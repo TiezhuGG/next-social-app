@@ -1,10 +1,10 @@
-// import prisma from "@/lib/client";
+import prisma from "@/lib/client";
 import { auth } from "@clerk/nextjs/server";
 import Image from "next/image";
 import Link from "next/link";
 
 const ProfileCard = async () => {
-  const { userId } = auth();
+  const { userId } = await auth();
 
   if (!userId) return null;
 
@@ -27,13 +27,13 @@ const ProfileCard = async () => {
     <div className="p-4 bg-white rounded-lg shadow-md text-sm flex flex-col gap-6">
       <div className="h-20 relative">
         <Image
-          src={user.cover || "/noCover.png"}
+          src={user?.cover || "/noCover.png"}
           alt=""
           fill
           className="rounded-md object-cover"
         />
         <Image
-          src={user.avatar || "/noAvatar.png"}
+          src={user?.avatar || "/noAvatar.png"}
           alt=""
           width={48}
           height={48}
@@ -46,6 +46,7 @@ const ProfileCard = async () => {
             ? user.name + " " + user.surname
             : user.username}
         </span>
+
         <div className="flex items-center gap-4">
           <div className="flex">
             <Image
@@ -74,6 +75,7 @@ const ProfileCard = async () => {
             {user._count.followers} Followers
           </span>
         </div>
+        
         <Link href={`/profile/${user.username}`}>
           <button className="bg-blue-500 text-white text-xs p-2 rounded-md">
             My Profile

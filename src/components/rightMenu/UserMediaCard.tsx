@@ -1,5 +1,5 @@
-// import prisma from "@/lib/client";
-// import { User } from "@prisma/client";
+import prisma from "@/lib/client";
+import { User } from "@/app/generated/prisma";
 import Image from "next/image";
 import Link from "next/link";
 

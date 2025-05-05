@@ -5,13 +5,11 @@ import React from "react";
 
 export default async function AddPost() {
 
-
-  };
   return (
     <div className="p-4 bg-white rounded-lg flex gap-4 text-sm">
       <div>
         <Image
-          src="https://cdn.dribbble.com/userupload/22681624/file/original-8fa4fb07e0045edbdb3d6c5cd1814a18.gif"
+          src=""
           width={60}
           height={60}
           alt="avatar"
@@ -19,7 +17,7 @@ export default async function AddPost() {
         />
       </div>
       <div className="flex flex-col flex-1">
-        <form action={testAction} className="flex gap-4 items-end">
+        <form className="flex gap-4 items-end">
           <textarea
             placeholder="What's on your mind?"
             className="w-full bg-slate-100 rounded-lg p-3"

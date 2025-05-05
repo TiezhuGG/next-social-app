@@ -1,12 +1,12 @@
 "use client";
 
 // import { updateProfile } from "@/lib/actions";
-// import { User } from "@prisma/client";
 import Image from "next/image";
 import { useActionState, useState } from "react";
 // import { CldUploadWidget } from "next-cloudinary";
 import { useRouter } from "next/navigation";
 import UpdateButton from "./UpdateButton";
+import { User } from "@/app/generated/prisma";
 
 const UpdateUser = ({ user }: { user: User }) => {
   const [open, setOpen] = useState(false);

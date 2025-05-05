@@ -13,7 +13,7 @@ export default function Stories() {
               className="flex flex-col items-center gap-2 cursor-pointer"
             >
               <Image
-                src="https://cdn.dribbble.com/userupload/9082089/file/original-28361a132344f19913b167ae33e93d12.png?resize=752x&vertical=center"
+                src=""
                 width={100}
                 height={100}
                 alt="story"

@@ -1,64 +1,66 @@
-// import prisma from "@/lib/client";
+import prisma from "@/lib/client";
 import { auth } from "@clerk/nextjs/server";
-// import { User } from "@prisma/client";
 import Image from "next/image";
 import Link from "next/link";
 import UserInfoCardInteraction from "./UserInfoCardInteraction";
 import UpdateUser from "./UpdateUser";
+import { User } from "@/app/generated/prisma";
 
-const UserInfoCard = async ({ userId }: { userId: string }) => {
-  // const createdAtDate = new Date(user.createdAt);
+const UserInfoCard = async ({ user }: { user: User }) => {
+  console.log("user info card", user);
 
-  // const formattedDate = createdAtDate.toLocaleDateString("en-US", {
-  //   year: "numeric",
-  //   month: "long",
-  //   day: "numeric",
-  // });
+  const createdAtDate = new Date(user.createdAt);
 
-  // let isUserBlocked = false;
-  // let isFollowing = false;
-  // let isFollowingSent = false;
+  const formattedDate = createdAtDate.toLocaleDateString("en-US", {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+  });
 
-  // const { userId: currentUserId } = auth();
+  let isUserBlocked = false;
+  let isFollowing = false;
+  let isFollowingSent = false;
 
-  // if (currentUserId) {
-  //   const blockRes = await prisma.block.findFirst({
-  //     where: {
-  //       blockerId: currentUserId,
-  //       blockedId: user.id,
-  //     },
-  //   });
+  const { userId: currentUserId } = await auth();
 
-  //   blockRes ? (isUserBlocked = true) : (isUserBlocked = false);
-  //   const followRes = await prisma.follower.findFirst({
-  //     where: {
-  //       followerId: currentUserId,
-  //       followingId: user.id,
-  //     },
-  //   });
+  if (currentUserId) {
+    const blockRes = await prisma.block.findFirst({
+      where: {
+        blockerId: currentUserId,
+        blockedId: user.id,
+      },
+    });
 
-  //   followRes ? (isFollowing = true) : (isFollowing = false);
-  //   const followReqRes = await prisma.followRequest.findFirst({
-  //     where: {
-  //       senderId: currentUserId,
-  //       receiverId: user.id,
-  //     },
-  //   });
+    blockRes ? (isUserBlocked = true) : (isUserBlocked = false);
+    const followRes = await prisma.follower.findFirst({
+      where: {
+        followerId: currentUserId,
+        followingId: user.id,
+      },
+    });
 
-  //   followReqRes ? (isFollowingSent = true) : (isFollowingSent = false);
-  // }
+    followRes ? (isFollowing = true) : (isFollowing = false);
+    const followReqRes = await prisma.followerRequest.findFirst({
+      where: {
+        senderId: currentUserId,
+        receiverId: user.id,
+      },
+    });
+
+    followReqRes ? (isFollowingSent = true) : (isFollowingSent = false);
+  }
   return (
     <div className="p-4 bg-white rounded-lg shadow-md text-sm flex flex-col gap-4">
       {/* TOP */}
       <div className="flex justify-between items-center font-medium">
         <span className="text-gray-500">User Information</span>
-        {currentUserId === user.id ? (
+        {/* {currentUserId === user.id ? (
           <UpdateUser user={user}/>
         ) : (
           <Link href="/" className="text-blue-500 text-xs">
             See all
           </Link>
-        )}
+        )} */}
       </div>
       {/* BOTTOM */}
       <div className="flex flex-col gap-4 text-gray-500">
