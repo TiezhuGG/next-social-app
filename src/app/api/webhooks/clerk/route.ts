@@ -1,12 +1,11 @@
 import { Webhook } from "svix";
 import { WebhookEvent } from "@clerk/nextjs/server";
 import { headers } from "next/headers";
-import prisma from "@/lib/prisma";
+import prisma from "@/lib/client";
 
 export async function POST(req: Request) {
   const secret = process.env.CLERK_WEBHOOK_SIGNING_SECRET;
   if (!secret) return new Response("Missing secret", { status: 500 });
-
   const wh = new Webhook(secret);
   const body = await req.text();
   const headerPayload = await headers();
@@ -17,8 +16,6 @@ export async function POST(req: Request) {
     "svix-signature": headerPayload.get("svix-signature")!,
   }) as WebhookEvent;
 
-  console.log("我登录了", event, body);
-
   if (event.type === "user.created") {
     try {
       const { id, username, image_url } = event.data;
@@ -26,9 +23,8 @@ export async function POST(req: Request) {
       await prisma.user.create({
         data: {
           id: id,
-          username: username,
+          username: username as string,
           avatar: image_url,
-          image_url: image_url,
           cover: "/noCover.png",
         },
       });
@@ -44,11 +40,10 @@ export async function POST(req: Request) {
     const { id } = event.data;
 
     try {
-      await prisma.user.update({
+      const res = await prisma.user.update({
         where: { id: id },
         data: {
-          id: id,
-          username: JSON.parse(body).data.username,
+          username: JSON.parse(body).data.username || "FFF",
           avatar: JSON.parse(body).data.image_url || "/noAvatar.png",
         },
       });
@@ -57,4 +52,6 @@ export async function POST(req: Request) {
       return new Response("Failed to update the user", { status: 500 });
     }
   }
+
+  return new Response("Webhook received", { status: 200 });
 }
