@@ -179,7 +179,7 @@ exports.Prisma.BlockScalarFieldEnum = {
   id: 'id',
   createAt: 'createAt',
   blockerId: 'blockerId',
-  blcokedId: 'blcokedId'
+  blockedId: 'blockedId'
 };
 
 exports.Prisma.StoryScalarFieldEnum = {

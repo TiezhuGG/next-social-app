@@ -8763,21 +8763,21 @@ export namespace Prisma {
     id: number | null
     createAt: Date | null
     blockerId: string | null
-    blcokedId: string | null
+    blockedId: string | null
   }
 
   export type BlockMaxAggregateOutputType = {
     id: number | null
     createAt: Date | null
     blockerId: string | null
-    blcokedId: string | null
+    blockedId: string | null
   }
 
   export type BlockCountAggregateOutputType = {
     id: number
     createAt: number
     blockerId: number
-    blcokedId: number
+    blockedId: number
     _all: number
   }
 
@@ -8794,21 +8794,21 @@ export namespace Prisma {
     id?: true
     createAt?: true
     blockerId?: true
-    blcokedId?: true
+    blockedId?: true
   }
 
   export type BlockMaxAggregateInputType = {
     id?: true
     createAt?: true
     blockerId?: true
-    blcokedId?: true
+    blockedId?: true
   }
 
   export type BlockCountAggregateInputType = {
     id?: true
     createAt?: true
     blockerId?: true
-    blcokedId?: true
+    blockedId?: true
     _all?: true
   }
 
@@ -8902,7 +8902,7 @@ export namespace Prisma {
     id: number
     createAt: Date
     blockerId: string
-    blcokedId: string
+    blockedId: string
     _count: BlockCountAggregateOutputType | null
     _avg: BlockAvgAggregateOutputType | null
     _sum: BlockSumAggregateOutputType | null
@@ -8928,7 +8928,7 @@ export namespace Prisma {
     id?: boolean
     createAt?: boolean
     blockerId?: boolean
-    blcokedId?: boolean
+    blockedId?: boolean
     sender?: boolean | UserDefaultArgs<ExtArgs>
     receiver?: boolean | UserDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["block"]>
@@ -8937,7 +8937,7 @@ export namespace Prisma {
     id?: boolean
     createAt?: boolean
     blockerId?: boolean
-    blcokedId?: boolean
+    blockedId?: boolean
     sender?: boolean | UserDefaultArgs<ExtArgs>
     receiver?: boolean | UserDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["block"]>
@@ -8946,7 +8946,7 @@ export namespace Prisma {
     id?: boolean
     createAt?: boolean
     blockerId?: boolean
-    blcokedId?: boolean
+    blockedId?: boolean
     sender?: boolean | UserDefaultArgs<ExtArgs>
     receiver?: boolean | UserDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["block"]>
@@ -8955,10 +8955,10 @@ export namespace Prisma {
     id?: boolean
     createAt?: boolean
     blockerId?: boolean
-    blcokedId?: boolean
+    blockedId?: boolean
   }
 
-  export type BlockOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "createAt" | "blockerId" | "blcokedId", ExtArgs["result"]["block"]>
+  export type BlockOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "createAt" | "blockerId" | "blockedId", ExtArgs["result"]["block"]>
   export type BlockInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     sender?: boolean | UserDefaultArgs<ExtArgs>
     receiver?: boolean | UserDefaultArgs<ExtArgs>
@@ -8982,7 +8982,7 @@ export namespace Prisma {
       id: number
       createAt: Date
       blockerId: string
-      blcokedId: string
+      blockedId: string
     }, ExtArgs["result"]["block"]>
     composites: {}
   }
@@ -9411,7 +9411,7 @@ export namespace Prisma {
     readonly id: FieldRef<"Block", 'Int'>
     readonly createAt: FieldRef<"Block", 'DateTime'>
     readonly blockerId: FieldRef<"Block", 'String'>
-    readonly blcokedId: FieldRef<"Block", 'String'>
+    readonly blockedId: FieldRef<"Block", 'String'>
   }
     
 
@@ -10996,7 +10996,7 @@ export namespace Prisma {
     id: 'id',
     createAt: 'createAt',
     blockerId: 'blockerId',
-    blcokedId: 'blcokedId'
+    blockedId: 'blockedId'
   };
 
   export type BlockScalarFieldEnum = (typeof BlockScalarFieldEnum)[keyof typeof BlockScalarFieldEnum]
@@ -11534,7 +11534,7 @@ export namespace Prisma {
     id?: IntFilter<"Block"> | number
     createAt?: DateTimeFilter<"Block"> | Date | string
     blockerId?: StringFilter<"Block"> | string
-    blcokedId?: StringFilter<"Block"> | string
+    blockedId?: StringFilter<"Block"> | string
     sender?: XOR<UserScalarRelationFilter, UserWhereInput>
     receiver?: XOR<UserScalarRelationFilter, UserWhereInput>
   }
@@ -11543,29 +11543,29 @@ export namespace Prisma {
     id?: SortOrder
     createAt?: SortOrder
     blockerId?: SortOrder
-    blcokedId?: SortOrder
+    blockedId?: SortOrder
     sender?: UserOrderByWithRelationInput
     receiver?: UserOrderByWithRelationInput
   }
 
   export type BlockWhereUniqueInput = Prisma.AtLeast<{
     id?: number
-    blockerId_blcokedId?: BlockBlockerIdBlcokedIdCompoundUniqueInput
+    blockerId_blockedId?: BlockBlockerIdBlockedIdCompoundUniqueInput
     AND?: BlockWhereInput | BlockWhereInput[]
     OR?: BlockWhereInput[]
     NOT?: BlockWhereInput | BlockWhereInput[]
     createAt?: DateTimeFilter<"Block"> | Date | string
     blockerId?: StringFilter<"Block"> | string
-    blcokedId?: StringFilter<"Block"> | string
+    blockedId?: StringFilter<"Block"> | string
     sender?: XOR<UserScalarRelationFilter, UserWhereInput>
     receiver?: XOR<UserScalarRelationFilter, UserWhereInput>
-  }, "id" | "blockerId_blcokedId">
+  }, "id" | "blockerId_blockedId">
 
   export type BlockOrderByWithAggregationInput = {
     id?: SortOrder
     createAt?: SortOrder
     blockerId?: SortOrder
-    blcokedId?: SortOrder
+    blockedId?: SortOrder
     _count?: BlockCountOrderByAggregateInput
     _avg?: BlockAvgOrderByAggregateInput
     _max?: BlockMaxOrderByAggregateInput
@@ -11580,7 +11580,7 @@ export namespace Prisma {
     id?: IntWithAggregatesFilter<"Block"> | number
     createAt?: DateTimeWithAggregatesFilter<"Block"> | Date | string
     blockerId?: StringWithAggregatesFilter<"Block"> | string
-    blcokedId?: StringWithAggregatesFilter<"Block"> | string
+    blockedId?: StringWithAggregatesFilter<"Block"> | string
   }
 
   export type StoryWhereInput = {
@@ -12057,7 +12057,7 @@ export namespace Prisma {
     id?: number
     createAt?: Date | string
     blockerId: string
-    blcokedId: string
+    blockedId: string
   }
 
   export type BlockUpdateInput = {
@@ -12070,14 +12070,14 @@ export namespace Prisma {
     id?: IntFieldUpdateOperationsInput | number
     createAt?: DateTimeFieldUpdateOperationsInput | Date | string
     blockerId?: StringFieldUpdateOperationsInput | string
-    blcokedId?: StringFieldUpdateOperationsInput | string
+    blockedId?: StringFieldUpdateOperationsInput | string
   }
 
   export type BlockCreateManyInput = {
     id?: number
     createAt?: Date | string
     blockerId: string
-    blcokedId: string
+    blockedId: string
   }
 
   export type BlockUpdateManyMutationInput = {
@@ -12088,7 +12088,7 @@ export namespace Prisma {
     id?: IntFieldUpdateOperationsInput | number
     createAt?: DateTimeFieldUpdateOperationsInput | Date | string
     blockerId?: StringFieldUpdateOperationsInput | string
-    blcokedId?: StringFieldUpdateOperationsInput | string
+    blockedId?: StringFieldUpdateOperationsInput | string
   }
 
   export type StoryCreateInput = {
@@ -12592,16 +12592,16 @@ export namespace Prisma {
     id?: SortOrder
   }
 
-  export type BlockBlockerIdBlcokedIdCompoundUniqueInput = {
+  export type BlockBlockerIdBlockedIdCompoundUniqueInput = {
     blockerId: string
-    blcokedId: string
+    blockedId: string
   }
 
   export type BlockCountOrderByAggregateInput = {
     id?: SortOrder
     createAt?: SortOrder
     blockerId?: SortOrder
-    blcokedId?: SortOrder
+    blockedId?: SortOrder
   }
 
   export type BlockAvgOrderByAggregateInput = {
@@ -12612,14 +12612,14 @@ export namespace Prisma {
     id?: SortOrder
     createAt?: SortOrder
     blockerId?: SortOrder
-    blcokedId?: SortOrder
+    blockedId?: SortOrder
   }
 
   export type BlockMinOrderByAggregateInput = {
     id?: SortOrder
     createAt?: SortOrder
     blockerId?: SortOrder
-    blcokedId?: SortOrder
+    blockedId?: SortOrder
   }
 
   export type BlockSumOrderByAggregateInput = {
@@ -13749,7 +13749,7 @@ export namespace Prisma {
   export type BlockUncheckedCreateWithoutSenderInput = {
     id?: number
     createAt?: Date | string
-    blcokedId: string
+    blockedId: string
   }
 
   export type BlockCreateOrConnectWithoutSenderInput = {
@@ -13994,7 +13994,7 @@ export namespace Prisma {
     id?: IntFilter<"Block"> | number
     createAt?: DateTimeFilter<"Block"> | Date | string
     blockerId?: StringFilter<"Block"> | string
-    blcokedId?: StringFilter<"Block"> | string
+    blockedId?: StringFilter<"Block"> | string
   }
 
   export type BlockUpsertWithWhereUniqueWithoutReceiverInput = {
@@ -15488,7 +15488,7 @@ export namespace Prisma {
   export type BlockCreateManySenderInput = {
     id?: number
     createAt?: Date | string
-    blcokedId: string
+    blockedId: string
   }
 
   export type BlockCreateManyReceiverInput = {
@@ -15651,13 +15651,13 @@ export namespace Prisma {
   export type BlockUncheckedUpdateWithoutSenderInput = {
     id?: IntFieldUpdateOperationsInput | number
     createAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    blcokedId?: StringFieldUpdateOperationsInput | string
+    blockedId?: StringFieldUpdateOperationsInput | string
   }
 
   export type BlockUncheckedUpdateManyWithoutSenderInput = {
     id?: IntFieldUpdateOperationsInput | number
     createAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    blcokedId?: StringFieldUpdateOperationsInput | string
+    blockedId?: StringFieldUpdateOperationsInput | string
   }
 
   export type BlockUpdateWithoutReceiverInput = {
