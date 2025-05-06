@@ -7,7 +7,7 @@ import { revalidatePath } from "next/cache";
 
 export const switchFollow = async (userId: string) => {
   const { userId: currentUserId } = await auth();
-
+  console.log("关注", currentUserId as string, userId);
   try {
     const existingFollow = await prisma.follower.findFirst({
       where: {
@@ -15,29 +15,35 @@ export const switchFollow = async (userId: string) => {
         followingId: userId,
       },
     });
+    console.log("是否已关注", existingFollow);
 
     if (existingFollow) {
+      console.log(1);
       await prisma.follower.delete({
         where: { id: existingFollow.id },
       });
     } else {
-      const existingFollowerRequest = await prisma.followerRequest.findFirst({
+      console.log(2);
+      const existingFollowerRequest = await prisma.followRequest.findFirst({
         where: {
           senderId: currentUserId as string,
           receiverId: userId,
         },
       });
+      console.log("existingFollowerRequest", existingFollowerRequest);
+
       if (existingFollowerRequest) {
-        await prisma.followerRequest.delete({
+        await prisma.followRequest.delete({
           where: { id: existingFollowerRequest.id },
         });
       } else {
-        await prisma.followerRequest.create({
+        const res = await prisma.followRequest.create({
           data: {
             senderId: currentUserId as string,
             receiverId: userId,
           },
         });
+        console.log("res", res);
       }
     }
   } catch (error) {
@@ -83,7 +89,7 @@ export const acceptFollowRequest = async (userId: string) => {
   }
 
   try {
-    const existingFollowRequest = await prisma.followerRequest.findFirst({
+    const existingFollowRequest = await prisma.followRequest.findFirst({
       where: {
         senderId: userId,
         receiverId: currentUserId,
@@ -116,7 +122,7 @@ export const declineFollowRequest = async (userId: string) => {
   }
 
   try {
-    const existingFollowRequest = await prisma.followerRequest.findFirst({
+    const existingFollowRequest = await prisma.followRequest.findFirst({
       where: {
         senderId: userId,
         receiverId: currentUserId,
@@ -124,7 +130,7 @@ export const declineFollowRequest = async (userId: string) => {
     });
 
     if (existingFollowRequest) {
-      await prisma.followerRequest.delete({
+      await prisma.followRequest.delete({
         where: {
           id: existingFollowRequest.id,
         },
@@ -223,6 +229,7 @@ export const addComment = async (postId: number, desc: string) => {
 
   if (!userId) throw new Error("User is not authenticated!");
 
+  console.log("添加评论", userId, postId, desc);
   try {
     const createdComment = await prisma.comment.create({
       data: {
@@ -253,7 +260,7 @@ export const addPost = async (formData: FormData, img: string) => {
     console.log("description is not valid");
     return;
   }
-  
+
   const { userId } = await auth();
 
   if (!userId) throw new Error("User is not authenticated!");

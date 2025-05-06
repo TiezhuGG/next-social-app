@@ -1,6 +1,5 @@
 import prisma from "@/lib/client";
 import { auth } from "@clerk/nextjs/server";
-import Image from "next/image";
 import Link from "next/link";
 import FriendRequestList from "./FriendRequestList";
 
@@ -9,7 +8,7 @@ const FriendRequests = async () => {
 
   if (!userId) return null;
 
-  const requests = await prisma.followerRequest.findMany({
+  const requests = await prisma.followRequest.findMany({
     where: {
       receiverId: userId,
     },

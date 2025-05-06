@@ -163,28 +163,28 @@ exports.Prisma.LikeScalarFieldEnum = {
 
 exports.Prisma.FollowerScalarFieldEnum = {
   id: 'id',
-  createAt: 'createAt',
+  createdAt: 'createdAt',
   followerId: 'followerId',
   followingId: 'followingId'
 };
 
-exports.Prisma.FollowerRequestScalarFieldEnum = {
+exports.Prisma.FollowRequestScalarFieldEnum = {
   id: 'id',
-  createAt: 'createAt',
+  createdAt: 'createdAt',
   senderId: 'senderId',
   receiverId: 'receiverId'
 };
 
 exports.Prisma.BlockScalarFieldEnum = {
   id: 'id',
-  createAt: 'createAt',
+  createdAt: 'createdAt',
   blockerId: 'blockerId',
   blockedId: 'blockedId'
 };
 
 exports.Prisma.StoryScalarFieldEnum = {
   id: 'id',
-  createAt: 'createAt',
+  createdAt: 'createdAt',
   expiresAt: 'expiresAt',
   img: 'img',
   userId: 'userId'
@@ -212,7 +212,7 @@ exports.Prisma.ModelName = {
   Comment: 'Comment',
   Like: 'Like',
   Follower: 'Follower',
-  FollowerRequest: 'FollowerRequest',
+  FollowRequest: 'FollowRequest',
   Block: 'Block',
   Story: 'Story'
 };

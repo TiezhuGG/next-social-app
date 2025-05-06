@@ -19,9 +19,9 @@ const RightMenu = ({ user }: { user?: User }) => {
           </Suspense>
       </>
       ) : null}
-      <FriendRequests />
-      <Birthdays />
-      <Ad size="md" />
+      {/* <FriendRequests /> */}
+      {/* <Birthdays /> */}
+      {/* <Ad size="md" /> */}
     </div>
   );
 };

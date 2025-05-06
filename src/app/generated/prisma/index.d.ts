@@ -39,10 +39,10 @@ export type Like = $Result.DefaultSelection<Prisma.$LikePayload>
  */
 export type Follower = $Result.DefaultSelection<Prisma.$FollowerPayload>
 /**
- * Model FollowerRequest
+ * Model FollowRequest
  * 
  */
-export type FollowerRequest = $Result.DefaultSelection<Prisma.$FollowerRequestPayload>
+export type FollowRequest = $Result.DefaultSelection<Prisma.$FollowRequestPayload>
 /**
  * Model Block
  * 
@@ -230,14 +230,14 @@ export class PrismaClient<
   get follower(): Prisma.FollowerDelegate<ExtArgs, ClientOptions>;
 
   /**
-   * `prisma.followerRequest`: Exposes CRUD operations for the **FollowerRequest** model.
+   * `prisma.followRequest`: Exposes CRUD operations for the **FollowRequest** model.
     * Example usage:
     * ```ts
-    * // Fetch zero or more FollowerRequests
-    * const followerRequests = await prisma.followerRequest.findMany()
+    * // Fetch zero or more FollowRequests
+    * const followRequests = await prisma.followRequest.findMany()
     * ```
     */
-  get followerRequest(): Prisma.FollowerRequestDelegate<ExtArgs, ClientOptions>;
+  get followRequest(): Prisma.FollowRequestDelegate<ExtArgs, ClientOptions>;
 
   /**
    * `prisma.block`: Exposes CRUD operations for the **Block** model.
@@ -703,7 +703,7 @@ export namespace Prisma {
     Comment: 'Comment',
     Like: 'Like',
     Follower: 'Follower',
-    FollowerRequest: 'FollowerRequest',
+    FollowRequest: 'FollowRequest',
     Block: 'Block',
     Story: 'Story'
   };
@@ -724,7 +724,7 @@ export namespace Prisma {
       omit: GlobalOmitOptions
     }
     meta: {
-      modelProps: "user" | "post" | "comment" | "like" | "follower" | "followerRequest" | "block" | "story"
+      modelProps: "user" | "post" | "comment" | "like" | "follower" | "followRequest" | "block" | "story"
       txIsolationLevel: Prisma.TransactionIsolationLevel
     }
     model: {
@@ -1098,77 +1098,77 @@ export namespace Prisma {
           }
         }
       }
-      FollowerRequest: {
-        payload: Prisma.$FollowerRequestPayload<ExtArgs>
-        fields: Prisma.FollowerRequestFieldRefs
+      FollowRequest: {
+        payload: Prisma.$FollowRequestPayload<ExtArgs>
+        fields: Prisma.FollowRequestFieldRefs
         operations: {
           findUnique: {
-            args: Prisma.FollowerRequestFindUniqueArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$FollowerRequestPayload> | null
+            args: Prisma.FollowRequestFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$FollowRequestPayload> | null
           }
           findUniqueOrThrow: {
-            args: Prisma.FollowerRequestFindUniqueOrThrowArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$FollowerRequestPayload>
+            args: Prisma.FollowRequestFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$FollowRequestPayload>
           }
           findFirst: {
-            args: Prisma.FollowerRequestFindFirstArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$FollowerRequestPayload> | null
+            args: Prisma.FollowRequestFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$FollowRequestPayload> | null
           }
           findFirstOrThrow: {
-            args: Prisma.FollowerRequestFindFirstOrThrowArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$FollowerRequestPayload>
+            args: Prisma.FollowRequestFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$FollowRequestPayload>
           }
           findMany: {
-            args: Prisma.FollowerRequestFindManyArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$FollowerRequestPayload>[]
+            args: Prisma.FollowRequestFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$FollowRequestPayload>[]
           }
           create: {
-            args: Prisma.FollowerRequestCreateArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$FollowerRequestPayload>
+            args: Prisma.FollowRequestCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$FollowRequestPayload>
           }
           createMany: {
-            args: Prisma.FollowerRequestCreateManyArgs<ExtArgs>
+            args: Prisma.FollowRequestCreateManyArgs<ExtArgs>
             result: BatchPayload
           }
           createManyAndReturn: {
-            args: Prisma.FollowerRequestCreateManyAndReturnArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$FollowerRequestPayload>[]
+            args: Prisma.FollowRequestCreateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$FollowRequestPayload>[]
           }
           delete: {
-            args: Prisma.FollowerRequestDeleteArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$FollowerRequestPayload>
+            args: Prisma.FollowRequestDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$FollowRequestPayload>
           }
           update: {
-            args: Prisma.FollowerRequestUpdateArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$FollowerRequestPayload>
+            args: Prisma.FollowRequestUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$FollowRequestPayload>
           }
           deleteMany: {
-            args: Prisma.FollowerRequestDeleteManyArgs<ExtArgs>
+            args: Prisma.FollowRequestDeleteManyArgs<ExtArgs>
             result: BatchPayload
           }
           updateMany: {
-            args: Prisma.FollowerRequestUpdateManyArgs<ExtArgs>
+            args: Prisma.FollowRequestUpdateManyArgs<ExtArgs>
             result: BatchPayload
           }
           updateManyAndReturn: {
-            args: Prisma.FollowerRequestUpdateManyAndReturnArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$FollowerRequestPayload>[]
+            args: Prisma.FollowRequestUpdateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$FollowRequestPayload>[]
           }
           upsert: {
-            args: Prisma.FollowerRequestUpsertArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$FollowerRequestPayload>
+            args: Prisma.FollowRequestUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$FollowRequestPayload>
           }
           aggregate: {
-            args: Prisma.FollowerRequestAggregateArgs<ExtArgs>
-            result: $Utils.Optional<AggregateFollowerRequest>
+            args: Prisma.FollowRequestAggregateArgs<ExtArgs>
+            result: $Utils.Optional<AggregateFollowRequest>
           }
           groupBy: {
-            args: Prisma.FollowerRequestGroupByArgs<ExtArgs>
-            result: $Utils.Optional<FollowerRequestGroupByOutputType>[]
+            args: Prisma.FollowRequestGroupByArgs<ExtArgs>
+            result: $Utils.Optional<FollowRequestGroupByOutputType>[]
           }
           count: {
-            args: Prisma.FollowerRequestCountArgs<ExtArgs>
-            result: $Utils.Optional<FollowerRequestCountAggregateOutputType> | number
+            args: Prisma.FollowRequestCountArgs<ExtArgs>
+            result: $Utils.Optional<FollowRequestCountAggregateOutputType> | number
           }
         }
       }
@@ -1409,7 +1409,7 @@ export namespace Prisma {
     comment?: CommentOmit
     like?: LikeOmit
     follower?: FollowerOmit
-    followerRequest?: FollowerRequestOmit
+    followRequest?: FollowRequestOmit
     block?: BlockOmit
     story?: StoryOmit
   }
@@ -1507,12 +1507,12 @@ export namespace Prisma {
 
   export type UserCountOutputType = {
     posts: number
-    likes: number
     comments: number
+    likes: number
     followers: number
-    following: number
-    followRequestSent: number
-    followRequestReceived: number
+    followings: number
+    followRequestsSent: number
+    followRequestsReceived: number
     blocks: number
     blockedBy: number
     stories: number
@@ -1520,12 +1520,12 @@ export namespace Prisma {
 
   export type UserCountOutputTypeSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     posts?: boolean | UserCountOutputTypeCountPostsArgs
-    likes?: boolean | UserCountOutputTypeCountLikesArgs
     comments?: boolean | UserCountOutputTypeCountCommentsArgs
+    likes?: boolean | UserCountOutputTypeCountLikesArgs
     followers?: boolean | UserCountOutputTypeCountFollowersArgs
-    following?: boolean | UserCountOutputTypeCountFollowingArgs
-    followRequestSent?: boolean | UserCountOutputTypeCountFollowRequestSentArgs
-    followRequestReceived?: boolean | UserCountOutputTypeCountFollowRequestReceivedArgs
+    followings?: boolean | UserCountOutputTypeCountFollowingsArgs
+    followRequestsSent?: boolean | UserCountOutputTypeCountFollowRequestsSentArgs
+    followRequestsReceived?: boolean | UserCountOutputTypeCountFollowRequestsReceivedArgs
     blocks?: boolean | UserCountOutputTypeCountBlocksArgs
     blockedBy?: boolean | UserCountOutputTypeCountBlockedByArgs
     stories?: boolean | UserCountOutputTypeCountStoriesArgs
@@ -1552,15 +1552,15 @@ export namespace Prisma {
   /**
    * UserCountOutputType without action
    */
-  export type UserCountOutputTypeCountLikesArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    where?: LikeWhereInput
+  export type UserCountOutputTypeCountCommentsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: CommentWhereInput
   }
 
   /**
    * UserCountOutputType without action
    */
-  export type UserCountOutputTypeCountCommentsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    where?: CommentWhereInput
+  export type UserCountOutputTypeCountLikesArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: LikeWhereInput
   }
 
   /**
@@ -1573,22 +1573,22 @@ export namespace Prisma {
   /**
    * UserCountOutputType without action
    */
-  export type UserCountOutputTypeCountFollowingArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type UserCountOutputTypeCountFollowingsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     where?: FollowerWhereInput
   }
 
   /**
    * UserCountOutputType without action
    */
-  export type UserCountOutputTypeCountFollowRequestSentArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    where?: FollowerRequestWhereInput
+  export type UserCountOutputTypeCountFollowRequestsSentArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: FollowRequestWhereInput
   }
 
   /**
    * UserCountOutputType without action
    */
-  export type UserCountOutputTypeCountFollowRequestReceivedArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    where?: FollowerRequestWhereInput
+  export type UserCountOutputTypeCountFollowRequestsReceivedArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: FollowRequestWhereInput
   }
 
   /**
@@ -1618,13 +1618,13 @@ export namespace Prisma {
    */
 
   export type PostCountOutputType = {
+    comments: number
     likes: number
-    Comment: number
   }
 
   export type PostCountOutputTypeSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    comments?: boolean | PostCountOutputTypeCountCommentsArgs
     likes?: boolean | PostCountOutputTypeCountLikesArgs
-    Comment?: boolean | PostCountOutputTypeCountCommentArgs
   }
 
   // Custom InputTypes
@@ -1641,15 +1641,15 @@ export namespace Prisma {
   /**
    * PostCountOutputType without action
    */
-  export type PostCountOutputTypeCountLikesArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    where?: LikeWhereInput
+  export type PostCountOutputTypeCountCommentsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: CommentWhereInput
   }
 
   /**
    * PostCountOutputType without action
    */
-  export type PostCountOutputTypeCountCommentArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    where?: CommentWhereInput
+  export type PostCountOutputTypeCountLikesArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: LikeWhereInput
   }
 
 
@@ -1909,12 +1909,12 @@ export namespace Prisma {
     website?: boolean
     createdAt?: boolean
     posts?: boolean | User$postsArgs<ExtArgs>
-    likes?: boolean | User$likesArgs<ExtArgs>
     comments?: boolean | User$commentsArgs<ExtArgs>
+    likes?: boolean | User$likesArgs<ExtArgs>
     followers?: boolean | User$followersArgs<ExtArgs>
-    following?: boolean | User$followingArgs<ExtArgs>
-    followRequestSent?: boolean | User$followRequestSentArgs<ExtArgs>
-    followRequestReceived?: boolean | User$followRequestReceivedArgs<ExtArgs>
+    followings?: boolean | User$followingsArgs<ExtArgs>
+    followRequestsSent?: boolean | User$followRequestsSentArgs<ExtArgs>
+    followRequestsReceived?: boolean | User$followRequestsReceivedArgs<ExtArgs>
     blocks?: boolean | User$blocksArgs<ExtArgs>
     blockedBy?: boolean | User$blockedByArgs<ExtArgs>
     stories?: boolean | User$storiesArgs<ExtArgs>
@@ -1969,12 +1969,12 @@ export namespace Prisma {
   export type UserOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "username" | "avatar" | "cover" | "name" | "surname" | "description" | "city" | "school" | "work" | "website" | "createdAt", ExtArgs["result"]["user"]>
   export type UserInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     posts?: boolean | User$postsArgs<ExtArgs>
-    likes?: boolean | User$likesArgs<ExtArgs>
     comments?: boolean | User$commentsArgs<ExtArgs>
+    likes?: boolean | User$likesArgs<ExtArgs>
     followers?: boolean | User$followersArgs<ExtArgs>
-    following?: boolean | User$followingArgs<ExtArgs>
-    followRequestSent?: boolean | User$followRequestSentArgs<ExtArgs>
-    followRequestReceived?: boolean | User$followRequestReceivedArgs<ExtArgs>
+    followings?: boolean | User$followingsArgs<ExtArgs>
+    followRequestsSent?: boolean | User$followRequestsSentArgs<ExtArgs>
+    followRequestsReceived?: boolean | User$followRequestsReceivedArgs<ExtArgs>
     blocks?: boolean | User$blocksArgs<ExtArgs>
     blockedBy?: boolean | User$blockedByArgs<ExtArgs>
     stories?: boolean | User$storiesArgs<ExtArgs>
@@ -1987,12 +1987,12 @@ export namespace Prisma {
     name: "User"
     objects: {
       posts: Prisma.$PostPayload<ExtArgs>[]
-      likes: Prisma.$LikePayload<ExtArgs>[]
       comments: Prisma.$CommentPayload<ExtArgs>[]
+      likes: Prisma.$LikePayload<ExtArgs>[]
       followers: Prisma.$FollowerPayload<ExtArgs>[]
-      following: Prisma.$FollowerPayload<ExtArgs>[]
-      followRequestSent: Prisma.$FollowerRequestPayload<ExtArgs>[]
-      followRequestReceived: Prisma.$FollowerRequestPayload<ExtArgs>[]
+      followings: Prisma.$FollowerPayload<ExtArgs>[]
+      followRequestsSent: Prisma.$FollowRequestPayload<ExtArgs>[]
+      followRequestsReceived: Prisma.$FollowRequestPayload<ExtArgs>[]
       blocks: Prisma.$BlockPayload<ExtArgs>[]
       blockedBy: Prisma.$BlockPayload<ExtArgs>[]
       stories: Prisma.$StoryPayload<ExtArgs>[]
@@ -2405,12 +2405,12 @@ export namespace Prisma {
   export interface Prisma__UserClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
     readonly [Symbol.toStringTag]: "PrismaPromise"
     posts<T extends User$postsArgs<ExtArgs> = {}>(args?: Subset<T, User$postsArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$PostPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
-    likes<T extends User$likesArgs<ExtArgs> = {}>(args?: Subset<T, User$likesArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$LikePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
     comments<T extends User$commentsArgs<ExtArgs> = {}>(args?: Subset<T, User$commentsArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$CommentPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+    likes<T extends User$likesArgs<ExtArgs> = {}>(args?: Subset<T, User$likesArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$LikePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
     followers<T extends User$followersArgs<ExtArgs> = {}>(args?: Subset<T, User$followersArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$FollowerPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
-    following<T extends User$followingArgs<ExtArgs> = {}>(args?: Subset<T, User$followingArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$FollowerPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
-    followRequestSent<T extends User$followRequestSentArgs<ExtArgs> = {}>(args?: Subset<T, User$followRequestSentArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$FollowerRequestPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
-    followRequestReceived<T extends User$followRequestReceivedArgs<ExtArgs> = {}>(args?: Subset<T, User$followRequestReceivedArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$FollowerRequestPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+    followings<T extends User$followingsArgs<ExtArgs> = {}>(args?: Subset<T, User$followingsArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$FollowerPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+    followRequestsSent<T extends User$followRequestsSentArgs<ExtArgs> = {}>(args?: Subset<T, User$followRequestsSentArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$FollowRequestPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+    followRequestsReceived<T extends User$followRequestsReceivedArgs<ExtArgs> = {}>(args?: Subset<T, User$followRequestsReceivedArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$FollowRequestPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
     blocks<T extends User$blocksArgs<ExtArgs> = {}>(args?: Subset<T, User$blocksArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$BlockPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
     blockedBy<T extends User$blockedByArgs<ExtArgs> = {}>(args?: Subset<T, User$blockedByArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$BlockPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
     stories<T extends User$storiesArgs<ExtArgs> = {}>(args?: Subset<T, User$storiesArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$StoryPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
@@ -2867,30 +2867,6 @@ export namespace Prisma {
   }
 
   /**
-   * User.likes
-   */
-  export type User$likesArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the Like
-     */
-    select?: LikeSelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the Like
-     */
-    omit?: LikeOmit<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: LikeInclude<ExtArgs> | null
-    where?: LikeWhereInput
-    orderBy?: LikeOrderByWithRelationInput | LikeOrderByWithRelationInput[]
-    cursor?: LikeWhereUniqueInput
-    take?: number
-    skip?: number
-    distinct?: LikeScalarFieldEnum | LikeScalarFieldEnum[]
-  }
-
-  /**
    * User.comments
    */
   export type User$commentsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
@@ -2912,6 +2888,30 @@ export namespace Prisma {
     take?: number
     skip?: number
     distinct?: CommentScalarFieldEnum | CommentScalarFieldEnum[]
+  }
+
+  /**
+   * User.likes
+   */
+  export type User$likesArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Like
+     */
+    select?: LikeSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Like
+     */
+    omit?: LikeOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: LikeInclude<ExtArgs> | null
+    where?: LikeWhereInput
+    orderBy?: LikeOrderByWithRelationInput | LikeOrderByWithRelationInput[]
+    cursor?: LikeWhereUniqueInput
+    take?: number
+    skip?: number
+    distinct?: LikeScalarFieldEnum | LikeScalarFieldEnum[]
   }
 
   /**
@@ -2939,9 +2939,9 @@ export namespace Prisma {
   }
 
   /**
-   * User.following
+   * User.followings
    */
-  export type User$followingArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type User$followingsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
      * Select specific fields to fetch from the Follower
      */
@@ -2963,51 +2963,51 @@ export namespace Prisma {
   }
 
   /**
-   * User.followRequestSent
+   * User.followRequestsSent
    */
-  export type User$followRequestSentArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type User$followRequestsSentArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the FollowerRequest
+     * Select specific fields to fetch from the FollowRequest
      */
-    select?: FollowerRequestSelect<ExtArgs> | null
+    select?: FollowRequestSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the FollowerRequest
+     * Omit specific fields from the FollowRequest
      */
-    omit?: FollowerRequestOmit<ExtArgs> | null
+    omit?: FollowRequestOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: FollowerRequestInclude<ExtArgs> | null
-    where?: FollowerRequestWhereInput
-    orderBy?: FollowerRequestOrderByWithRelationInput | FollowerRequestOrderByWithRelationInput[]
-    cursor?: FollowerRequestWhereUniqueInput
+    include?: FollowRequestInclude<ExtArgs> | null
+    where?: FollowRequestWhereInput
+    orderBy?: FollowRequestOrderByWithRelationInput | FollowRequestOrderByWithRelationInput[]
+    cursor?: FollowRequestWhereUniqueInput
     take?: number
     skip?: number
-    distinct?: FollowerRequestScalarFieldEnum | FollowerRequestScalarFieldEnum[]
+    distinct?: FollowRequestScalarFieldEnum | FollowRequestScalarFieldEnum[]
   }
 
   /**
-   * User.followRequestReceived
+   * User.followRequestsReceived
    */
-  export type User$followRequestReceivedArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type User$followRequestsReceivedArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the FollowerRequest
+     * Select specific fields to fetch from the FollowRequest
      */
-    select?: FollowerRequestSelect<ExtArgs> | null
+    select?: FollowRequestSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the FollowerRequest
+     * Omit specific fields from the FollowRequest
      */
-    omit?: FollowerRequestOmit<ExtArgs> | null
+    omit?: FollowRequestOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: FollowerRequestInclude<ExtArgs> | null
-    where?: FollowerRequestWhereInput
-    orderBy?: FollowerRequestOrderByWithRelationInput | FollowerRequestOrderByWithRelationInput[]
-    cursor?: FollowerRequestWhereUniqueInput
+    include?: FollowRequestInclude<ExtArgs> | null
+    where?: FollowRequestWhereInput
+    orderBy?: FollowRequestOrderByWithRelationInput | FollowRequestOrderByWithRelationInput[]
+    cursor?: FollowRequestWhereUniqueInput
     take?: number
     skip?: number
-    distinct?: FollowerRequestScalarFieldEnum | FollowerRequestScalarFieldEnum[]
+    distinct?: FollowRequestScalarFieldEnum | FollowRequestScalarFieldEnum[]
   }
 
   /**
@@ -3308,8 +3308,8 @@ export namespace Prisma {
     updatedAt?: boolean
     userId?: boolean
     user?: boolean | UserDefaultArgs<ExtArgs>
+    comments?: boolean | Post$commentsArgs<ExtArgs>
     likes?: boolean | Post$likesArgs<ExtArgs>
-    Comment?: boolean | Post$CommentArgs<ExtArgs>
     _count?: boolean | PostCountOutputTypeDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["post"]>
 
@@ -3345,8 +3345,8 @@ export namespace Prisma {
   export type PostOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "desc" | "img" | "createdAt" | "updatedAt" | "userId", ExtArgs["result"]["post"]>
   export type PostInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     user?: boolean | UserDefaultArgs<ExtArgs>
+    comments?: boolean | Post$commentsArgs<ExtArgs>
     likes?: boolean | Post$likesArgs<ExtArgs>
-    Comment?: boolean | Post$CommentArgs<ExtArgs>
     _count?: boolean | PostCountOutputTypeDefaultArgs<ExtArgs>
   }
   export type PostIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
@@ -3360,8 +3360,8 @@ export namespace Prisma {
     name: "Post"
     objects: {
       user: Prisma.$UserPayload<ExtArgs>
+      comments: Prisma.$CommentPayload<ExtArgs>[]
       likes: Prisma.$LikePayload<ExtArgs>[]
-      Comment: Prisma.$CommentPayload<ExtArgs>[]
     }
     scalars: $Extensions.GetPayloadResult<{
       id: number
@@ -3765,8 +3765,8 @@ export namespace Prisma {
   export interface Prisma__PostClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
     readonly [Symbol.toStringTag]: "PrismaPromise"
     user<T extends UserDefaultArgs<ExtArgs> = {}>(args?: Subset<T, UserDefaultArgs<ExtArgs>>): Prisma__UserClient<$Result.GetResult<Prisma.$UserPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+    comments<T extends Post$commentsArgs<ExtArgs> = {}>(args?: Subset<T, Post$commentsArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$CommentPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
     likes<T extends Post$likesArgs<ExtArgs> = {}>(args?: Subset<T, Post$likesArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$LikePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
-    Comment<T extends Post$CommentArgs<ExtArgs> = {}>(args?: Subset<T, Post$CommentArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$CommentPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
     /**
      * Attaches callbacks for the resolution and/or rejection of the Promise.
      * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -4198,6 +4198,30 @@ export namespace Prisma {
   }
 
   /**
+   * Post.comments
+   */
+  export type Post$commentsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Comment
+     */
+    select?: CommentSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Comment
+     */
+    omit?: CommentOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: CommentInclude<ExtArgs> | null
+    where?: CommentWhereInput
+    orderBy?: CommentOrderByWithRelationInput | CommentOrderByWithRelationInput[]
+    cursor?: CommentWhereUniqueInput
+    take?: number
+    skip?: number
+    distinct?: CommentScalarFieldEnum | CommentScalarFieldEnum[]
+  }
+
+  /**
    * Post.likes
    */
   export type Post$likesArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
@@ -4219,30 +4243,6 @@ export namespace Prisma {
     take?: number
     skip?: number
     distinct?: LikeScalarFieldEnum | LikeScalarFieldEnum[]
-  }
-
-  /**
-   * Post.Comment
-   */
-  export type Post$CommentArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the Comment
-     */
-    select?: CommentSelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the Comment
-     */
-    omit?: CommentOmit<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: CommentInclude<ExtArgs> | null
-    where?: CommentWhereInput
-    orderBy?: CommentOrderByWithRelationInput | CommentOrderByWithRelationInput[]
-    cursor?: CommentWhereUniqueInput
-    take?: number
-    skip?: number
-    distinct?: CommentScalarFieldEnum | CommentScalarFieldEnum[]
   }
 
   /**
@@ -6587,21 +6587,21 @@ export namespace Prisma {
 
   export type FollowerMinAggregateOutputType = {
     id: number | null
-    createAt: Date | null
+    createdAt: Date | null
     followerId: string | null
     followingId: string | null
   }
 
   export type FollowerMaxAggregateOutputType = {
     id: number | null
-    createAt: Date | null
+    createdAt: Date | null
     followerId: string | null
     followingId: string | null
   }
 
   export type FollowerCountAggregateOutputType = {
     id: number
-    createAt: number
+    createdAt: number
     followerId: number
     followingId: number
     _all: number
@@ -6618,21 +6618,21 @@ export namespace Prisma {
 
   export type FollowerMinAggregateInputType = {
     id?: true
-    createAt?: true
+    createdAt?: true
     followerId?: true
     followingId?: true
   }
 
   export type FollowerMaxAggregateInputType = {
     id?: true
-    createAt?: true
+    createdAt?: true
     followerId?: true
     followingId?: true
   }
 
   export type FollowerCountAggregateInputType = {
     id?: true
-    createAt?: true
+    createdAt?: true
     followerId?: true
     followingId?: true
     _all?: true
@@ -6726,7 +6726,7 @@ export namespace Prisma {
 
   export type FollowerGroupByOutputType = {
     id: number
-    createAt: Date
+    createdAt: Date
     followerId: string
     followingId: string
     _count: FollowerCountAggregateOutputType | null
@@ -6752,7 +6752,7 @@ export namespace Prisma {
 
   export type FollowerSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
-    createAt?: boolean
+    createdAt?: boolean
     followerId?: boolean
     followingId?: boolean
     follower?: boolean | UserDefaultArgs<ExtArgs>
@@ -6761,7 +6761,7 @@ export namespace Prisma {
 
   export type FollowerSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
-    createAt?: boolean
+    createdAt?: boolean
     followerId?: boolean
     followingId?: boolean
     follower?: boolean | UserDefaultArgs<ExtArgs>
@@ -6770,7 +6770,7 @@ export namespace Prisma {
 
   export type FollowerSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
-    createAt?: boolean
+    createdAt?: boolean
     followerId?: boolean
     followingId?: boolean
     follower?: boolean | UserDefaultArgs<ExtArgs>
@@ -6779,12 +6779,12 @@ export namespace Prisma {
 
   export type FollowerSelectScalar = {
     id?: boolean
-    createAt?: boolean
+    createdAt?: boolean
     followerId?: boolean
     followingId?: boolean
   }
 
-  export type FollowerOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "createAt" | "followerId" | "followingId", ExtArgs["result"]["follower"]>
+  export type FollowerOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "createdAt" | "followerId" | "followingId", ExtArgs["result"]["follower"]>
   export type FollowerInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     follower?: boolean | UserDefaultArgs<ExtArgs>
     following?: boolean | UserDefaultArgs<ExtArgs>
@@ -6806,7 +6806,7 @@ export namespace Prisma {
     }
     scalars: $Extensions.GetPayloadResult<{
       id: number
-      createAt: Date
+      createdAt: Date
       followerId: string
       followingId: string
     }, ExtArgs["result"]["follower"]>
@@ -7235,7 +7235,7 @@ export namespace Prisma {
    */
   interface FollowerFieldRefs {
     readonly id: FieldRef<"Follower", 'Int'>
-    readonly createAt: FieldRef<"Follower", 'DateTime'>
+    readonly createdAt: FieldRef<"Follower", 'DateTime'>
     readonly followerId: FieldRef<"Follower", 'String'>
     readonly followingId: FieldRef<"Follower", 'String'>
   }
@@ -7653,379 +7653,379 @@ export namespace Prisma {
 
 
   /**
-   * Model FollowerRequest
+   * Model FollowRequest
    */
 
-  export type AggregateFollowerRequest = {
-    _count: FollowerRequestCountAggregateOutputType | null
-    _avg: FollowerRequestAvgAggregateOutputType | null
-    _sum: FollowerRequestSumAggregateOutputType | null
-    _min: FollowerRequestMinAggregateOutputType | null
-    _max: FollowerRequestMaxAggregateOutputType | null
+  export type AggregateFollowRequest = {
+    _count: FollowRequestCountAggregateOutputType | null
+    _avg: FollowRequestAvgAggregateOutputType | null
+    _sum: FollowRequestSumAggregateOutputType | null
+    _min: FollowRequestMinAggregateOutputType | null
+    _max: FollowRequestMaxAggregateOutputType | null
   }
 
-  export type FollowerRequestAvgAggregateOutputType = {
+  export type FollowRequestAvgAggregateOutputType = {
     id: number | null
   }
 
-  export type FollowerRequestSumAggregateOutputType = {
+  export type FollowRequestSumAggregateOutputType = {
     id: number | null
   }
 
-  export type FollowerRequestMinAggregateOutputType = {
+  export type FollowRequestMinAggregateOutputType = {
     id: number | null
-    createAt: Date | null
+    createdAt: Date | null
     senderId: string | null
     receiverId: string | null
   }
 
-  export type FollowerRequestMaxAggregateOutputType = {
+  export type FollowRequestMaxAggregateOutputType = {
     id: number | null
-    createAt: Date | null
+    createdAt: Date | null
     senderId: string | null
     receiverId: string | null
   }
 
-  export type FollowerRequestCountAggregateOutputType = {
+  export type FollowRequestCountAggregateOutputType = {
     id: number
-    createAt: number
+    createdAt: number
     senderId: number
     receiverId: number
     _all: number
   }
 
 
-  export type FollowerRequestAvgAggregateInputType = {
+  export type FollowRequestAvgAggregateInputType = {
     id?: true
   }
 
-  export type FollowerRequestSumAggregateInputType = {
+  export type FollowRequestSumAggregateInputType = {
     id?: true
   }
 
-  export type FollowerRequestMinAggregateInputType = {
+  export type FollowRequestMinAggregateInputType = {
     id?: true
-    createAt?: true
+    createdAt?: true
     senderId?: true
     receiverId?: true
   }
 
-  export type FollowerRequestMaxAggregateInputType = {
+  export type FollowRequestMaxAggregateInputType = {
     id?: true
-    createAt?: true
+    createdAt?: true
     senderId?: true
     receiverId?: true
   }
 
-  export type FollowerRequestCountAggregateInputType = {
+  export type FollowRequestCountAggregateInputType = {
     id?: true
-    createAt?: true
+    createdAt?: true
     senderId?: true
     receiverId?: true
     _all?: true
   }
 
-  export type FollowerRequestAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type FollowRequestAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Filter which FollowerRequest to aggregate.
+     * Filter which FollowRequest to aggregate.
      */
-    where?: FollowerRequestWhereInput
+    where?: FollowRequestWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of FollowerRequests to fetch.
+     * Determine the order of FollowRequests to fetch.
      */
-    orderBy?: FollowerRequestOrderByWithRelationInput | FollowerRequestOrderByWithRelationInput[]
+    orderBy?: FollowRequestOrderByWithRelationInput | FollowRequestOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
      * Sets the start position
      */
-    cursor?: FollowerRequestWhereUniqueInput
+    cursor?: FollowRequestWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` FollowerRequests from the position of the cursor.
+     * Take `±n` FollowRequests from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` FollowerRequests.
+     * Skip the first `n` FollowRequests.
      */
     skip?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
      * 
-     * Count returned FollowerRequests
+     * Count returned FollowRequests
     **/
-    _count?: true | FollowerRequestCountAggregateInputType
+    _count?: true | FollowRequestCountAggregateInputType
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
      * 
      * Select which fields to average
     **/
-    _avg?: FollowerRequestAvgAggregateInputType
+    _avg?: FollowRequestAvgAggregateInputType
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
      * 
      * Select which fields to sum
     **/
-    _sum?: FollowerRequestSumAggregateInputType
+    _sum?: FollowRequestSumAggregateInputType
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
      * 
      * Select which fields to find the minimum value
     **/
-    _min?: FollowerRequestMinAggregateInputType
+    _min?: FollowRequestMinAggregateInputType
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
      * 
      * Select which fields to find the maximum value
     **/
-    _max?: FollowerRequestMaxAggregateInputType
+    _max?: FollowRequestMaxAggregateInputType
   }
 
-  export type GetFollowerRequestAggregateType<T extends FollowerRequestAggregateArgs> = {
-        [P in keyof T & keyof AggregateFollowerRequest]: P extends '_count' | 'count'
+  export type GetFollowRequestAggregateType<T extends FollowRequestAggregateArgs> = {
+        [P in keyof T & keyof AggregateFollowRequest]: P extends '_count' | 'count'
       ? T[P] extends true
         ? number
-        : GetScalarType<T[P], AggregateFollowerRequest[P]>
-      : GetScalarType<T[P], AggregateFollowerRequest[P]>
+        : GetScalarType<T[P], AggregateFollowRequest[P]>
+      : GetScalarType<T[P], AggregateFollowRequest[P]>
   }
 
 
 
 
-  export type FollowerRequestGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    where?: FollowerRequestWhereInput
-    orderBy?: FollowerRequestOrderByWithAggregationInput | FollowerRequestOrderByWithAggregationInput[]
-    by: FollowerRequestScalarFieldEnum[] | FollowerRequestScalarFieldEnum
-    having?: FollowerRequestScalarWhereWithAggregatesInput
+  export type FollowRequestGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: FollowRequestWhereInput
+    orderBy?: FollowRequestOrderByWithAggregationInput | FollowRequestOrderByWithAggregationInput[]
+    by: FollowRequestScalarFieldEnum[] | FollowRequestScalarFieldEnum
+    having?: FollowRequestScalarWhereWithAggregatesInput
     take?: number
     skip?: number
-    _count?: FollowerRequestCountAggregateInputType | true
-    _avg?: FollowerRequestAvgAggregateInputType
-    _sum?: FollowerRequestSumAggregateInputType
-    _min?: FollowerRequestMinAggregateInputType
-    _max?: FollowerRequestMaxAggregateInputType
+    _count?: FollowRequestCountAggregateInputType | true
+    _avg?: FollowRequestAvgAggregateInputType
+    _sum?: FollowRequestSumAggregateInputType
+    _min?: FollowRequestMinAggregateInputType
+    _max?: FollowRequestMaxAggregateInputType
   }
 
-  export type FollowerRequestGroupByOutputType = {
+  export type FollowRequestGroupByOutputType = {
     id: number
-    createAt: Date
+    createdAt: Date
     senderId: string
     receiverId: string
-    _count: FollowerRequestCountAggregateOutputType | null
-    _avg: FollowerRequestAvgAggregateOutputType | null
-    _sum: FollowerRequestSumAggregateOutputType | null
-    _min: FollowerRequestMinAggregateOutputType | null
-    _max: FollowerRequestMaxAggregateOutputType | null
+    _count: FollowRequestCountAggregateOutputType | null
+    _avg: FollowRequestAvgAggregateOutputType | null
+    _sum: FollowRequestSumAggregateOutputType | null
+    _min: FollowRequestMinAggregateOutputType | null
+    _max: FollowRequestMaxAggregateOutputType | null
   }
 
-  type GetFollowerRequestGroupByPayload<T extends FollowerRequestGroupByArgs> = Prisma.PrismaPromise<
+  type GetFollowRequestGroupByPayload<T extends FollowRequestGroupByArgs> = Prisma.PrismaPromise<
     Array<
-      PickEnumerable<FollowerRequestGroupByOutputType, T['by']> &
+      PickEnumerable<FollowRequestGroupByOutputType, T['by']> &
         {
-          [P in ((keyof T) & (keyof FollowerRequestGroupByOutputType))]: P extends '_count'
+          [P in ((keyof T) & (keyof FollowRequestGroupByOutputType))]: P extends '_count'
             ? T[P] extends boolean
               ? number
-              : GetScalarType<T[P], FollowerRequestGroupByOutputType[P]>
-            : GetScalarType<T[P], FollowerRequestGroupByOutputType[P]>
+              : GetScalarType<T[P], FollowRequestGroupByOutputType[P]>
+            : GetScalarType<T[P], FollowRequestGroupByOutputType[P]>
         }
       >
     >
 
 
-  export type FollowerRequestSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+  export type FollowRequestSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
-    createAt?: boolean
+    createdAt?: boolean
     senderId?: boolean
     receiverId?: boolean
     sender?: boolean | UserDefaultArgs<ExtArgs>
     receiver?: boolean | UserDefaultArgs<ExtArgs>
-  }, ExtArgs["result"]["followerRequest"]>
+  }, ExtArgs["result"]["followRequest"]>
 
-  export type FollowerRequestSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+  export type FollowRequestSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
-    createAt?: boolean
+    createdAt?: boolean
     senderId?: boolean
     receiverId?: boolean
     sender?: boolean | UserDefaultArgs<ExtArgs>
     receiver?: boolean | UserDefaultArgs<ExtArgs>
-  }, ExtArgs["result"]["followerRequest"]>
+  }, ExtArgs["result"]["followRequest"]>
 
-  export type FollowerRequestSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+  export type FollowRequestSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
-    createAt?: boolean
+    createdAt?: boolean
     senderId?: boolean
     receiverId?: boolean
     sender?: boolean | UserDefaultArgs<ExtArgs>
     receiver?: boolean | UserDefaultArgs<ExtArgs>
-  }, ExtArgs["result"]["followerRequest"]>
+  }, ExtArgs["result"]["followRequest"]>
 
-  export type FollowerRequestSelectScalar = {
+  export type FollowRequestSelectScalar = {
     id?: boolean
-    createAt?: boolean
+    createdAt?: boolean
     senderId?: boolean
     receiverId?: boolean
   }
 
-  export type FollowerRequestOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "createAt" | "senderId" | "receiverId", ExtArgs["result"]["followerRequest"]>
-  export type FollowerRequestInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type FollowRequestOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "createdAt" | "senderId" | "receiverId", ExtArgs["result"]["followRequest"]>
+  export type FollowRequestInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     sender?: boolean | UserDefaultArgs<ExtArgs>
     receiver?: boolean | UserDefaultArgs<ExtArgs>
   }
-  export type FollowerRequestIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type FollowRequestIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     sender?: boolean | UserDefaultArgs<ExtArgs>
     receiver?: boolean | UserDefaultArgs<ExtArgs>
   }
-  export type FollowerRequestIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type FollowRequestIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     sender?: boolean | UserDefaultArgs<ExtArgs>
     receiver?: boolean | UserDefaultArgs<ExtArgs>
   }
 
-  export type $FollowerRequestPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    name: "FollowerRequest"
+  export type $FollowRequestPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "FollowRequest"
     objects: {
       sender: Prisma.$UserPayload<ExtArgs>
       receiver: Prisma.$UserPayload<ExtArgs>
     }
     scalars: $Extensions.GetPayloadResult<{
       id: number
-      createAt: Date
+      createdAt: Date
       senderId: string
       receiverId: string
-    }, ExtArgs["result"]["followerRequest"]>
+    }, ExtArgs["result"]["followRequest"]>
     composites: {}
   }
 
-  type FollowerRequestGetPayload<S extends boolean | null | undefined | FollowerRequestDefaultArgs> = $Result.GetResult<Prisma.$FollowerRequestPayload, S>
+  type FollowRequestGetPayload<S extends boolean | null | undefined | FollowRequestDefaultArgs> = $Result.GetResult<Prisma.$FollowRequestPayload, S>
 
-  type FollowerRequestCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
-    Omit<FollowerRequestFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
-      select?: FollowerRequestCountAggregateInputType | true
+  type FollowRequestCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    Omit<FollowRequestFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+      select?: FollowRequestCountAggregateInputType | true
     }
 
-  export interface FollowerRequestDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
-    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['FollowerRequest'], meta: { name: 'FollowerRequest' } }
+  export interface FollowRequestDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['FollowRequest'], meta: { name: 'FollowRequest' } }
     /**
-     * Find zero or one FollowerRequest that matches the filter.
-     * @param {FollowerRequestFindUniqueArgs} args - Arguments to find a FollowerRequest
+     * Find zero or one FollowRequest that matches the filter.
+     * @param {FollowRequestFindUniqueArgs} args - Arguments to find a FollowRequest
      * @example
-     * // Get one FollowerRequest
-     * const followerRequest = await prisma.followerRequest.findUnique({
+     * // Get one FollowRequest
+     * const followRequest = await prisma.followRequest.findUnique({
      *   where: {
      *     // ... provide filter here
      *   }
      * })
      */
-    findUnique<T extends FollowerRequestFindUniqueArgs>(args: SelectSubset<T, FollowerRequestFindUniqueArgs<ExtArgs>>): Prisma__FollowerRequestClient<$Result.GetResult<Prisma.$FollowerRequestPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+    findUnique<T extends FollowRequestFindUniqueArgs>(args: SelectSubset<T, FollowRequestFindUniqueArgs<ExtArgs>>): Prisma__FollowRequestClient<$Result.GetResult<Prisma.$FollowRequestPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
 
     /**
-     * Find one FollowerRequest that matches the filter or throw an error with `error.code='P2025'`
+     * Find one FollowRequest that matches the filter or throw an error with `error.code='P2025'`
      * if no matches were found.
-     * @param {FollowerRequestFindUniqueOrThrowArgs} args - Arguments to find a FollowerRequest
+     * @param {FollowRequestFindUniqueOrThrowArgs} args - Arguments to find a FollowRequest
      * @example
-     * // Get one FollowerRequest
-     * const followerRequest = await prisma.followerRequest.findUniqueOrThrow({
+     * // Get one FollowRequest
+     * const followRequest = await prisma.followRequest.findUniqueOrThrow({
      *   where: {
      *     // ... provide filter here
      *   }
      * })
      */
-    findUniqueOrThrow<T extends FollowerRequestFindUniqueOrThrowArgs>(args: SelectSubset<T, FollowerRequestFindUniqueOrThrowArgs<ExtArgs>>): Prisma__FollowerRequestClient<$Result.GetResult<Prisma.$FollowerRequestPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    findUniqueOrThrow<T extends FollowRequestFindUniqueOrThrowArgs>(args: SelectSubset<T, FollowRequestFindUniqueOrThrowArgs<ExtArgs>>): Prisma__FollowRequestClient<$Result.GetResult<Prisma.$FollowRequestPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
     /**
-     * Find the first FollowerRequest that matches the filter.
+     * Find the first FollowRequest that matches the filter.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {FollowerRequestFindFirstArgs} args - Arguments to find a FollowerRequest
+     * @param {FollowRequestFindFirstArgs} args - Arguments to find a FollowRequest
      * @example
-     * // Get one FollowerRequest
-     * const followerRequest = await prisma.followerRequest.findFirst({
+     * // Get one FollowRequest
+     * const followRequest = await prisma.followRequest.findFirst({
      *   where: {
      *     // ... provide filter here
      *   }
      * })
      */
-    findFirst<T extends FollowerRequestFindFirstArgs>(args?: SelectSubset<T, FollowerRequestFindFirstArgs<ExtArgs>>): Prisma__FollowerRequestClient<$Result.GetResult<Prisma.$FollowerRequestPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+    findFirst<T extends FollowRequestFindFirstArgs>(args?: SelectSubset<T, FollowRequestFindFirstArgs<ExtArgs>>): Prisma__FollowRequestClient<$Result.GetResult<Prisma.$FollowRequestPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
 
     /**
-     * Find the first FollowerRequest that matches the filter or
+     * Find the first FollowRequest that matches the filter or
      * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {FollowerRequestFindFirstOrThrowArgs} args - Arguments to find a FollowerRequest
+     * @param {FollowRequestFindFirstOrThrowArgs} args - Arguments to find a FollowRequest
      * @example
-     * // Get one FollowerRequest
-     * const followerRequest = await prisma.followerRequest.findFirstOrThrow({
+     * // Get one FollowRequest
+     * const followRequest = await prisma.followRequest.findFirstOrThrow({
      *   where: {
      *     // ... provide filter here
      *   }
      * })
      */
-    findFirstOrThrow<T extends FollowerRequestFindFirstOrThrowArgs>(args?: SelectSubset<T, FollowerRequestFindFirstOrThrowArgs<ExtArgs>>): Prisma__FollowerRequestClient<$Result.GetResult<Prisma.$FollowerRequestPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    findFirstOrThrow<T extends FollowRequestFindFirstOrThrowArgs>(args?: SelectSubset<T, FollowRequestFindFirstOrThrowArgs<ExtArgs>>): Prisma__FollowRequestClient<$Result.GetResult<Prisma.$FollowRequestPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
     /**
-     * Find zero or more FollowerRequests that matches the filter.
+     * Find zero or more FollowRequests that matches the filter.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {FollowerRequestFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @param {FollowRequestFindManyArgs} args - Arguments to filter and select certain fields only.
      * @example
-     * // Get all FollowerRequests
-     * const followerRequests = await prisma.followerRequest.findMany()
+     * // Get all FollowRequests
+     * const followRequests = await prisma.followRequest.findMany()
      * 
-     * // Get first 10 FollowerRequests
-     * const followerRequests = await prisma.followerRequest.findMany({ take: 10 })
+     * // Get first 10 FollowRequests
+     * const followRequests = await prisma.followRequest.findMany({ take: 10 })
      * 
      * // Only select the `id`
-     * const followerRequestWithIdOnly = await prisma.followerRequest.findMany({ select: { id: true } })
+     * const followRequestWithIdOnly = await prisma.followRequest.findMany({ select: { id: true } })
      * 
      */
-    findMany<T extends FollowerRequestFindManyArgs>(args?: SelectSubset<T, FollowerRequestFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$FollowerRequestPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+    findMany<T extends FollowRequestFindManyArgs>(args?: SelectSubset<T, FollowRequestFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$FollowRequestPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
 
     /**
-     * Create a FollowerRequest.
-     * @param {FollowerRequestCreateArgs} args - Arguments to create a FollowerRequest.
+     * Create a FollowRequest.
+     * @param {FollowRequestCreateArgs} args - Arguments to create a FollowRequest.
      * @example
-     * // Create one FollowerRequest
-     * const FollowerRequest = await prisma.followerRequest.create({
+     * // Create one FollowRequest
+     * const FollowRequest = await prisma.followRequest.create({
      *   data: {
-     *     // ... data to create a FollowerRequest
+     *     // ... data to create a FollowRequest
      *   }
      * })
      * 
      */
-    create<T extends FollowerRequestCreateArgs>(args: SelectSubset<T, FollowerRequestCreateArgs<ExtArgs>>): Prisma__FollowerRequestClient<$Result.GetResult<Prisma.$FollowerRequestPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    create<T extends FollowRequestCreateArgs>(args: SelectSubset<T, FollowRequestCreateArgs<ExtArgs>>): Prisma__FollowRequestClient<$Result.GetResult<Prisma.$FollowRequestPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
     /**
-     * Create many FollowerRequests.
-     * @param {FollowerRequestCreateManyArgs} args - Arguments to create many FollowerRequests.
+     * Create many FollowRequests.
+     * @param {FollowRequestCreateManyArgs} args - Arguments to create many FollowRequests.
      * @example
-     * // Create many FollowerRequests
-     * const followerRequest = await prisma.followerRequest.createMany({
+     * // Create many FollowRequests
+     * const followRequest = await prisma.followRequest.createMany({
      *   data: [
      *     // ... provide data here
      *   ]
      * })
      *     
      */
-    createMany<T extends FollowerRequestCreateManyArgs>(args?: SelectSubset<T, FollowerRequestCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+    createMany<T extends FollowRequestCreateManyArgs>(args?: SelectSubset<T, FollowRequestCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
 
     /**
-     * Create many FollowerRequests and returns the data saved in the database.
-     * @param {FollowerRequestCreateManyAndReturnArgs} args - Arguments to create many FollowerRequests.
+     * Create many FollowRequests and returns the data saved in the database.
+     * @param {FollowRequestCreateManyAndReturnArgs} args - Arguments to create many FollowRequests.
      * @example
-     * // Create many FollowerRequests
-     * const followerRequest = await prisma.followerRequest.createManyAndReturn({
+     * // Create many FollowRequests
+     * const followRequest = await prisma.followRequest.createManyAndReturn({
      *   data: [
      *     // ... provide data here
      *   ]
      * })
      * 
-     * // Create many FollowerRequests and only return the `id`
-     * const followerRequestWithIdOnly = await prisma.followerRequest.createManyAndReturn({
+     * // Create many FollowRequests and only return the `id`
+     * const followRequestWithIdOnly = await prisma.followRequest.createManyAndReturn({
      *   select: { id: true },
      *   data: [
      *     // ... provide data here
@@ -8035,28 +8035,28 @@ export namespace Prisma {
      * Read more here: https://pris.ly/d/null-undefined
      * 
      */
-    createManyAndReturn<T extends FollowerRequestCreateManyAndReturnArgs>(args?: SelectSubset<T, FollowerRequestCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$FollowerRequestPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
+    createManyAndReturn<T extends FollowRequestCreateManyAndReturnArgs>(args?: SelectSubset<T, FollowRequestCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$FollowRequestPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
 
     /**
-     * Delete a FollowerRequest.
-     * @param {FollowerRequestDeleteArgs} args - Arguments to delete one FollowerRequest.
+     * Delete a FollowRequest.
+     * @param {FollowRequestDeleteArgs} args - Arguments to delete one FollowRequest.
      * @example
-     * // Delete one FollowerRequest
-     * const FollowerRequest = await prisma.followerRequest.delete({
+     * // Delete one FollowRequest
+     * const FollowRequest = await prisma.followRequest.delete({
      *   where: {
-     *     // ... filter to delete one FollowerRequest
+     *     // ... filter to delete one FollowRequest
      *   }
      * })
      * 
      */
-    delete<T extends FollowerRequestDeleteArgs>(args: SelectSubset<T, FollowerRequestDeleteArgs<ExtArgs>>): Prisma__FollowerRequestClient<$Result.GetResult<Prisma.$FollowerRequestPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    delete<T extends FollowRequestDeleteArgs>(args: SelectSubset<T, FollowRequestDeleteArgs<ExtArgs>>): Prisma__FollowRequestClient<$Result.GetResult<Prisma.$FollowRequestPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
     /**
-     * Update one FollowerRequest.
-     * @param {FollowerRequestUpdateArgs} args - Arguments to update one FollowerRequest.
+     * Update one FollowRequest.
+     * @param {FollowRequestUpdateArgs} args - Arguments to update one FollowRequest.
      * @example
-     * // Update one FollowerRequest
-     * const followerRequest = await prisma.followerRequest.update({
+     * // Update one FollowRequest
+     * const followRequest = await prisma.followRequest.update({
      *   where: {
      *     // ... provide filter here
      *   },
@@ -8066,30 +8066,30 @@ export namespace Prisma {
      * })
      * 
      */
-    update<T extends FollowerRequestUpdateArgs>(args: SelectSubset<T, FollowerRequestUpdateArgs<ExtArgs>>): Prisma__FollowerRequestClient<$Result.GetResult<Prisma.$FollowerRequestPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    update<T extends FollowRequestUpdateArgs>(args: SelectSubset<T, FollowRequestUpdateArgs<ExtArgs>>): Prisma__FollowRequestClient<$Result.GetResult<Prisma.$FollowRequestPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
     /**
-     * Delete zero or more FollowerRequests.
-     * @param {FollowerRequestDeleteManyArgs} args - Arguments to filter FollowerRequests to delete.
+     * Delete zero or more FollowRequests.
+     * @param {FollowRequestDeleteManyArgs} args - Arguments to filter FollowRequests to delete.
      * @example
-     * // Delete a few FollowerRequests
-     * const { count } = await prisma.followerRequest.deleteMany({
+     * // Delete a few FollowRequests
+     * const { count } = await prisma.followRequest.deleteMany({
      *   where: {
      *     // ... provide filter here
      *   }
      * })
      * 
      */
-    deleteMany<T extends FollowerRequestDeleteManyArgs>(args?: SelectSubset<T, FollowerRequestDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+    deleteMany<T extends FollowRequestDeleteManyArgs>(args?: SelectSubset<T, FollowRequestDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
 
     /**
-     * Update zero or more FollowerRequests.
+     * Update zero or more FollowRequests.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {FollowerRequestUpdateManyArgs} args - Arguments to update one or more rows.
+     * @param {FollowRequestUpdateManyArgs} args - Arguments to update one or more rows.
      * @example
-     * // Update many FollowerRequests
-     * const followerRequest = await prisma.followerRequest.updateMany({
+     * // Update many FollowRequests
+     * const followRequest = await prisma.followRequest.updateMany({
      *   where: {
      *     // ... provide filter here
      *   },
@@ -8099,14 +8099,14 @@ export namespace Prisma {
      * })
      * 
      */
-    updateMany<T extends FollowerRequestUpdateManyArgs>(args: SelectSubset<T, FollowerRequestUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+    updateMany<T extends FollowRequestUpdateManyArgs>(args: SelectSubset<T, FollowRequestUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
 
     /**
-     * Update zero or more FollowerRequests and returns the data updated in the database.
-     * @param {FollowerRequestUpdateManyAndReturnArgs} args - Arguments to update many FollowerRequests.
+     * Update zero or more FollowRequests and returns the data updated in the database.
+     * @param {FollowRequestUpdateManyAndReturnArgs} args - Arguments to update many FollowRequests.
      * @example
-     * // Update many FollowerRequests
-     * const followerRequest = await prisma.followerRequest.updateManyAndReturn({
+     * // Update many FollowRequests
+     * const followRequest = await prisma.followRequest.updateManyAndReturn({
      *   where: {
      *     // ... provide filter here
      *   },
@@ -8115,8 +8115,8 @@ export namespace Prisma {
      *   ]
      * })
      * 
-     * // Update zero or more FollowerRequests and only return the `id`
-     * const followerRequestWithIdOnly = await prisma.followerRequest.updateManyAndReturn({
+     * // Update zero or more FollowRequests and only return the `id`
+     * const followRequestWithIdOnly = await prisma.followRequest.updateManyAndReturn({
      *   select: { id: true },
      *   where: {
      *     // ... provide filter here
@@ -8129,56 +8129,56 @@ export namespace Prisma {
      * Read more here: https://pris.ly/d/null-undefined
      * 
      */
-    updateManyAndReturn<T extends FollowerRequestUpdateManyAndReturnArgs>(args: SelectSubset<T, FollowerRequestUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$FollowerRequestPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
+    updateManyAndReturn<T extends FollowRequestUpdateManyAndReturnArgs>(args: SelectSubset<T, FollowRequestUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$FollowRequestPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
 
     /**
-     * Create or update one FollowerRequest.
-     * @param {FollowerRequestUpsertArgs} args - Arguments to update or create a FollowerRequest.
+     * Create or update one FollowRequest.
+     * @param {FollowRequestUpsertArgs} args - Arguments to update or create a FollowRequest.
      * @example
-     * // Update or create a FollowerRequest
-     * const followerRequest = await prisma.followerRequest.upsert({
+     * // Update or create a FollowRequest
+     * const followRequest = await prisma.followRequest.upsert({
      *   create: {
-     *     // ... data to create a FollowerRequest
+     *     // ... data to create a FollowRequest
      *   },
      *   update: {
      *     // ... in case it already exists, update
      *   },
      *   where: {
-     *     // ... the filter for the FollowerRequest we want to update
+     *     // ... the filter for the FollowRequest we want to update
      *   }
      * })
      */
-    upsert<T extends FollowerRequestUpsertArgs>(args: SelectSubset<T, FollowerRequestUpsertArgs<ExtArgs>>): Prisma__FollowerRequestClient<$Result.GetResult<Prisma.$FollowerRequestPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    upsert<T extends FollowRequestUpsertArgs>(args: SelectSubset<T, FollowRequestUpsertArgs<ExtArgs>>): Prisma__FollowRequestClient<$Result.GetResult<Prisma.$FollowRequestPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
 
     /**
-     * Count the number of FollowerRequests.
+     * Count the number of FollowRequests.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {FollowerRequestCountArgs} args - Arguments to filter FollowerRequests to count.
+     * @param {FollowRequestCountArgs} args - Arguments to filter FollowRequests to count.
      * @example
-     * // Count the number of FollowerRequests
-     * const count = await prisma.followerRequest.count({
+     * // Count the number of FollowRequests
+     * const count = await prisma.followRequest.count({
      *   where: {
-     *     // ... the filter for the FollowerRequests we want to count
+     *     // ... the filter for the FollowRequests we want to count
      *   }
      * })
     **/
-    count<T extends FollowerRequestCountArgs>(
-      args?: Subset<T, FollowerRequestCountArgs>,
+    count<T extends FollowRequestCountArgs>(
+      args?: Subset<T, FollowRequestCountArgs>,
     ): Prisma.PrismaPromise<
       T extends $Utils.Record<'select', any>
         ? T['select'] extends true
           ? number
-          : GetScalarType<T['select'], FollowerRequestCountAggregateOutputType>
+          : GetScalarType<T['select'], FollowRequestCountAggregateOutputType>
         : number
     >
 
     /**
-     * Allows you to perform aggregations operations on a FollowerRequest.
+     * Allows you to perform aggregations operations on a FollowRequest.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {FollowerRequestAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @param {FollowRequestAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
      * @example
      * // Ordered by age ascending
      * // Where email contains prisma.io
@@ -8198,13 +8198,13 @@ export namespace Prisma {
      *   take: 10,
      * })
     **/
-    aggregate<T extends FollowerRequestAggregateArgs>(args: Subset<T, FollowerRequestAggregateArgs>): Prisma.PrismaPromise<GetFollowerRequestAggregateType<T>>
+    aggregate<T extends FollowRequestAggregateArgs>(args: Subset<T, FollowRequestAggregateArgs>): Prisma.PrismaPromise<GetFollowRequestAggregateType<T>>
 
     /**
-     * Group by FollowerRequest.
+     * Group by FollowRequest.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {FollowerRequestGroupByArgs} args - Group by arguments.
+     * @param {FollowRequestGroupByArgs} args - Group by arguments.
      * @example
      * // Group by city, order by createdAt, get count
      * const result = await prisma.user.groupBy({
@@ -8219,14 +8219,14 @@ export namespace Prisma {
      * 
     **/
     groupBy<
-      T extends FollowerRequestGroupByArgs,
+      T extends FollowRequestGroupByArgs,
       HasSelectOrTake extends Or<
         Extends<'skip', Keys<T>>,
         Extends<'take', Keys<T>>
       >,
       OrderByArg extends True extends HasSelectOrTake
-        ? { orderBy: FollowerRequestGroupByArgs['orderBy'] }
-        : { orderBy?: FollowerRequestGroupByArgs['orderBy'] },
+        ? { orderBy: FollowRequestGroupByArgs['orderBy'] }
+        : { orderBy?: FollowRequestGroupByArgs['orderBy'] },
       OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
       ByFields extends MaybeTupleToUnion<T['by']>,
       ByValid extends Has<ByFields, OrderFields>,
@@ -8275,20 +8275,20 @@ export namespace Prisma {
             ? never
             : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
         }[OrderFields]
-    >(args: SubsetIntersection<T, FollowerRequestGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetFollowerRequestGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+    >(args: SubsetIntersection<T, FollowRequestGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetFollowRequestGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
   /**
-   * Fields of the FollowerRequest model
+   * Fields of the FollowRequest model
    */
-  readonly fields: FollowerRequestFieldRefs;
+  readonly fields: FollowRequestFieldRefs;
   }
 
   /**
-   * The delegate class that acts as a "Promise-like" for FollowerRequest.
+   * The delegate class that acts as a "Promise-like" for FollowRequest.
    * Why is this prefixed with `Prisma__`?
    * Because we want to prevent naming conflicts as mentioned in
    * https://github.com/prisma/prisma-client-js/issues/707
    */
-  export interface Prisma__FollowerRequestClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+  export interface Prisma__FollowRequestClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
     readonly [Symbol.toStringTag]: "PrismaPromise"
     sender<T extends UserDefaultArgs<ExtArgs> = {}>(args?: Subset<T, UserDefaultArgs<ExtArgs>>): Prisma__UserClient<$Result.GetResult<Prisma.$UserPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
     receiver<T extends UserDefaultArgs<ExtArgs> = {}>(args?: Subset<T, UserDefaultArgs<ExtArgs>>): Prisma__UserClient<$Result.GetResult<Prisma.$UserPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
@@ -8318,424 +8318,424 @@ export namespace Prisma {
 
 
   /**
-   * Fields of the FollowerRequest model
+   * Fields of the FollowRequest model
    */
-  interface FollowerRequestFieldRefs {
-    readonly id: FieldRef<"FollowerRequest", 'Int'>
-    readonly createAt: FieldRef<"FollowerRequest", 'DateTime'>
-    readonly senderId: FieldRef<"FollowerRequest", 'String'>
-    readonly receiverId: FieldRef<"FollowerRequest", 'String'>
+  interface FollowRequestFieldRefs {
+    readonly id: FieldRef<"FollowRequest", 'Int'>
+    readonly createdAt: FieldRef<"FollowRequest", 'DateTime'>
+    readonly senderId: FieldRef<"FollowRequest", 'String'>
+    readonly receiverId: FieldRef<"FollowRequest", 'String'>
   }
     
 
   // Custom InputTypes
   /**
-   * FollowerRequest findUnique
+   * FollowRequest findUnique
    */
-  export type FollowerRequestFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type FollowRequestFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the FollowerRequest
+     * Select specific fields to fetch from the FollowRequest
      */
-    select?: FollowerRequestSelect<ExtArgs> | null
+    select?: FollowRequestSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the FollowerRequest
+     * Omit specific fields from the FollowRequest
      */
-    omit?: FollowerRequestOmit<ExtArgs> | null
+    omit?: FollowRequestOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: FollowerRequestInclude<ExtArgs> | null
+    include?: FollowRequestInclude<ExtArgs> | null
     /**
-     * Filter, which FollowerRequest to fetch.
+     * Filter, which FollowRequest to fetch.
      */
-    where: FollowerRequestWhereUniqueInput
+    where: FollowRequestWhereUniqueInput
   }
 
   /**
-   * FollowerRequest findUniqueOrThrow
+   * FollowRequest findUniqueOrThrow
    */
-  export type FollowerRequestFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type FollowRequestFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the FollowerRequest
+     * Select specific fields to fetch from the FollowRequest
      */
-    select?: FollowerRequestSelect<ExtArgs> | null
+    select?: FollowRequestSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the FollowerRequest
+     * Omit specific fields from the FollowRequest
      */
-    omit?: FollowerRequestOmit<ExtArgs> | null
+    omit?: FollowRequestOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: FollowerRequestInclude<ExtArgs> | null
+    include?: FollowRequestInclude<ExtArgs> | null
     /**
-     * Filter, which FollowerRequest to fetch.
+     * Filter, which FollowRequest to fetch.
      */
-    where: FollowerRequestWhereUniqueInput
+    where: FollowRequestWhereUniqueInput
   }
 
   /**
-   * FollowerRequest findFirst
+   * FollowRequest findFirst
    */
-  export type FollowerRequestFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type FollowRequestFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the FollowerRequest
+     * Select specific fields to fetch from the FollowRequest
      */
-    select?: FollowerRequestSelect<ExtArgs> | null
+    select?: FollowRequestSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the FollowerRequest
+     * Omit specific fields from the FollowRequest
      */
-    omit?: FollowerRequestOmit<ExtArgs> | null
+    omit?: FollowRequestOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: FollowerRequestInclude<ExtArgs> | null
+    include?: FollowRequestInclude<ExtArgs> | null
     /**
-     * Filter, which FollowerRequest to fetch.
+     * Filter, which FollowRequest to fetch.
      */
-    where?: FollowerRequestWhereInput
+    where?: FollowRequestWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of FollowerRequests to fetch.
+     * Determine the order of FollowRequests to fetch.
      */
-    orderBy?: FollowerRequestOrderByWithRelationInput | FollowerRequestOrderByWithRelationInput[]
+    orderBy?: FollowRequestOrderByWithRelationInput | FollowRequestOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
-     * Sets the position for searching for FollowerRequests.
+     * Sets the position for searching for FollowRequests.
      */
-    cursor?: FollowerRequestWhereUniqueInput
+    cursor?: FollowRequestWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` FollowerRequests from the position of the cursor.
+     * Take `±n` FollowRequests from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` FollowerRequests.
+     * Skip the first `n` FollowRequests.
      */
     skip?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
      * 
-     * Filter by unique combinations of FollowerRequests.
+     * Filter by unique combinations of FollowRequests.
      */
-    distinct?: FollowerRequestScalarFieldEnum | FollowerRequestScalarFieldEnum[]
+    distinct?: FollowRequestScalarFieldEnum | FollowRequestScalarFieldEnum[]
   }
 
   /**
-   * FollowerRequest findFirstOrThrow
+   * FollowRequest findFirstOrThrow
    */
-  export type FollowerRequestFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type FollowRequestFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the FollowerRequest
+     * Select specific fields to fetch from the FollowRequest
      */
-    select?: FollowerRequestSelect<ExtArgs> | null
+    select?: FollowRequestSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the FollowerRequest
+     * Omit specific fields from the FollowRequest
      */
-    omit?: FollowerRequestOmit<ExtArgs> | null
+    omit?: FollowRequestOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: FollowerRequestInclude<ExtArgs> | null
+    include?: FollowRequestInclude<ExtArgs> | null
     /**
-     * Filter, which FollowerRequest to fetch.
+     * Filter, which FollowRequest to fetch.
      */
-    where?: FollowerRequestWhereInput
+    where?: FollowRequestWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of FollowerRequests to fetch.
+     * Determine the order of FollowRequests to fetch.
      */
-    orderBy?: FollowerRequestOrderByWithRelationInput | FollowerRequestOrderByWithRelationInput[]
+    orderBy?: FollowRequestOrderByWithRelationInput | FollowRequestOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
-     * Sets the position for searching for FollowerRequests.
+     * Sets the position for searching for FollowRequests.
      */
-    cursor?: FollowerRequestWhereUniqueInput
+    cursor?: FollowRequestWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` FollowerRequests from the position of the cursor.
+     * Take `±n` FollowRequests from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` FollowerRequests.
+     * Skip the first `n` FollowRequests.
      */
     skip?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
      * 
-     * Filter by unique combinations of FollowerRequests.
+     * Filter by unique combinations of FollowRequests.
      */
-    distinct?: FollowerRequestScalarFieldEnum | FollowerRequestScalarFieldEnum[]
+    distinct?: FollowRequestScalarFieldEnum | FollowRequestScalarFieldEnum[]
   }
 
   /**
-   * FollowerRequest findMany
+   * FollowRequest findMany
    */
-  export type FollowerRequestFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type FollowRequestFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the FollowerRequest
+     * Select specific fields to fetch from the FollowRequest
      */
-    select?: FollowerRequestSelect<ExtArgs> | null
+    select?: FollowRequestSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the FollowerRequest
+     * Omit specific fields from the FollowRequest
      */
-    omit?: FollowerRequestOmit<ExtArgs> | null
+    omit?: FollowRequestOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: FollowerRequestInclude<ExtArgs> | null
+    include?: FollowRequestInclude<ExtArgs> | null
     /**
-     * Filter, which FollowerRequests to fetch.
+     * Filter, which FollowRequests to fetch.
      */
-    where?: FollowerRequestWhereInput
+    where?: FollowRequestWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of FollowerRequests to fetch.
+     * Determine the order of FollowRequests to fetch.
      */
-    orderBy?: FollowerRequestOrderByWithRelationInput | FollowerRequestOrderByWithRelationInput[]
+    orderBy?: FollowRequestOrderByWithRelationInput | FollowRequestOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
-     * Sets the position for listing FollowerRequests.
+     * Sets the position for listing FollowRequests.
      */
-    cursor?: FollowerRequestWhereUniqueInput
+    cursor?: FollowRequestWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` FollowerRequests from the position of the cursor.
+     * Take `±n` FollowRequests from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` FollowerRequests.
+     * Skip the first `n` FollowRequests.
      */
     skip?: number
-    distinct?: FollowerRequestScalarFieldEnum | FollowerRequestScalarFieldEnum[]
+    distinct?: FollowRequestScalarFieldEnum | FollowRequestScalarFieldEnum[]
   }
 
   /**
-   * FollowerRequest create
+   * FollowRequest create
    */
-  export type FollowerRequestCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type FollowRequestCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the FollowerRequest
+     * Select specific fields to fetch from the FollowRequest
      */
-    select?: FollowerRequestSelect<ExtArgs> | null
+    select?: FollowRequestSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the FollowerRequest
+     * Omit specific fields from the FollowRequest
      */
-    omit?: FollowerRequestOmit<ExtArgs> | null
+    omit?: FollowRequestOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: FollowerRequestInclude<ExtArgs> | null
+    include?: FollowRequestInclude<ExtArgs> | null
     /**
-     * The data needed to create a FollowerRequest.
+     * The data needed to create a FollowRequest.
      */
-    data: XOR<FollowerRequestCreateInput, FollowerRequestUncheckedCreateInput>
+    data: XOR<FollowRequestCreateInput, FollowRequestUncheckedCreateInput>
   }
 
   /**
-   * FollowerRequest createMany
+   * FollowRequest createMany
    */
-  export type FollowerRequestCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type FollowRequestCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * The data used to create many FollowerRequests.
+     * The data used to create many FollowRequests.
      */
-    data: FollowerRequestCreateManyInput | FollowerRequestCreateManyInput[]
+    data: FollowRequestCreateManyInput | FollowRequestCreateManyInput[]
     skipDuplicates?: boolean
   }
 
   /**
-   * FollowerRequest createManyAndReturn
+   * FollowRequest createManyAndReturn
    */
-  export type FollowerRequestCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type FollowRequestCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the FollowerRequest
+     * Select specific fields to fetch from the FollowRequest
      */
-    select?: FollowerRequestSelectCreateManyAndReturn<ExtArgs> | null
+    select?: FollowRequestSelectCreateManyAndReturn<ExtArgs> | null
     /**
-     * Omit specific fields from the FollowerRequest
+     * Omit specific fields from the FollowRequest
      */
-    omit?: FollowerRequestOmit<ExtArgs> | null
+    omit?: FollowRequestOmit<ExtArgs> | null
     /**
-     * The data used to create many FollowerRequests.
+     * The data used to create many FollowRequests.
      */
-    data: FollowerRequestCreateManyInput | FollowerRequestCreateManyInput[]
+    data: FollowRequestCreateManyInput | FollowRequestCreateManyInput[]
     skipDuplicates?: boolean
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: FollowerRequestIncludeCreateManyAndReturn<ExtArgs> | null
+    include?: FollowRequestIncludeCreateManyAndReturn<ExtArgs> | null
   }
 
   /**
-   * FollowerRequest update
+   * FollowRequest update
    */
-  export type FollowerRequestUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type FollowRequestUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the FollowerRequest
+     * Select specific fields to fetch from the FollowRequest
      */
-    select?: FollowerRequestSelect<ExtArgs> | null
+    select?: FollowRequestSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the FollowerRequest
+     * Omit specific fields from the FollowRequest
      */
-    omit?: FollowerRequestOmit<ExtArgs> | null
+    omit?: FollowRequestOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: FollowerRequestInclude<ExtArgs> | null
+    include?: FollowRequestInclude<ExtArgs> | null
     /**
-     * The data needed to update a FollowerRequest.
+     * The data needed to update a FollowRequest.
      */
-    data: XOR<FollowerRequestUpdateInput, FollowerRequestUncheckedUpdateInput>
+    data: XOR<FollowRequestUpdateInput, FollowRequestUncheckedUpdateInput>
     /**
-     * Choose, which FollowerRequest to update.
+     * Choose, which FollowRequest to update.
      */
-    where: FollowerRequestWhereUniqueInput
+    where: FollowRequestWhereUniqueInput
   }
 
   /**
-   * FollowerRequest updateMany
+   * FollowRequest updateMany
    */
-  export type FollowerRequestUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type FollowRequestUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * The data used to update FollowerRequests.
+     * The data used to update FollowRequests.
      */
-    data: XOR<FollowerRequestUpdateManyMutationInput, FollowerRequestUncheckedUpdateManyInput>
+    data: XOR<FollowRequestUpdateManyMutationInput, FollowRequestUncheckedUpdateManyInput>
     /**
-     * Filter which FollowerRequests to update
+     * Filter which FollowRequests to update
      */
-    where?: FollowerRequestWhereInput
+    where?: FollowRequestWhereInput
     /**
-     * Limit how many FollowerRequests to update.
+     * Limit how many FollowRequests to update.
      */
     limit?: number
   }
 
   /**
-   * FollowerRequest updateManyAndReturn
+   * FollowRequest updateManyAndReturn
    */
-  export type FollowerRequestUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type FollowRequestUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the FollowerRequest
+     * Select specific fields to fetch from the FollowRequest
      */
-    select?: FollowerRequestSelectUpdateManyAndReturn<ExtArgs> | null
+    select?: FollowRequestSelectUpdateManyAndReturn<ExtArgs> | null
     /**
-     * Omit specific fields from the FollowerRequest
+     * Omit specific fields from the FollowRequest
      */
-    omit?: FollowerRequestOmit<ExtArgs> | null
+    omit?: FollowRequestOmit<ExtArgs> | null
     /**
-     * The data used to update FollowerRequests.
+     * The data used to update FollowRequests.
      */
-    data: XOR<FollowerRequestUpdateManyMutationInput, FollowerRequestUncheckedUpdateManyInput>
+    data: XOR<FollowRequestUpdateManyMutationInput, FollowRequestUncheckedUpdateManyInput>
     /**
-     * Filter which FollowerRequests to update
+     * Filter which FollowRequests to update
      */
-    where?: FollowerRequestWhereInput
+    where?: FollowRequestWhereInput
     /**
-     * Limit how many FollowerRequests to update.
+     * Limit how many FollowRequests to update.
      */
     limit?: number
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: FollowerRequestIncludeUpdateManyAndReturn<ExtArgs> | null
+    include?: FollowRequestIncludeUpdateManyAndReturn<ExtArgs> | null
   }
 
   /**
-   * FollowerRequest upsert
+   * FollowRequest upsert
    */
-  export type FollowerRequestUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type FollowRequestUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the FollowerRequest
+     * Select specific fields to fetch from the FollowRequest
      */
-    select?: FollowerRequestSelect<ExtArgs> | null
+    select?: FollowRequestSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the FollowerRequest
+     * Omit specific fields from the FollowRequest
      */
-    omit?: FollowerRequestOmit<ExtArgs> | null
+    omit?: FollowRequestOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: FollowerRequestInclude<ExtArgs> | null
+    include?: FollowRequestInclude<ExtArgs> | null
     /**
-     * The filter to search for the FollowerRequest to update in case it exists.
+     * The filter to search for the FollowRequest to update in case it exists.
      */
-    where: FollowerRequestWhereUniqueInput
+    where: FollowRequestWhereUniqueInput
     /**
-     * In case the FollowerRequest found by the `where` argument doesn't exist, create a new FollowerRequest with this data.
+     * In case the FollowRequest found by the `where` argument doesn't exist, create a new FollowRequest with this data.
      */
-    create: XOR<FollowerRequestCreateInput, FollowerRequestUncheckedCreateInput>
+    create: XOR<FollowRequestCreateInput, FollowRequestUncheckedCreateInput>
     /**
-     * In case the FollowerRequest was found with the provided `where` argument, update it with this data.
+     * In case the FollowRequest was found with the provided `where` argument, update it with this data.
      */
-    update: XOR<FollowerRequestUpdateInput, FollowerRequestUncheckedUpdateInput>
+    update: XOR<FollowRequestUpdateInput, FollowRequestUncheckedUpdateInput>
   }
 
   /**
-   * FollowerRequest delete
+   * FollowRequest delete
    */
-  export type FollowerRequestDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type FollowRequestDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the FollowerRequest
+     * Select specific fields to fetch from the FollowRequest
      */
-    select?: FollowerRequestSelect<ExtArgs> | null
+    select?: FollowRequestSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the FollowerRequest
+     * Omit specific fields from the FollowRequest
      */
-    omit?: FollowerRequestOmit<ExtArgs> | null
+    omit?: FollowRequestOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: FollowerRequestInclude<ExtArgs> | null
+    include?: FollowRequestInclude<ExtArgs> | null
     /**
-     * Filter which FollowerRequest to delete.
+     * Filter which FollowRequest to delete.
      */
-    where: FollowerRequestWhereUniqueInput
+    where: FollowRequestWhereUniqueInput
   }
 
   /**
-   * FollowerRequest deleteMany
+   * FollowRequest deleteMany
    */
-  export type FollowerRequestDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type FollowRequestDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Filter which FollowerRequests to delete
+     * Filter which FollowRequests to delete
      */
-    where?: FollowerRequestWhereInput
+    where?: FollowRequestWhereInput
     /**
-     * Limit how many FollowerRequests to delete.
+     * Limit how many FollowRequests to delete.
      */
     limit?: number
   }
 
   /**
-   * FollowerRequest without action
+   * FollowRequest without action
    */
-  export type FollowerRequestDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type FollowRequestDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the FollowerRequest
+     * Select specific fields to fetch from the FollowRequest
      */
-    select?: FollowerRequestSelect<ExtArgs> | null
+    select?: FollowRequestSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the FollowerRequest
+     * Omit specific fields from the FollowRequest
      */
-    omit?: FollowerRequestOmit<ExtArgs> | null
+    omit?: FollowRequestOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: FollowerRequestInclude<ExtArgs> | null
+    include?: FollowRequestInclude<ExtArgs> | null
   }
 
 
@@ -8761,21 +8761,21 @@ export namespace Prisma {
 
   export type BlockMinAggregateOutputType = {
     id: number | null
-    createAt: Date | null
+    createdAt: Date | null
     blockerId: string | null
     blockedId: string | null
   }
 
   export type BlockMaxAggregateOutputType = {
     id: number | null
-    createAt: Date | null
+    createdAt: Date | null
     blockerId: string | null
     blockedId: string | null
   }
 
   export type BlockCountAggregateOutputType = {
     id: number
-    createAt: number
+    createdAt: number
     blockerId: number
     blockedId: number
     _all: number
@@ -8792,21 +8792,21 @@ export namespace Prisma {
 
   export type BlockMinAggregateInputType = {
     id?: true
-    createAt?: true
+    createdAt?: true
     blockerId?: true
     blockedId?: true
   }
 
   export type BlockMaxAggregateInputType = {
     id?: true
-    createAt?: true
+    createdAt?: true
     blockerId?: true
     blockedId?: true
   }
 
   export type BlockCountAggregateInputType = {
     id?: true
-    createAt?: true
+    createdAt?: true
     blockerId?: true
     blockedId?: true
     _all?: true
@@ -8900,7 +8900,7 @@ export namespace Prisma {
 
   export type BlockGroupByOutputType = {
     id: number
-    createAt: Date
+    createdAt: Date
     blockerId: string
     blockedId: string
     _count: BlockCountAggregateOutputType | null
@@ -8926,61 +8926,61 @@ export namespace Prisma {
 
   export type BlockSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
-    createAt?: boolean
+    createdAt?: boolean
     blockerId?: boolean
     blockedId?: boolean
-    sender?: boolean | UserDefaultArgs<ExtArgs>
-    receiver?: boolean | UserDefaultArgs<ExtArgs>
+    blocker?: boolean | UserDefaultArgs<ExtArgs>
+    blocked?: boolean | UserDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["block"]>
 
   export type BlockSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
-    createAt?: boolean
+    createdAt?: boolean
     blockerId?: boolean
     blockedId?: boolean
-    sender?: boolean | UserDefaultArgs<ExtArgs>
-    receiver?: boolean | UserDefaultArgs<ExtArgs>
+    blocker?: boolean | UserDefaultArgs<ExtArgs>
+    blocked?: boolean | UserDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["block"]>
 
   export type BlockSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
-    createAt?: boolean
+    createdAt?: boolean
     blockerId?: boolean
     blockedId?: boolean
-    sender?: boolean | UserDefaultArgs<ExtArgs>
-    receiver?: boolean | UserDefaultArgs<ExtArgs>
+    blocker?: boolean | UserDefaultArgs<ExtArgs>
+    blocked?: boolean | UserDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["block"]>
 
   export type BlockSelectScalar = {
     id?: boolean
-    createAt?: boolean
+    createdAt?: boolean
     blockerId?: boolean
     blockedId?: boolean
   }
 
-  export type BlockOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "createAt" | "blockerId" | "blockedId", ExtArgs["result"]["block"]>
+  export type BlockOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "createdAt" | "blockerId" | "blockedId", ExtArgs["result"]["block"]>
   export type BlockInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    sender?: boolean | UserDefaultArgs<ExtArgs>
-    receiver?: boolean | UserDefaultArgs<ExtArgs>
+    blocker?: boolean | UserDefaultArgs<ExtArgs>
+    blocked?: boolean | UserDefaultArgs<ExtArgs>
   }
   export type BlockIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    sender?: boolean | UserDefaultArgs<ExtArgs>
-    receiver?: boolean | UserDefaultArgs<ExtArgs>
+    blocker?: boolean | UserDefaultArgs<ExtArgs>
+    blocked?: boolean | UserDefaultArgs<ExtArgs>
   }
   export type BlockIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    sender?: boolean | UserDefaultArgs<ExtArgs>
-    receiver?: boolean | UserDefaultArgs<ExtArgs>
+    blocker?: boolean | UserDefaultArgs<ExtArgs>
+    blocked?: boolean | UserDefaultArgs<ExtArgs>
   }
 
   export type $BlockPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     name: "Block"
     objects: {
-      sender: Prisma.$UserPayload<ExtArgs>
-      receiver: Prisma.$UserPayload<ExtArgs>
+      blocker: Prisma.$UserPayload<ExtArgs>
+      blocked: Prisma.$UserPayload<ExtArgs>
     }
     scalars: $Extensions.GetPayloadResult<{
       id: number
-      createAt: Date
+      createdAt: Date
       blockerId: string
       blockedId: string
     }, ExtArgs["result"]["block"]>
@@ -9377,8 +9377,8 @@ export namespace Prisma {
    */
   export interface Prisma__BlockClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
     readonly [Symbol.toStringTag]: "PrismaPromise"
-    sender<T extends UserDefaultArgs<ExtArgs> = {}>(args?: Subset<T, UserDefaultArgs<ExtArgs>>): Prisma__UserClient<$Result.GetResult<Prisma.$UserPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
-    receiver<T extends UserDefaultArgs<ExtArgs> = {}>(args?: Subset<T, UserDefaultArgs<ExtArgs>>): Prisma__UserClient<$Result.GetResult<Prisma.$UserPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+    blocker<T extends UserDefaultArgs<ExtArgs> = {}>(args?: Subset<T, UserDefaultArgs<ExtArgs>>): Prisma__UserClient<$Result.GetResult<Prisma.$UserPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+    blocked<T extends UserDefaultArgs<ExtArgs> = {}>(args?: Subset<T, UserDefaultArgs<ExtArgs>>): Prisma__UserClient<$Result.GetResult<Prisma.$UserPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
     /**
      * Attaches callbacks for the resolution and/or rejection of the Promise.
      * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -9409,7 +9409,7 @@ export namespace Prisma {
    */
   interface BlockFieldRefs {
     readonly id: FieldRef<"Block", 'Int'>
-    readonly createAt: FieldRef<"Block", 'DateTime'>
+    readonly createdAt: FieldRef<"Block", 'DateTime'>
     readonly blockerId: FieldRef<"Block", 'String'>
     readonly blockedId: FieldRef<"Block", 'String'>
   }
@@ -9848,7 +9848,7 @@ export namespace Prisma {
 
   export type StoryMinAggregateOutputType = {
     id: number | null
-    createAt: Date | null
+    createdAt: Date | null
     expiresAt: Date | null
     img: string | null
     userId: string | null
@@ -9856,7 +9856,7 @@ export namespace Prisma {
 
   export type StoryMaxAggregateOutputType = {
     id: number | null
-    createAt: Date | null
+    createdAt: Date | null
     expiresAt: Date | null
     img: string | null
     userId: string | null
@@ -9864,7 +9864,7 @@ export namespace Prisma {
 
   export type StoryCountAggregateOutputType = {
     id: number
-    createAt: number
+    createdAt: number
     expiresAt: number
     img: number
     userId: number
@@ -9882,7 +9882,7 @@ export namespace Prisma {
 
   export type StoryMinAggregateInputType = {
     id?: true
-    createAt?: true
+    createdAt?: true
     expiresAt?: true
     img?: true
     userId?: true
@@ -9890,7 +9890,7 @@ export namespace Prisma {
 
   export type StoryMaxAggregateInputType = {
     id?: true
-    createAt?: true
+    createdAt?: true
     expiresAt?: true
     img?: true
     userId?: true
@@ -9898,7 +9898,7 @@ export namespace Prisma {
 
   export type StoryCountAggregateInputType = {
     id?: true
-    createAt?: true
+    createdAt?: true
     expiresAt?: true
     img?: true
     userId?: true
@@ -9993,9 +9993,9 @@ export namespace Prisma {
 
   export type StoryGroupByOutputType = {
     id: number
-    createAt: Date
+    createdAt: Date
     expiresAt: Date
-    img: string | null
+    img: string
     userId: string
     _count: StoryCountAggregateOutputType | null
     _avg: StoryAvgAggregateOutputType | null
@@ -10020,7 +10020,7 @@ export namespace Prisma {
 
   export type StorySelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
-    createAt?: boolean
+    createdAt?: boolean
     expiresAt?: boolean
     img?: boolean
     userId?: boolean
@@ -10029,7 +10029,7 @@ export namespace Prisma {
 
   export type StorySelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
-    createAt?: boolean
+    createdAt?: boolean
     expiresAt?: boolean
     img?: boolean
     userId?: boolean
@@ -10038,7 +10038,7 @@ export namespace Prisma {
 
   export type StorySelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
-    createAt?: boolean
+    createdAt?: boolean
     expiresAt?: boolean
     img?: boolean
     userId?: boolean
@@ -10047,13 +10047,13 @@ export namespace Prisma {
 
   export type StorySelectScalar = {
     id?: boolean
-    createAt?: boolean
+    createdAt?: boolean
     expiresAt?: boolean
     img?: boolean
     userId?: boolean
   }
 
-  export type StoryOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "createAt" | "expiresAt" | "img" | "userId", ExtArgs["result"]["story"]>
+  export type StoryOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "createdAt" | "expiresAt" | "img" | "userId", ExtArgs["result"]["story"]>
   export type StoryInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     user?: boolean | UserDefaultArgs<ExtArgs>
   }
@@ -10071,9 +10071,9 @@ export namespace Prisma {
     }
     scalars: $Extensions.GetPayloadResult<{
       id: number
-      createAt: Date
+      createdAt: Date
       expiresAt: Date
-      img: string | null
+      img: string
       userId: string
     }, ExtArgs["result"]["story"]>
     composites: {}
@@ -10500,7 +10500,7 @@ export namespace Prisma {
    */
   interface StoryFieldRefs {
     readonly id: FieldRef<"Story", 'Int'>
-    readonly createAt: FieldRef<"Story", 'DateTime'>
+    readonly createdAt: FieldRef<"Story", 'DateTime'>
     readonly expiresAt: FieldRef<"Story", 'DateTime'>
     readonly img: FieldRef<"Story", 'String'>
     readonly userId: FieldRef<"Story", 'String'>
@@ -10987,7 +10987,7 @@ export namespace Prisma {
 
   export const FollowerScalarFieldEnum: {
     id: 'id',
-    createAt: 'createAt',
+    createdAt: 'createdAt',
     followerId: 'followerId',
     followingId: 'followingId'
   };
@@ -10995,19 +10995,19 @@ export namespace Prisma {
   export type FollowerScalarFieldEnum = (typeof FollowerScalarFieldEnum)[keyof typeof FollowerScalarFieldEnum]
 
 
-  export const FollowerRequestScalarFieldEnum: {
+  export const FollowRequestScalarFieldEnum: {
     id: 'id',
-    createAt: 'createAt',
+    createdAt: 'createdAt',
     senderId: 'senderId',
     receiverId: 'receiverId'
   };
 
-  export type FollowerRequestScalarFieldEnum = (typeof FollowerRequestScalarFieldEnum)[keyof typeof FollowerRequestScalarFieldEnum]
+  export type FollowRequestScalarFieldEnum = (typeof FollowRequestScalarFieldEnum)[keyof typeof FollowRequestScalarFieldEnum]
 
 
   export const BlockScalarFieldEnum: {
     id: 'id',
-    createAt: 'createAt',
+    createdAt: 'createdAt',
     blockerId: 'blockerId',
     blockedId: 'blockedId'
   };
@@ -11017,7 +11017,7 @@ export namespace Prisma {
 
   export const StoryScalarFieldEnum: {
     id: 'id',
-    createAt: 'createAt',
+    createdAt: 'createdAt',
     expiresAt: 'expiresAt',
     img: 'img',
     userId: 'userId'
@@ -11131,12 +11131,12 @@ export namespace Prisma {
     website?: StringNullableFilter<"User"> | string | null
     createdAt?: DateTimeFilter<"User"> | Date | string
     posts?: PostListRelationFilter
-    likes?: LikeListRelationFilter
     comments?: CommentListRelationFilter
+    likes?: LikeListRelationFilter
     followers?: FollowerListRelationFilter
-    following?: FollowerListRelationFilter
-    followRequestSent?: FollowerRequestListRelationFilter
-    followRequestReceived?: FollowerRequestListRelationFilter
+    followings?: FollowerListRelationFilter
+    followRequestsSent?: FollowRequestListRelationFilter
+    followRequestsReceived?: FollowRequestListRelationFilter
     blocks?: BlockListRelationFilter
     blockedBy?: BlockListRelationFilter
     stories?: StoryListRelationFilter
@@ -11156,12 +11156,12 @@ export namespace Prisma {
     website?: SortOrderInput | SortOrder
     createdAt?: SortOrder
     posts?: PostOrderByRelationAggregateInput
-    likes?: LikeOrderByRelationAggregateInput
     comments?: CommentOrderByRelationAggregateInput
+    likes?: LikeOrderByRelationAggregateInput
     followers?: FollowerOrderByRelationAggregateInput
-    following?: FollowerOrderByRelationAggregateInput
-    followRequestSent?: FollowerRequestOrderByRelationAggregateInput
-    followRequestReceived?: FollowerRequestOrderByRelationAggregateInput
+    followings?: FollowerOrderByRelationAggregateInput
+    followRequestsSent?: FollowRequestOrderByRelationAggregateInput
+    followRequestsReceived?: FollowRequestOrderByRelationAggregateInput
     blocks?: BlockOrderByRelationAggregateInput
     blockedBy?: BlockOrderByRelationAggregateInput
     stories?: StoryOrderByRelationAggregateInput
@@ -11184,12 +11184,12 @@ export namespace Prisma {
     website?: StringNullableFilter<"User"> | string | null
     createdAt?: DateTimeFilter<"User"> | Date | string
     posts?: PostListRelationFilter
-    likes?: LikeListRelationFilter
     comments?: CommentListRelationFilter
+    likes?: LikeListRelationFilter
     followers?: FollowerListRelationFilter
-    following?: FollowerListRelationFilter
-    followRequestSent?: FollowerRequestListRelationFilter
-    followRequestReceived?: FollowerRequestListRelationFilter
+    followings?: FollowerListRelationFilter
+    followRequestsSent?: FollowRequestListRelationFilter
+    followRequestsReceived?: FollowRequestListRelationFilter
     blocks?: BlockListRelationFilter
     blockedBy?: BlockListRelationFilter
     stories?: StoryListRelationFilter
@@ -11242,8 +11242,8 @@ export namespace Prisma {
     updatedAt?: DateTimeFilter<"Post"> | Date | string
     userId?: StringFilter<"Post"> | string
     user?: XOR<UserScalarRelationFilter, UserWhereInput>
+    comments?: CommentListRelationFilter
     likes?: LikeListRelationFilter
-    Comment?: CommentListRelationFilter
   }
 
   export type PostOrderByWithRelationInput = {
@@ -11254,8 +11254,8 @@ export namespace Prisma {
     updatedAt?: SortOrder
     userId?: SortOrder
     user?: UserOrderByWithRelationInput
+    comments?: CommentOrderByRelationAggregateInput
     likes?: LikeOrderByRelationAggregateInput
-    Comment?: CommentOrderByRelationAggregateInput
   }
 
   export type PostWhereUniqueInput = Prisma.AtLeast<{
@@ -11269,8 +11269,8 @@ export namespace Prisma {
     updatedAt?: DateTimeFilter<"Post"> | Date | string
     userId?: StringFilter<"Post"> | string
     user?: XOR<UserScalarRelationFilter, UserWhereInput>
+    comments?: CommentListRelationFilter
     likes?: LikeListRelationFilter
-    Comment?: CommentListRelationFilter
   }, "id">
 
   export type PostOrderByWithAggregationInput = {
@@ -11435,7 +11435,7 @@ export namespace Prisma {
     OR?: FollowerWhereInput[]
     NOT?: FollowerWhereInput | FollowerWhereInput[]
     id?: IntFilter<"Follower"> | number
-    createAt?: DateTimeFilter<"Follower"> | Date | string
+    createdAt?: DateTimeFilter<"Follower"> | Date | string
     followerId?: StringFilter<"Follower"> | string
     followingId?: StringFilter<"Follower"> | string
     follower?: XOR<UserScalarRelationFilter, UserWhereInput>
@@ -11444,7 +11444,7 @@ export namespace Prisma {
 
   export type FollowerOrderByWithRelationInput = {
     id?: SortOrder
-    createAt?: SortOrder
+    createdAt?: SortOrder
     followerId?: SortOrder
     followingId?: SortOrder
     follower?: UserOrderByWithRelationInput
@@ -11456,7 +11456,7 @@ export namespace Prisma {
     AND?: FollowerWhereInput | FollowerWhereInput[]
     OR?: FollowerWhereInput[]
     NOT?: FollowerWhereInput | FollowerWhereInput[]
-    createAt?: DateTimeFilter<"Follower"> | Date | string
+    createdAt?: DateTimeFilter<"Follower"> | Date | string
     followerId?: StringFilter<"Follower"> | string
     followingId?: StringFilter<"Follower"> | string
     follower?: XOR<UserScalarRelationFilter, UserWhereInput>
@@ -11465,7 +11465,7 @@ export namespace Prisma {
 
   export type FollowerOrderByWithAggregationInput = {
     id?: SortOrder
-    createAt?: SortOrder
+    createdAt?: SortOrder
     followerId?: SortOrder
     followingId?: SortOrder
     _count?: FollowerCountOrderByAggregateInput
@@ -11480,65 +11480,65 @@ export namespace Prisma {
     OR?: FollowerScalarWhereWithAggregatesInput[]
     NOT?: FollowerScalarWhereWithAggregatesInput | FollowerScalarWhereWithAggregatesInput[]
     id?: IntWithAggregatesFilter<"Follower"> | number
-    createAt?: DateTimeWithAggregatesFilter<"Follower"> | Date | string
+    createdAt?: DateTimeWithAggregatesFilter<"Follower"> | Date | string
     followerId?: StringWithAggregatesFilter<"Follower"> | string
     followingId?: StringWithAggregatesFilter<"Follower"> | string
   }
 
-  export type FollowerRequestWhereInput = {
-    AND?: FollowerRequestWhereInput | FollowerRequestWhereInput[]
-    OR?: FollowerRequestWhereInput[]
-    NOT?: FollowerRequestWhereInput | FollowerRequestWhereInput[]
-    id?: IntFilter<"FollowerRequest"> | number
-    createAt?: DateTimeFilter<"FollowerRequest"> | Date | string
-    senderId?: StringFilter<"FollowerRequest"> | string
-    receiverId?: StringFilter<"FollowerRequest"> | string
+  export type FollowRequestWhereInput = {
+    AND?: FollowRequestWhereInput | FollowRequestWhereInput[]
+    OR?: FollowRequestWhereInput[]
+    NOT?: FollowRequestWhereInput | FollowRequestWhereInput[]
+    id?: IntFilter<"FollowRequest"> | number
+    createdAt?: DateTimeFilter<"FollowRequest"> | Date | string
+    senderId?: StringFilter<"FollowRequest"> | string
+    receiverId?: StringFilter<"FollowRequest"> | string
     sender?: XOR<UserScalarRelationFilter, UserWhereInput>
     receiver?: XOR<UserScalarRelationFilter, UserWhereInput>
   }
 
-  export type FollowerRequestOrderByWithRelationInput = {
+  export type FollowRequestOrderByWithRelationInput = {
     id?: SortOrder
-    createAt?: SortOrder
+    createdAt?: SortOrder
     senderId?: SortOrder
     receiverId?: SortOrder
     sender?: UserOrderByWithRelationInput
     receiver?: UserOrderByWithRelationInput
   }
 
-  export type FollowerRequestWhereUniqueInput = Prisma.AtLeast<{
+  export type FollowRequestWhereUniqueInput = Prisma.AtLeast<{
     id?: number
-    senderId_receiverId?: FollowerRequestSenderIdReceiverIdCompoundUniqueInput
-    AND?: FollowerRequestWhereInput | FollowerRequestWhereInput[]
-    OR?: FollowerRequestWhereInput[]
-    NOT?: FollowerRequestWhereInput | FollowerRequestWhereInput[]
-    createAt?: DateTimeFilter<"FollowerRequest"> | Date | string
-    senderId?: StringFilter<"FollowerRequest"> | string
-    receiverId?: StringFilter<"FollowerRequest"> | string
+    senderId_receiverId?: FollowRequestSenderIdReceiverIdCompoundUniqueInput
+    AND?: FollowRequestWhereInput | FollowRequestWhereInput[]
+    OR?: FollowRequestWhereInput[]
+    NOT?: FollowRequestWhereInput | FollowRequestWhereInput[]
+    createdAt?: DateTimeFilter<"FollowRequest"> | Date | string
+    senderId?: StringFilter<"FollowRequest"> | string
+    receiverId?: StringFilter<"FollowRequest"> | string
     sender?: XOR<UserScalarRelationFilter, UserWhereInput>
     receiver?: XOR<UserScalarRelationFilter, UserWhereInput>
   }, "id" | "senderId_receiverId">
 
-  export type FollowerRequestOrderByWithAggregationInput = {
+  export type FollowRequestOrderByWithAggregationInput = {
     id?: SortOrder
-    createAt?: SortOrder
+    createdAt?: SortOrder
     senderId?: SortOrder
     receiverId?: SortOrder
-    _count?: FollowerRequestCountOrderByAggregateInput
-    _avg?: FollowerRequestAvgOrderByAggregateInput
-    _max?: FollowerRequestMaxOrderByAggregateInput
-    _min?: FollowerRequestMinOrderByAggregateInput
-    _sum?: FollowerRequestSumOrderByAggregateInput
+    _count?: FollowRequestCountOrderByAggregateInput
+    _avg?: FollowRequestAvgOrderByAggregateInput
+    _max?: FollowRequestMaxOrderByAggregateInput
+    _min?: FollowRequestMinOrderByAggregateInput
+    _sum?: FollowRequestSumOrderByAggregateInput
   }
 
-  export type FollowerRequestScalarWhereWithAggregatesInput = {
-    AND?: FollowerRequestScalarWhereWithAggregatesInput | FollowerRequestScalarWhereWithAggregatesInput[]
-    OR?: FollowerRequestScalarWhereWithAggregatesInput[]
-    NOT?: FollowerRequestScalarWhereWithAggregatesInput | FollowerRequestScalarWhereWithAggregatesInput[]
-    id?: IntWithAggregatesFilter<"FollowerRequest"> | number
-    createAt?: DateTimeWithAggregatesFilter<"FollowerRequest"> | Date | string
-    senderId?: StringWithAggregatesFilter<"FollowerRequest"> | string
-    receiverId?: StringWithAggregatesFilter<"FollowerRequest"> | string
+  export type FollowRequestScalarWhereWithAggregatesInput = {
+    AND?: FollowRequestScalarWhereWithAggregatesInput | FollowRequestScalarWhereWithAggregatesInput[]
+    OR?: FollowRequestScalarWhereWithAggregatesInput[]
+    NOT?: FollowRequestScalarWhereWithAggregatesInput | FollowRequestScalarWhereWithAggregatesInput[]
+    id?: IntWithAggregatesFilter<"FollowRequest"> | number
+    createdAt?: DateTimeWithAggregatesFilter<"FollowRequest"> | Date | string
+    senderId?: StringWithAggregatesFilter<"FollowRequest"> | string
+    receiverId?: StringWithAggregatesFilter<"FollowRequest"> | string
   }
 
   export type BlockWhereInput = {
@@ -11546,20 +11546,20 @@ export namespace Prisma {
     OR?: BlockWhereInput[]
     NOT?: BlockWhereInput | BlockWhereInput[]
     id?: IntFilter<"Block"> | number
-    createAt?: DateTimeFilter<"Block"> | Date | string
+    createdAt?: DateTimeFilter<"Block"> | Date | string
     blockerId?: StringFilter<"Block"> | string
     blockedId?: StringFilter<"Block"> | string
-    sender?: XOR<UserScalarRelationFilter, UserWhereInput>
-    receiver?: XOR<UserScalarRelationFilter, UserWhereInput>
+    blocker?: XOR<UserScalarRelationFilter, UserWhereInput>
+    blocked?: XOR<UserScalarRelationFilter, UserWhereInput>
   }
 
   export type BlockOrderByWithRelationInput = {
     id?: SortOrder
-    createAt?: SortOrder
+    createdAt?: SortOrder
     blockerId?: SortOrder
     blockedId?: SortOrder
-    sender?: UserOrderByWithRelationInput
-    receiver?: UserOrderByWithRelationInput
+    blocker?: UserOrderByWithRelationInput
+    blocked?: UserOrderByWithRelationInput
   }
 
   export type BlockWhereUniqueInput = Prisma.AtLeast<{
@@ -11568,16 +11568,16 @@ export namespace Prisma {
     AND?: BlockWhereInput | BlockWhereInput[]
     OR?: BlockWhereInput[]
     NOT?: BlockWhereInput | BlockWhereInput[]
-    createAt?: DateTimeFilter<"Block"> | Date | string
+    createdAt?: DateTimeFilter<"Block"> | Date | string
     blockerId?: StringFilter<"Block"> | string
     blockedId?: StringFilter<"Block"> | string
-    sender?: XOR<UserScalarRelationFilter, UserWhereInput>
-    receiver?: XOR<UserScalarRelationFilter, UserWhereInput>
+    blocker?: XOR<UserScalarRelationFilter, UserWhereInput>
+    blocked?: XOR<UserScalarRelationFilter, UserWhereInput>
   }, "id" | "blockerId_blockedId">
 
   export type BlockOrderByWithAggregationInput = {
     id?: SortOrder
-    createAt?: SortOrder
+    createdAt?: SortOrder
     blockerId?: SortOrder
     blockedId?: SortOrder
     _count?: BlockCountOrderByAggregateInput
@@ -11592,7 +11592,7 @@ export namespace Prisma {
     OR?: BlockScalarWhereWithAggregatesInput[]
     NOT?: BlockScalarWhereWithAggregatesInput | BlockScalarWhereWithAggregatesInput[]
     id?: IntWithAggregatesFilter<"Block"> | number
-    createAt?: DateTimeWithAggregatesFilter<"Block"> | Date | string
+    createdAt?: DateTimeWithAggregatesFilter<"Block"> | Date | string
     blockerId?: StringWithAggregatesFilter<"Block"> | string
     blockedId?: StringWithAggregatesFilter<"Block"> | string
   }
@@ -11602,39 +11602,39 @@ export namespace Prisma {
     OR?: StoryWhereInput[]
     NOT?: StoryWhereInput | StoryWhereInput[]
     id?: IntFilter<"Story"> | number
-    createAt?: DateTimeFilter<"Story"> | Date | string
+    createdAt?: DateTimeFilter<"Story"> | Date | string
     expiresAt?: DateTimeFilter<"Story"> | Date | string
-    img?: StringNullableFilter<"Story"> | string | null
+    img?: StringFilter<"Story"> | string
     userId?: StringFilter<"Story"> | string
     user?: XOR<UserScalarRelationFilter, UserWhereInput>
   }
 
   export type StoryOrderByWithRelationInput = {
     id?: SortOrder
-    createAt?: SortOrder
+    createdAt?: SortOrder
     expiresAt?: SortOrder
-    img?: SortOrderInput | SortOrder
+    img?: SortOrder
     userId?: SortOrder
     user?: UserOrderByWithRelationInput
   }
 
   export type StoryWhereUniqueInput = Prisma.AtLeast<{
     id?: number
+    userId?: string
     AND?: StoryWhereInput | StoryWhereInput[]
     OR?: StoryWhereInput[]
     NOT?: StoryWhereInput | StoryWhereInput[]
-    createAt?: DateTimeFilter<"Story"> | Date | string
+    createdAt?: DateTimeFilter<"Story"> | Date | string
     expiresAt?: DateTimeFilter<"Story"> | Date | string
-    img?: StringNullableFilter<"Story"> | string | null
-    userId?: StringFilter<"Story"> | string
+    img?: StringFilter<"Story"> | string
     user?: XOR<UserScalarRelationFilter, UserWhereInput>
-  }, "id">
+  }, "id" | "userId">
 
   export type StoryOrderByWithAggregationInput = {
     id?: SortOrder
-    createAt?: SortOrder
+    createdAt?: SortOrder
     expiresAt?: SortOrder
-    img?: SortOrderInput | SortOrder
+    img?: SortOrder
     userId?: SortOrder
     _count?: StoryCountOrderByAggregateInput
     _avg?: StoryAvgOrderByAggregateInput
@@ -11648,9 +11648,9 @@ export namespace Prisma {
     OR?: StoryScalarWhereWithAggregatesInput[]
     NOT?: StoryScalarWhereWithAggregatesInput | StoryScalarWhereWithAggregatesInput[]
     id?: IntWithAggregatesFilter<"Story"> | number
-    createAt?: DateTimeWithAggregatesFilter<"Story"> | Date | string
+    createdAt?: DateTimeWithAggregatesFilter<"Story"> | Date | string
     expiresAt?: DateTimeWithAggregatesFilter<"Story"> | Date | string
-    img?: StringNullableWithAggregatesFilter<"Story"> | string | null
+    img?: StringWithAggregatesFilter<"Story"> | string
     userId?: StringWithAggregatesFilter<"Story"> | string
   }
 
@@ -11668,14 +11668,14 @@ export namespace Prisma {
     website?: string | null
     createdAt?: Date | string
     posts?: PostCreateNestedManyWithoutUserInput
-    likes?: LikeCreateNestedManyWithoutUserInput
     comments?: CommentCreateNestedManyWithoutUserInput
+    likes?: LikeCreateNestedManyWithoutUserInput
     followers?: FollowerCreateNestedManyWithoutFollowerInput
-    following?: FollowerCreateNestedManyWithoutFollowingInput
-    followRequestSent?: FollowerRequestCreateNestedManyWithoutSenderInput
-    followRequestReceived?: FollowerRequestCreateNestedManyWithoutReceiverInput
-    blocks?: BlockCreateNestedManyWithoutSenderInput
-    blockedBy?: BlockCreateNestedManyWithoutReceiverInput
+    followings?: FollowerCreateNestedManyWithoutFollowingInput
+    followRequestsSent?: FollowRequestCreateNestedManyWithoutSenderInput
+    followRequestsReceived?: FollowRequestCreateNestedManyWithoutReceiverInput
+    blocks?: BlockCreateNestedManyWithoutBlockerInput
+    blockedBy?: BlockCreateNestedManyWithoutBlockedInput
     stories?: StoryCreateNestedManyWithoutUserInput
   }
 
@@ -11693,14 +11693,14 @@ export namespace Prisma {
     website?: string | null
     createdAt?: Date | string
     posts?: PostUncheckedCreateNestedManyWithoutUserInput
-    likes?: LikeUncheckedCreateNestedManyWithoutUserInput
     comments?: CommentUncheckedCreateNestedManyWithoutUserInput
+    likes?: LikeUncheckedCreateNestedManyWithoutUserInput
     followers?: FollowerUncheckedCreateNestedManyWithoutFollowerInput
-    following?: FollowerUncheckedCreateNestedManyWithoutFollowingInput
-    followRequestSent?: FollowerRequestUncheckedCreateNestedManyWithoutSenderInput
-    followRequestReceived?: FollowerRequestUncheckedCreateNestedManyWithoutReceiverInput
-    blocks?: BlockUncheckedCreateNestedManyWithoutSenderInput
-    blockedBy?: BlockUncheckedCreateNestedManyWithoutReceiverInput
+    followings?: FollowerUncheckedCreateNestedManyWithoutFollowingInput
+    followRequestsSent?: FollowRequestUncheckedCreateNestedManyWithoutSenderInput
+    followRequestsReceived?: FollowRequestUncheckedCreateNestedManyWithoutReceiverInput
+    blocks?: BlockUncheckedCreateNestedManyWithoutBlockerInput
+    blockedBy?: BlockUncheckedCreateNestedManyWithoutBlockedInput
     stories?: StoryUncheckedCreateNestedManyWithoutUserInput
   }
 
@@ -11718,14 +11718,14 @@ export namespace Prisma {
     website?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     posts?: PostUpdateManyWithoutUserNestedInput
-    likes?: LikeUpdateManyWithoutUserNestedInput
     comments?: CommentUpdateManyWithoutUserNestedInput
+    likes?: LikeUpdateManyWithoutUserNestedInput
     followers?: FollowerUpdateManyWithoutFollowerNestedInput
-    following?: FollowerUpdateManyWithoutFollowingNestedInput
-    followRequestSent?: FollowerRequestUpdateManyWithoutSenderNestedInput
-    followRequestReceived?: FollowerRequestUpdateManyWithoutReceiverNestedInput
-    blocks?: BlockUpdateManyWithoutSenderNestedInput
-    blockedBy?: BlockUpdateManyWithoutReceiverNestedInput
+    followings?: FollowerUpdateManyWithoutFollowingNestedInput
+    followRequestsSent?: FollowRequestUpdateManyWithoutSenderNestedInput
+    followRequestsReceived?: FollowRequestUpdateManyWithoutReceiverNestedInput
+    blocks?: BlockUpdateManyWithoutBlockerNestedInput
+    blockedBy?: BlockUpdateManyWithoutBlockedNestedInput
     stories?: StoryUpdateManyWithoutUserNestedInput
   }
 
@@ -11743,14 +11743,14 @@ export namespace Prisma {
     website?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     posts?: PostUncheckedUpdateManyWithoutUserNestedInput
-    likes?: LikeUncheckedUpdateManyWithoutUserNestedInput
     comments?: CommentUncheckedUpdateManyWithoutUserNestedInput
+    likes?: LikeUncheckedUpdateManyWithoutUserNestedInput
     followers?: FollowerUncheckedUpdateManyWithoutFollowerNestedInput
-    following?: FollowerUncheckedUpdateManyWithoutFollowingNestedInput
-    followRequestSent?: FollowerRequestUncheckedUpdateManyWithoutSenderNestedInput
-    followRequestReceived?: FollowerRequestUncheckedUpdateManyWithoutReceiverNestedInput
-    blocks?: BlockUncheckedUpdateManyWithoutSenderNestedInput
-    blockedBy?: BlockUncheckedUpdateManyWithoutReceiverNestedInput
+    followings?: FollowerUncheckedUpdateManyWithoutFollowingNestedInput
+    followRequestsSent?: FollowRequestUncheckedUpdateManyWithoutSenderNestedInput
+    followRequestsReceived?: FollowRequestUncheckedUpdateManyWithoutReceiverNestedInput
+    blocks?: BlockUncheckedUpdateManyWithoutBlockerNestedInput
+    blockedBy?: BlockUncheckedUpdateManyWithoutBlockedNestedInput
     stories?: StoryUncheckedUpdateManyWithoutUserNestedInput
   }
 
@@ -11805,8 +11805,8 @@ export namespace Prisma {
     createdAt?: Date | string
     updatedAt?: Date | string
     user: UserCreateNestedOneWithoutPostsInput
+    comments?: CommentCreateNestedManyWithoutPostInput
     likes?: LikeCreateNestedManyWithoutPostInput
-    Comment?: CommentCreateNestedManyWithoutPostInput
   }
 
   export type PostUncheckedCreateInput = {
@@ -11816,8 +11816,8 @@ export namespace Prisma {
     createdAt?: Date | string
     updatedAt?: Date | string
     userId: string
+    comments?: CommentUncheckedCreateNestedManyWithoutPostInput
     likes?: LikeUncheckedCreateNestedManyWithoutPostInput
-    Comment?: CommentUncheckedCreateNestedManyWithoutPostInput
   }
 
   export type PostUpdateInput = {
@@ -11826,8 +11826,8 @@ export namespace Prisma {
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     user?: UserUpdateOneRequiredWithoutPostsNestedInput
+    comments?: CommentUpdateManyWithoutPostNestedInput
     likes?: LikeUpdateManyWithoutPostNestedInput
-    Comment?: CommentUpdateManyWithoutPostNestedInput
   }
 
   export type PostUncheckedUpdateInput = {
@@ -11837,8 +11837,8 @@ export namespace Prisma {
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     userId?: StringFieldUpdateOperationsInput | string
+    comments?: CommentUncheckedUpdateManyWithoutPostNestedInput
     likes?: LikeUncheckedUpdateManyWithoutPostNestedInput
-    Comment?: CommentUncheckedUpdateManyWithoutPostNestedInput
   }
 
   export type PostCreateManyInput = {
@@ -11871,7 +11871,7 @@ export namespace Prisma {
     createdAt?: Date | string
     updatedAt?: Date | string
     user: UserCreateNestedOneWithoutCommentsInput
-    post: PostCreateNestedOneWithoutCommentInput
+    post: PostCreateNestedOneWithoutCommentsInput
     likes?: LikeCreateNestedManyWithoutCommentInput
   }
 
@@ -11890,7 +11890,7 @@ export namespace Prisma {
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     user?: UserUpdateOneRequiredWithoutCommentsNestedInput
-    post?: PostUpdateOneRequiredWithoutCommentNestedInput
+    post?: PostUpdateOneRequiredWithoutCommentsNestedInput
     likes?: LikeUpdateManyWithoutCommentNestedInput
   }
 
@@ -11979,186 +11979,186 @@ export namespace Prisma {
   }
 
   export type FollowerCreateInput = {
-    createAt?: Date | string
+    createdAt?: Date | string
     follower: UserCreateNestedOneWithoutFollowersInput
-    following: UserCreateNestedOneWithoutFollowingInput
+    following: UserCreateNestedOneWithoutFollowingsInput
   }
 
   export type FollowerUncheckedCreateInput = {
     id?: number
-    createAt?: Date | string
+    createdAt?: Date | string
     followerId: string
     followingId: string
   }
 
   export type FollowerUpdateInput = {
-    createAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     follower?: UserUpdateOneRequiredWithoutFollowersNestedInput
-    following?: UserUpdateOneRequiredWithoutFollowingNestedInput
+    following?: UserUpdateOneRequiredWithoutFollowingsNestedInput
   }
 
   export type FollowerUncheckedUpdateInput = {
     id?: IntFieldUpdateOperationsInput | number
-    createAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     followerId?: StringFieldUpdateOperationsInput | string
     followingId?: StringFieldUpdateOperationsInput | string
   }
 
   export type FollowerCreateManyInput = {
     id?: number
-    createAt?: Date | string
+    createdAt?: Date | string
     followerId: string
     followingId: string
   }
 
   export type FollowerUpdateManyMutationInput = {
-    createAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type FollowerUncheckedUpdateManyInput = {
     id?: IntFieldUpdateOperationsInput | number
-    createAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     followerId?: StringFieldUpdateOperationsInput | string
     followingId?: StringFieldUpdateOperationsInput | string
   }
 
-  export type FollowerRequestCreateInput = {
-    createAt?: Date | string
-    sender: UserCreateNestedOneWithoutFollowRequestSentInput
-    receiver: UserCreateNestedOneWithoutFollowRequestReceivedInput
+  export type FollowRequestCreateInput = {
+    createdAt?: Date | string
+    sender: UserCreateNestedOneWithoutFollowRequestsSentInput
+    receiver: UserCreateNestedOneWithoutFollowRequestsReceivedInput
   }
 
-  export type FollowerRequestUncheckedCreateInput = {
+  export type FollowRequestUncheckedCreateInput = {
     id?: number
-    createAt?: Date | string
+    createdAt?: Date | string
     senderId: string
     receiverId: string
   }
 
-  export type FollowerRequestUpdateInput = {
-    createAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    sender?: UserUpdateOneRequiredWithoutFollowRequestSentNestedInput
-    receiver?: UserUpdateOneRequiredWithoutFollowRequestReceivedNestedInput
+  export type FollowRequestUpdateInput = {
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    sender?: UserUpdateOneRequiredWithoutFollowRequestsSentNestedInput
+    receiver?: UserUpdateOneRequiredWithoutFollowRequestsReceivedNestedInput
   }
 
-  export type FollowerRequestUncheckedUpdateInput = {
+  export type FollowRequestUncheckedUpdateInput = {
     id?: IntFieldUpdateOperationsInput | number
-    createAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     senderId?: StringFieldUpdateOperationsInput | string
     receiverId?: StringFieldUpdateOperationsInput | string
   }
 
-  export type FollowerRequestCreateManyInput = {
+  export type FollowRequestCreateManyInput = {
     id?: number
-    createAt?: Date | string
+    createdAt?: Date | string
     senderId: string
     receiverId: string
   }
 
-  export type FollowerRequestUpdateManyMutationInput = {
-    createAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  export type FollowRequestUpdateManyMutationInput = {
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
-  export type FollowerRequestUncheckedUpdateManyInput = {
+  export type FollowRequestUncheckedUpdateManyInput = {
     id?: IntFieldUpdateOperationsInput | number
-    createAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     senderId?: StringFieldUpdateOperationsInput | string
     receiverId?: StringFieldUpdateOperationsInput | string
   }
 
   export type BlockCreateInput = {
-    createAt?: Date | string
-    sender: UserCreateNestedOneWithoutBlocksInput
-    receiver: UserCreateNestedOneWithoutBlockedByInput
+    createdAt?: Date | string
+    blocker: UserCreateNestedOneWithoutBlocksInput
+    blocked: UserCreateNestedOneWithoutBlockedByInput
   }
 
   export type BlockUncheckedCreateInput = {
     id?: number
-    createAt?: Date | string
+    createdAt?: Date | string
     blockerId: string
     blockedId: string
   }
 
   export type BlockUpdateInput = {
-    createAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    sender?: UserUpdateOneRequiredWithoutBlocksNestedInput
-    receiver?: UserUpdateOneRequiredWithoutBlockedByNestedInput
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    blocker?: UserUpdateOneRequiredWithoutBlocksNestedInput
+    blocked?: UserUpdateOneRequiredWithoutBlockedByNestedInput
   }
 
   export type BlockUncheckedUpdateInput = {
     id?: IntFieldUpdateOperationsInput | number
-    createAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     blockerId?: StringFieldUpdateOperationsInput | string
     blockedId?: StringFieldUpdateOperationsInput | string
   }
 
   export type BlockCreateManyInput = {
     id?: number
-    createAt?: Date | string
+    createdAt?: Date | string
     blockerId: string
     blockedId: string
   }
 
   export type BlockUpdateManyMutationInput = {
-    createAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type BlockUncheckedUpdateManyInput = {
     id?: IntFieldUpdateOperationsInput | number
-    createAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     blockerId?: StringFieldUpdateOperationsInput | string
     blockedId?: StringFieldUpdateOperationsInput | string
   }
 
   export type StoryCreateInput = {
-    createAt?: Date | string
+    createdAt?: Date | string
     expiresAt: Date | string
-    img?: string | null
+    img: string
     user: UserCreateNestedOneWithoutStoriesInput
   }
 
   export type StoryUncheckedCreateInput = {
     id?: number
-    createAt?: Date | string
+    createdAt?: Date | string
     expiresAt: Date | string
-    img?: string | null
+    img: string
     userId: string
   }
 
   export type StoryUpdateInput = {
-    createAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     expiresAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    img?: NullableStringFieldUpdateOperationsInput | string | null
+    img?: StringFieldUpdateOperationsInput | string
     user?: UserUpdateOneRequiredWithoutStoriesNestedInput
   }
 
   export type StoryUncheckedUpdateInput = {
     id?: IntFieldUpdateOperationsInput | number
-    createAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     expiresAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    img?: NullableStringFieldUpdateOperationsInput | string | null
+    img?: StringFieldUpdateOperationsInput | string
     userId?: StringFieldUpdateOperationsInput | string
   }
 
   export type StoryCreateManyInput = {
     id?: number
-    createAt?: Date | string
+    createdAt?: Date | string
     expiresAt: Date | string
-    img?: string | null
+    img: string
     userId: string
   }
 
   export type StoryUpdateManyMutationInput = {
-    createAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     expiresAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    img?: NullableStringFieldUpdateOperationsInput | string | null
+    img?: StringFieldUpdateOperationsInput | string
   }
 
   export type StoryUncheckedUpdateManyInput = {
     id?: IntFieldUpdateOperationsInput | number
-    createAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     expiresAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    img?: NullableStringFieldUpdateOperationsInput | string | null
+    img?: StringFieldUpdateOperationsInput | string
     userId?: StringFieldUpdateOperationsInput | string
   }
 
@@ -12209,16 +12209,16 @@ export namespace Prisma {
     none?: PostWhereInput
   }
 
-  export type LikeListRelationFilter = {
-    every?: LikeWhereInput
-    some?: LikeWhereInput
-    none?: LikeWhereInput
-  }
-
   export type CommentListRelationFilter = {
     every?: CommentWhereInput
     some?: CommentWhereInput
     none?: CommentWhereInput
+  }
+
+  export type LikeListRelationFilter = {
+    every?: LikeWhereInput
+    some?: LikeWhereInput
+    none?: LikeWhereInput
   }
 
   export type FollowerListRelationFilter = {
@@ -12227,10 +12227,10 @@ export namespace Prisma {
     none?: FollowerWhereInput
   }
 
-  export type FollowerRequestListRelationFilter = {
-    every?: FollowerRequestWhereInput
-    some?: FollowerRequestWhereInput
-    none?: FollowerRequestWhereInput
+  export type FollowRequestListRelationFilter = {
+    every?: FollowRequestWhereInput
+    some?: FollowRequestWhereInput
+    none?: FollowRequestWhereInput
   }
 
   export type BlockListRelationFilter = {
@@ -12254,11 +12254,11 @@ export namespace Prisma {
     _count?: SortOrder
   }
 
-  export type LikeOrderByRelationAggregateInput = {
+  export type CommentOrderByRelationAggregateInput = {
     _count?: SortOrder
   }
 
-  export type CommentOrderByRelationAggregateInput = {
+  export type LikeOrderByRelationAggregateInput = {
     _count?: SortOrder
   }
 
@@ -12266,7 +12266,7 @@ export namespace Prisma {
     _count?: SortOrder
   }
 
-  export type FollowerRequestOrderByRelationAggregateInput = {
+  export type FollowRequestOrderByRelationAggregateInput = {
     _count?: SortOrder
   }
 
@@ -12557,7 +12557,7 @@ export namespace Prisma {
 
   export type FollowerCountOrderByAggregateInput = {
     id?: SortOrder
-    createAt?: SortOrder
+    createdAt?: SortOrder
     followerId?: SortOrder
     followingId?: SortOrder
   }
@@ -12568,14 +12568,14 @@ export namespace Prisma {
 
   export type FollowerMaxOrderByAggregateInput = {
     id?: SortOrder
-    createAt?: SortOrder
+    createdAt?: SortOrder
     followerId?: SortOrder
     followingId?: SortOrder
   }
 
   export type FollowerMinOrderByAggregateInput = {
     id?: SortOrder
-    createAt?: SortOrder
+    createdAt?: SortOrder
     followerId?: SortOrder
     followingId?: SortOrder
   }
@@ -12584,37 +12584,37 @@ export namespace Prisma {
     id?: SortOrder
   }
 
-  export type FollowerRequestSenderIdReceiverIdCompoundUniqueInput = {
+  export type FollowRequestSenderIdReceiverIdCompoundUniqueInput = {
     senderId: string
     receiverId: string
   }
 
-  export type FollowerRequestCountOrderByAggregateInput = {
+  export type FollowRequestCountOrderByAggregateInput = {
     id?: SortOrder
-    createAt?: SortOrder
+    createdAt?: SortOrder
     senderId?: SortOrder
     receiverId?: SortOrder
   }
 
-  export type FollowerRequestAvgOrderByAggregateInput = {
+  export type FollowRequestAvgOrderByAggregateInput = {
     id?: SortOrder
   }
 
-  export type FollowerRequestMaxOrderByAggregateInput = {
+  export type FollowRequestMaxOrderByAggregateInput = {
     id?: SortOrder
-    createAt?: SortOrder
+    createdAt?: SortOrder
     senderId?: SortOrder
     receiverId?: SortOrder
   }
 
-  export type FollowerRequestMinOrderByAggregateInput = {
+  export type FollowRequestMinOrderByAggregateInput = {
     id?: SortOrder
-    createAt?: SortOrder
+    createdAt?: SortOrder
     senderId?: SortOrder
     receiverId?: SortOrder
   }
 
-  export type FollowerRequestSumOrderByAggregateInput = {
+  export type FollowRequestSumOrderByAggregateInput = {
     id?: SortOrder
   }
 
@@ -12625,7 +12625,7 @@ export namespace Prisma {
 
   export type BlockCountOrderByAggregateInput = {
     id?: SortOrder
-    createAt?: SortOrder
+    createdAt?: SortOrder
     blockerId?: SortOrder
     blockedId?: SortOrder
   }
@@ -12636,14 +12636,14 @@ export namespace Prisma {
 
   export type BlockMaxOrderByAggregateInput = {
     id?: SortOrder
-    createAt?: SortOrder
+    createdAt?: SortOrder
     blockerId?: SortOrder
     blockedId?: SortOrder
   }
 
   export type BlockMinOrderByAggregateInput = {
     id?: SortOrder
-    createAt?: SortOrder
+    createdAt?: SortOrder
     blockerId?: SortOrder
     blockedId?: SortOrder
   }
@@ -12654,7 +12654,7 @@ export namespace Prisma {
 
   export type StoryCountOrderByAggregateInput = {
     id?: SortOrder
-    createAt?: SortOrder
+    createdAt?: SortOrder
     expiresAt?: SortOrder
     img?: SortOrder
     userId?: SortOrder
@@ -12666,7 +12666,7 @@ export namespace Prisma {
 
   export type StoryMaxOrderByAggregateInput = {
     id?: SortOrder
-    createAt?: SortOrder
+    createdAt?: SortOrder
     expiresAt?: SortOrder
     img?: SortOrder
     userId?: SortOrder
@@ -12674,7 +12674,7 @@ export namespace Prisma {
 
   export type StoryMinOrderByAggregateInput = {
     id?: SortOrder
-    createAt?: SortOrder
+    createdAt?: SortOrder
     expiresAt?: SortOrder
     img?: SortOrder
     userId?: SortOrder
@@ -12691,18 +12691,18 @@ export namespace Prisma {
     connect?: PostWhereUniqueInput | PostWhereUniqueInput[]
   }
 
-  export type LikeCreateNestedManyWithoutUserInput = {
-    create?: XOR<LikeCreateWithoutUserInput, LikeUncheckedCreateWithoutUserInput> | LikeCreateWithoutUserInput[] | LikeUncheckedCreateWithoutUserInput[]
-    connectOrCreate?: LikeCreateOrConnectWithoutUserInput | LikeCreateOrConnectWithoutUserInput[]
-    createMany?: LikeCreateManyUserInputEnvelope
-    connect?: LikeWhereUniqueInput | LikeWhereUniqueInput[]
-  }
-
   export type CommentCreateNestedManyWithoutUserInput = {
     create?: XOR<CommentCreateWithoutUserInput, CommentUncheckedCreateWithoutUserInput> | CommentCreateWithoutUserInput[] | CommentUncheckedCreateWithoutUserInput[]
     connectOrCreate?: CommentCreateOrConnectWithoutUserInput | CommentCreateOrConnectWithoutUserInput[]
     createMany?: CommentCreateManyUserInputEnvelope
     connect?: CommentWhereUniqueInput | CommentWhereUniqueInput[]
+  }
+
+  export type LikeCreateNestedManyWithoutUserInput = {
+    create?: XOR<LikeCreateWithoutUserInput, LikeUncheckedCreateWithoutUserInput> | LikeCreateWithoutUserInput[] | LikeUncheckedCreateWithoutUserInput[]
+    connectOrCreate?: LikeCreateOrConnectWithoutUserInput | LikeCreateOrConnectWithoutUserInput[]
+    createMany?: LikeCreateManyUserInputEnvelope
+    connect?: LikeWhereUniqueInput | LikeWhereUniqueInput[]
   }
 
   export type FollowerCreateNestedManyWithoutFollowerInput = {
@@ -12719,31 +12719,31 @@ export namespace Prisma {
     connect?: FollowerWhereUniqueInput | FollowerWhereUniqueInput[]
   }
 
-  export type FollowerRequestCreateNestedManyWithoutSenderInput = {
-    create?: XOR<FollowerRequestCreateWithoutSenderInput, FollowerRequestUncheckedCreateWithoutSenderInput> | FollowerRequestCreateWithoutSenderInput[] | FollowerRequestUncheckedCreateWithoutSenderInput[]
-    connectOrCreate?: FollowerRequestCreateOrConnectWithoutSenderInput | FollowerRequestCreateOrConnectWithoutSenderInput[]
-    createMany?: FollowerRequestCreateManySenderInputEnvelope
-    connect?: FollowerRequestWhereUniqueInput | FollowerRequestWhereUniqueInput[]
+  export type FollowRequestCreateNestedManyWithoutSenderInput = {
+    create?: XOR<FollowRequestCreateWithoutSenderInput, FollowRequestUncheckedCreateWithoutSenderInput> | FollowRequestCreateWithoutSenderInput[] | FollowRequestUncheckedCreateWithoutSenderInput[]
+    connectOrCreate?: FollowRequestCreateOrConnectWithoutSenderInput | FollowRequestCreateOrConnectWithoutSenderInput[]
+    createMany?: FollowRequestCreateManySenderInputEnvelope
+    connect?: FollowRequestWhereUniqueInput | FollowRequestWhereUniqueInput[]
   }
 
-  export type FollowerRequestCreateNestedManyWithoutReceiverInput = {
-    create?: XOR<FollowerRequestCreateWithoutReceiverInput, FollowerRequestUncheckedCreateWithoutReceiverInput> | FollowerRequestCreateWithoutReceiverInput[] | FollowerRequestUncheckedCreateWithoutReceiverInput[]
-    connectOrCreate?: FollowerRequestCreateOrConnectWithoutReceiverInput | FollowerRequestCreateOrConnectWithoutReceiverInput[]
-    createMany?: FollowerRequestCreateManyReceiverInputEnvelope
-    connect?: FollowerRequestWhereUniqueInput | FollowerRequestWhereUniqueInput[]
+  export type FollowRequestCreateNestedManyWithoutReceiverInput = {
+    create?: XOR<FollowRequestCreateWithoutReceiverInput, FollowRequestUncheckedCreateWithoutReceiverInput> | FollowRequestCreateWithoutReceiverInput[] | FollowRequestUncheckedCreateWithoutReceiverInput[]
+    connectOrCreate?: FollowRequestCreateOrConnectWithoutReceiverInput | FollowRequestCreateOrConnectWithoutReceiverInput[]
+    createMany?: FollowRequestCreateManyReceiverInputEnvelope
+    connect?: FollowRequestWhereUniqueInput | FollowRequestWhereUniqueInput[]
   }
 
-  export type BlockCreateNestedManyWithoutSenderInput = {
-    create?: XOR<BlockCreateWithoutSenderInput, BlockUncheckedCreateWithoutSenderInput> | BlockCreateWithoutSenderInput[] | BlockUncheckedCreateWithoutSenderInput[]
-    connectOrCreate?: BlockCreateOrConnectWithoutSenderInput | BlockCreateOrConnectWithoutSenderInput[]
-    createMany?: BlockCreateManySenderInputEnvelope
+  export type BlockCreateNestedManyWithoutBlockerInput = {
+    create?: XOR<BlockCreateWithoutBlockerInput, BlockUncheckedCreateWithoutBlockerInput> | BlockCreateWithoutBlockerInput[] | BlockUncheckedCreateWithoutBlockerInput[]
+    connectOrCreate?: BlockCreateOrConnectWithoutBlockerInput | BlockCreateOrConnectWithoutBlockerInput[]
+    createMany?: BlockCreateManyBlockerInputEnvelope
     connect?: BlockWhereUniqueInput | BlockWhereUniqueInput[]
   }
 
-  export type BlockCreateNestedManyWithoutReceiverInput = {
-    create?: XOR<BlockCreateWithoutReceiverInput, BlockUncheckedCreateWithoutReceiverInput> | BlockCreateWithoutReceiverInput[] | BlockUncheckedCreateWithoutReceiverInput[]
-    connectOrCreate?: BlockCreateOrConnectWithoutReceiverInput | BlockCreateOrConnectWithoutReceiverInput[]
-    createMany?: BlockCreateManyReceiverInputEnvelope
+  export type BlockCreateNestedManyWithoutBlockedInput = {
+    create?: XOR<BlockCreateWithoutBlockedInput, BlockUncheckedCreateWithoutBlockedInput> | BlockCreateWithoutBlockedInput[] | BlockUncheckedCreateWithoutBlockedInput[]
+    connectOrCreate?: BlockCreateOrConnectWithoutBlockedInput | BlockCreateOrConnectWithoutBlockedInput[]
+    createMany?: BlockCreateManyBlockedInputEnvelope
     connect?: BlockWhereUniqueInput | BlockWhereUniqueInput[]
   }
 
@@ -12761,18 +12761,18 @@ export namespace Prisma {
     connect?: PostWhereUniqueInput | PostWhereUniqueInput[]
   }
 
-  export type LikeUncheckedCreateNestedManyWithoutUserInput = {
-    create?: XOR<LikeCreateWithoutUserInput, LikeUncheckedCreateWithoutUserInput> | LikeCreateWithoutUserInput[] | LikeUncheckedCreateWithoutUserInput[]
-    connectOrCreate?: LikeCreateOrConnectWithoutUserInput | LikeCreateOrConnectWithoutUserInput[]
-    createMany?: LikeCreateManyUserInputEnvelope
-    connect?: LikeWhereUniqueInput | LikeWhereUniqueInput[]
-  }
-
   export type CommentUncheckedCreateNestedManyWithoutUserInput = {
     create?: XOR<CommentCreateWithoutUserInput, CommentUncheckedCreateWithoutUserInput> | CommentCreateWithoutUserInput[] | CommentUncheckedCreateWithoutUserInput[]
     connectOrCreate?: CommentCreateOrConnectWithoutUserInput | CommentCreateOrConnectWithoutUserInput[]
     createMany?: CommentCreateManyUserInputEnvelope
     connect?: CommentWhereUniqueInput | CommentWhereUniqueInput[]
+  }
+
+  export type LikeUncheckedCreateNestedManyWithoutUserInput = {
+    create?: XOR<LikeCreateWithoutUserInput, LikeUncheckedCreateWithoutUserInput> | LikeCreateWithoutUserInput[] | LikeUncheckedCreateWithoutUserInput[]
+    connectOrCreate?: LikeCreateOrConnectWithoutUserInput | LikeCreateOrConnectWithoutUserInput[]
+    createMany?: LikeCreateManyUserInputEnvelope
+    connect?: LikeWhereUniqueInput | LikeWhereUniqueInput[]
   }
 
   export type FollowerUncheckedCreateNestedManyWithoutFollowerInput = {
@@ -12789,31 +12789,31 @@ export namespace Prisma {
     connect?: FollowerWhereUniqueInput | FollowerWhereUniqueInput[]
   }
 
-  export type FollowerRequestUncheckedCreateNestedManyWithoutSenderInput = {
-    create?: XOR<FollowerRequestCreateWithoutSenderInput, FollowerRequestUncheckedCreateWithoutSenderInput> | FollowerRequestCreateWithoutSenderInput[] | FollowerRequestUncheckedCreateWithoutSenderInput[]
-    connectOrCreate?: FollowerRequestCreateOrConnectWithoutSenderInput | FollowerRequestCreateOrConnectWithoutSenderInput[]
-    createMany?: FollowerRequestCreateManySenderInputEnvelope
-    connect?: FollowerRequestWhereUniqueInput | FollowerRequestWhereUniqueInput[]
+  export type FollowRequestUncheckedCreateNestedManyWithoutSenderInput = {
+    create?: XOR<FollowRequestCreateWithoutSenderInput, FollowRequestUncheckedCreateWithoutSenderInput> | FollowRequestCreateWithoutSenderInput[] | FollowRequestUncheckedCreateWithoutSenderInput[]
+    connectOrCreate?: FollowRequestCreateOrConnectWithoutSenderInput | FollowRequestCreateOrConnectWithoutSenderInput[]
+    createMany?: FollowRequestCreateManySenderInputEnvelope
+    connect?: FollowRequestWhereUniqueInput | FollowRequestWhereUniqueInput[]
   }
 
-  export type FollowerRequestUncheckedCreateNestedManyWithoutReceiverInput = {
-    create?: XOR<FollowerRequestCreateWithoutReceiverInput, FollowerRequestUncheckedCreateWithoutReceiverInput> | FollowerRequestCreateWithoutReceiverInput[] | FollowerRequestUncheckedCreateWithoutReceiverInput[]
-    connectOrCreate?: FollowerRequestCreateOrConnectWithoutReceiverInput | FollowerRequestCreateOrConnectWithoutReceiverInput[]
-    createMany?: FollowerRequestCreateManyReceiverInputEnvelope
-    connect?: FollowerRequestWhereUniqueInput | FollowerRequestWhereUniqueInput[]
+  export type FollowRequestUncheckedCreateNestedManyWithoutReceiverInput = {
+    create?: XOR<FollowRequestCreateWithoutReceiverInput, FollowRequestUncheckedCreateWithoutReceiverInput> | FollowRequestCreateWithoutReceiverInput[] | FollowRequestUncheckedCreateWithoutReceiverInput[]
+    connectOrCreate?: FollowRequestCreateOrConnectWithoutReceiverInput | FollowRequestCreateOrConnectWithoutReceiverInput[]
+    createMany?: FollowRequestCreateManyReceiverInputEnvelope
+    connect?: FollowRequestWhereUniqueInput | FollowRequestWhereUniqueInput[]
   }
 
-  export type BlockUncheckedCreateNestedManyWithoutSenderInput = {
-    create?: XOR<BlockCreateWithoutSenderInput, BlockUncheckedCreateWithoutSenderInput> | BlockCreateWithoutSenderInput[] | BlockUncheckedCreateWithoutSenderInput[]
-    connectOrCreate?: BlockCreateOrConnectWithoutSenderInput | BlockCreateOrConnectWithoutSenderInput[]
-    createMany?: BlockCreateManySenderInputEnvelope
+  export type BlockUncheckedCreateNestedManyWithoutBlockerInput = {
+    create?: XOR<BlockCreateWithoutBlockerInput, BlockUncheckedCreateWithoutBlockerInput> | BlockCreateWithoutBlockerInput[] | BlockUncheckedCreateWithoutBlockerInput[]
+    connectOrCreate?: BlockCreateOrConnectWithoutBlockerInput | BlockCreateOrConnectWithoutBlockerInput[]
+    createMany?: BlockCreateManyBlockerInputEnvelope
     connect?: BlockWhereUniqueInput | BlockWhereUniqueInput[]
   }
 
-  export type BlockUncheckedCreateNestedManyWithoutReceiverInput = {
-    create?: XOR<BlockCreateWithoutReceiverInput, BlockUncheckedCreateWithoutReceiverInput> | BlockCreateWithoutReceiverInput[] | BlockUncheckedCreateWithoutReceiverInput[]
-    connectOrCreate?: BlockCreateOrConnectWithoutReceiverInput | BlockCreateOrConnectWithoutReceiverInput[]
-    createMany?: BlockCreateManyReceiverInputEnvelope
+  export type BlockUncheckedCreateNestedManyWithoutBlockedInput = {
+    create?: XOR<BlockCreateWithoutBlockedInput, BlockUncheckedCreateWithoutBlockedInput> | BlockCreateWithoutBlockedInput[] | BlockUncheckedCreateWithoutBlockedInput[]
+    connectOrCreate?: BlockCreateOrConnectWithoutBlockedInput | BlockCreateOrConnectWithoutBlockedInput[]
+    createMany?: BlockCreateManyBlockedInputEnvelope
     connect?: BlockWhereUniqueInput | BlockWhereUniqueInput[]
   }
 
@@ -12850,20 +12850,6 @@ export namespace Prisma {
     deleteMany?: PostScalarWhereInput | PostScalarWhereInput[]
   }
 
-  export type LikeUpdateManyWithoutUserNestedInput = {
-    create?: XOR<LikeCreateWithoutUserInput, LikeUncheckedCreateWithoutUserInput> | LikeCreateWithoutUserInput[] | LikeUncheckedCreateWithoutUserInput[]
-    connectOrCreate?: LikeCreateOrConnectWithoutUserInput | LikeCreateOrConnectWithoutUserInput[]
-    upsert?: LikeUpsertWithWhereUniqueWithoutUserInput | LikeUpsertWithWhereUniqueWithoutUserInput[]
-    createMany?: LikeCreateManyUserInputEnvelope
-    set?: LikeWhereUniqueInput | LikeWhereUniqueInput[]
-    disconnect?: LikeWhereUniqueInput | LikeWhereUniqueInput[]
-    delete?: LikeWhereUniqueInput | LikeWhereUniqueInput[]
-    connect?: LikeWhereUniqueInput | LikeWhereUniqueInput[]
-    update?: LikeUpdateWithWhereUniqueWithoutUserInput | LikeUpdateWithWhereUniqueWithoutUserInput[]
-    updateMany?: LikeUpdateManyWithWhereWithoutUserInput | LikeUpdateManyWithWhereWithoutUserInput[]
-    deleteMany?: LikeScalarWhereInput | LikeScalarWhereInput[]
-  }
-
   export type CommentUpdateManyWithoutUserNestedInput = {
     create?: XOR<CommentCreateWithoutUserInput, CommentUncheckedCreateWithoutUserInput> | CommentCreateWithoutUserInput[] | CommentUncheckedCreateWithoutUserInput[]
     connectOrCreate?: CommentCreateOrConnectWithoutUserInput | CommentCreateOrConnectWithoutUserInput[]
@@ -12876,6 +12862,20 @@ export namespace Prisma {
     update?: CommentUpdateWithWhereUniqueWithoutUserInput | CommentUpdateWithWhereUniqueWithoutUserInput[]
     updateMany?: CommentUpdateManyWithWhereWithoutUserInput | CommentUpdateManyWithWhereWithoutUserInput[]
     deleteMany?: CommentScalarWhereInput | CommentScalarWhereInput[]
+  }
+
+  export type LikeUpdateManyWithoutUserNestedInput = {
+    create?: XOR<LikeCreateWithoutUserInput, LikeUncheckedCreateWithoutUserInput> | LikeCreateWithoutUserInput[] | LikeUncheckedCreateWithoutUserInput[]
+    connectOrCreate?: LikeCreateOrConnectWithoutUserInput | LikeCreateOrConnectWithoutUserInput[]
+    upsert?: LikeUpsertWithWhereUniqueWithoutUserInput | LikeUpsertWithWhereUniqueWithoutUserInput[]
+    createMany?: LikeCreateManyUserInputEnvelope
+    set?: LikeWhereUniqueInput | LikeWhereUniqueInput[]
+    disconnect?: LikeWhereUniqueInput | LikeWhereUniqueInput[]
+    delete?: LikeWhereUniqueInput | LikeWhereUniqueInput[]
+    connect?: LikeWhereUniqueInput | LikeWhereUniqueInput[]
+    update?: LikeUpdateWithWhereUniqueWithoutUserInput | LikeUpdateWithWhereUniqueWithoutUserInput[]
+    updateMany?: LikeUpdateManyWithWhereWithoutUserInput | LikeUpdateManyWithWhereWithoutUserInput[]
+    deleteMany?: LikeScalarWhereInput | LikeScalarWhereInput[]
   }
 
   export type FollowerUpdateManyWithoutFollowerNestedInput = {
@@ -12906,59 +12906,59 @@ export namespace Prisma {
     deleteMany?: FollowerScalarWhereInput | FollowerScalarWhereInput[]
   }
 
-  export type FollowerRequestUpdateManyWithoutSenderNestedInput = {
-    create?: XOR<FollowerRequestCreateWithoutSenderInput, FollowerRequestUncheckedCreateWithoutSenderInput> | FollowerRequestCreateWithoutSenderInput[] | FollowerRequestUncheckedCreateWithoutSenderInput[]
-    connectOrCreate?: FollowerRequestCreateOrConnectWithoutSenderInput | FollowerRequestCreateOrConnectWithoutSenderInput[]
-    upsert?: FollowerRequestUpsertWithWhereUniqueWithoutSenderInput | FollowerRequestUpsertWithWhereUniqueWithoutSenderInput[]
-    createMany?: FollowerRequestCreateManySenderInputEnvelope
-    set?: FollowerRequestWhereUniqueInput | FollowerRequestWhereUniqueInput[]
-    disconnect?: FollowerRequestWhereUniqueInput | FollowerRequestWhereUniqueInput[]
-    delete?: FollowerRequestWhereUniqueInput | FollowerRequestWhereUniqueInput[]
-    connect?: FollowerRequestWhereUniqueInput | FollowerRequestWhereUniqueInput[]
-    update?: FollowerRequestUpdateWithWhereUniqueWithoutSenderInput | FollowerRequestUpdateWithWhereUniqueWithoutSenderInput[]
-    updateMany?: FollowerRequestUpdateManyWithWhereWithoutSenderInput | FollowerRequestUpdateManyWithWhereWithoutSenderInput[]
-    deleteMany?: FollowerRequestScalarWhereInput | FollowerRequestScalarWhereInput[]
+  export type FollowRequestUpdateManyWithoutSenderNestedInput = {
+    create?: XOR<FollowRequestCreateWithoutSenderInput, FollowRequestUncheckedCreateWithoutSenderInput> | FollowRequestCreateWithoutSenderInput[] | FollowRequestUncheckedCreateWithoutSenderInput[]
+    connectOrCreate?: FollowRequestCreateOrConnectWithoutSenderInput | FollowRequestCreateOrConnectWithoutSenderInput[]
+    upsert?: FollowRequestUpsertWithWhereUniqueWithoutSenderInput | FollowRequestUpsertWithWhereUniqueWithoutSenderInput[]
+    createMany?: FollowRequestCreateManySenderInputEnvelope
+    set?: FollowRequestWhereUniqueInput | FollowRequestWhereUniqueInput[]
+    disconnect?: FollowRequestWhereUniqueInput | FollowRequestWhereUniqueInput[]
+    delete?: FollowRequestWhereUniqueInput | FollowRequestWhereUniqueInput[]
+    connect?: FollowRequestWhereUniqueInput | FollowRequestWhereUniqueInput[]
+    update?: FollowRequestUpdateWithWhereUniqueWithoutSenderInput | FollowRequestUpdateWithWhereUniqueWithoutSenderInput[]
+    updateMany?: FollowRequestUpdateManyWithWhereWithoutSenderInput | FollowRequestUpdateManyWithWhereWithoutSenderInput[]
+    deleteMany?: FollowRequestScalarWhereInput | FollowRequestScalarWhereInput[]
   }
 
-  export type FollowerRequestUpdateManyWithoutReceiverNestedInput = {
-    create?: XOR<FollowerRequestCreateWithoutReceiverInput, FollowerRequestUncheckedCreateWithoutReceiverInput> | FollowerRequestCreateWithoutReceiverInput[] | FollowerRequestUncheckedCreateWithoutReceiverInput[]
-    connectOrCreate?: FollowerRequestCreateOrConnectWithoutReceiverInput | FollowerRequestCreateOrConnectWithoutReceiverInput[]
-    upsert?: FollowerRequestUpsertWithWhereUniqueWithoutReceiverInput | FollowerRequestUpsertWithWhereUniqueWithoutReceiverInput[]
-    createMany?: FollowerRequestCreateManyReceiverInputEnvelope
-    set?: FollowerRequestWhereUniqueInput | FollowerRequestWhereUniqueInput[]
-    disconnect?: FollowerRequestWhereUniqueInput | FollowerRequestWhereUniqueInput[]
-    delete?: FollowerRequestWhereUniqueInput | FollowerRequestWhereUniqueInput[]
-    connect?: FollowerRequestWhereUniqueInput | FollowerRequestWhereUniqueInput[]
-    update?: FollowerRequestUpdateWithWhereUniqueWithoutReceiverInput | FollowerRequestUpdateWithWhereUniqueWithoutReceiverInput[]
-    updateMany?: FollowerRequestUpdateManyWithWhereWithoutReceiverInput | FollowerRequestUpdateManyWithWhereWithoutReceiverInput[]
-    deleteMany?: FollowerRequestScalarWhereInput | FollowerRequestScalarWhereInput[]
+  export type FollowRequestUpdateManyWithoutReceiverNestedInput = {
+    create?: XOR<FollowRequestCreateWithoutReceiverInput, FollowRequestUncheckedCreateWithoutReceiverInput> | FollowRequestCreateWithoutReceiverInput[] | FollowRequestUncheckedCreateWithoutReceiverInput[]
+    connectOrCreate?: FollowRequestCreateOrConnectWithoutReceiverInput | FollowRequestCreateOrConnectWithoutReceiverInput[]
+    upsert?: FollowRequestUpsertWithWhereUniqueWithoutReceiverInput | FollowRequestUpsertWithWhereUniqueWithoutReceiverInput[]
+    createMany?: FollowRequestCreateManyReceiverInputEnvelope
+    set?: FollowRequestWhereUniqueInput | FollowRequestWhereUniqueInput[]
+    disconnect?: FollowRequestWhereUniqueInput | FollowRequestWhereUniqueInput[]
+    delete?: FollowRequestWhereUniqueInput | FollowRequestWhereUniqueInput[]
+    connect?: FollowRequestWhereUniqueInput | FollowRequestWhereUniqueInput[]
+    update?: FollowRequestUpdateWithWhereUniqueWithoutReceiverInput | FollowRequestUpdateWithWhereUniqueWithoutReceiverInput[]
+    updateMany?: FollowRequestUpdateManyWithWhereWithoutReceiverInput | FollowRequestUpdateManyWithWhereWithoutReceiverInput[]
+    deleteMany?: FollowRequestScalarWhereInput | FollowRequestScalarWhereInput[]
   }
 
-  export type BlockUpdateManyWithoutSenderNestedInput = {
-    create?: XOR<BlockCreateWithoutSenderInput, BlockUncheckedCreateWithoutSenderInput> | BlockCreateWithoutSenderInput[] | BlockUncheckedCreateWithoutSenderInput[]
-    connectOrCreate?: BlockCreateOrConnectWithoutSenderInput | BlockCreateOrConnectWithoutSenderInput[]
-    upsert?: BlockUpsertWithWhereUniqueWithoutSenderInput | BlockUpsertWithWhereUniqueWithoutSenderInput[]
-    createMany?: BlockCreateManySenderInputEnvelope
+  export type BlockUpdateManyWithoutBlockerNestedInput = {
+    create?: XOR<BlockCreateWithoutBlockerInput, BlockUncheckedCreateWithoutBlockerInput> | BlockCreateWithoutBlockerInput[] | BlockUncheckedCreateWithoutBlockerInput[]
+    connectOrCreate?: BlockCreateOrConnectWithoutBlockerInput | BlockCreateOrConnectWithoutBlockerInput[]
+    upsert?: BlockUpsertWithWhereUniqueWithoutBlockerInput | BlockUpsertWithWhereUniqueWithoutBlockerInput[]
+    createMany?: BlockCreateManyBlockerInputEnvelope
     set?: BlockWhereUniqueInput | BlockWhereUniqueInput[]
     disconnect?: BlockWhereUniqueInput | BlockWhereUniqueInput[]
     delete?: BlockWhereUniqueInput | BlockWhereUniqueInput[]
     connect?: BlockWhereUniqueInput | BlockWhereUniqueInput[]
-    update?: BlockUpdateWithWhereUniqueWithoutSenderInput | BlockUpdateWithWhereUniqueWithoutSenderInput[]
-    updateMany?: BlockUpdateManyWithWhereWithoutSenderInput | BlockUpdateManyWithWhereWithoutSenderInput[]
+    update?: BlockUpdateWithWhereUniqueWithoutBlockerInput | BlockUpdateWithWhereUniqueWithoutBlockerInput[]
+    updateMany?: BlockUpdateManyWithWhereWithoutBlockerInput | BlockUpdateManyWithWhereWithoutBlockerInput[]
     deleteMany?: BlockScalarWhereInput | BlockScalarWhereInput[]
   }
 
-  export type BlockUpdateManyWithoutReceiverNestedInput = {
-    create?: XOR<BlockCreateWithoutReceiverInput, BlockUncheckedCreateWithoutReceiverInput> | BlockCreateWithoutReceiverInput[] | BlockUncheckedCreateWithoutReceiverInput[]
-    connectOrCreate?: BlockCreateOrConnectWithoutReceiverInput | BlockCreateOrConnectWithoutReceiverInput[]
-    upsert?: BlockUpsertWithWhereUniqueWithoutReceiverInput | BlockUpsertWithWhereUniqueWithoutReceiverInput[]
-    createMany?: BlockCreateManyReceiverInputEnvelope
+  export type BlockUpdateManyWithoutBlockedNestedInput = {
+    create?: XOR<BlockCreateWithoutBlockedInput, BlockUncheckedCreateWithoutBlockedInput> | BlockCreateWithoutBlockedInput[] | BlockUncheckedCreateWithoutBlockedInput[]
+    connectOrCreate?: BlockCreateOrConnectWithoutBlockedInput | BlockCreateOrConnectWithoutBlockedInput[]
+    upsert?: BlockUpsertWithWhereUniqueWithoutBlockedInput | BlockUpsertWithWhereUniqueWithoutBlockedInput[]
+    createMany?: BlockCreateManyBlockedInputEnvelope
     set?: BlockWhereUniqueInput | BlockWhereUniqueInput[]
     disconnect?: BlockWhereUniqueInput | BlockWhereUniqueInput[]
     delete?: BlockWhereUniqueInput | BlockWhereUniqueInput[]
     connect?: BlockWhereUniqueInput | BlockWhereUniqueInput[]
-    update?: BlockUpdateWithWhereUniqueWithoutReceiverInput | BlockUpdateWithWhereUniqueWithoutReceiverInput[]
-    updateMany?: BlockUpdateManyWithWhereWithoutReceiverInput | BlockUpdateManyWithWhereWithoutReceiverInput[]
+    update?: BlockUpdateWithWhereUniqueWithoutBlockedInput | BlockUpdateWithWhereUniqueWithoutBlockedInput[]
+    updateMany?: BlockUpdateManyWithWhereWithoutBlockedInput | BlockUpdateManyWithWhereWithoutBlockedInput[]
     deleteMany?: BlockScalarWhereInput | BlockScalarWhereInput[]
   }
 
@@ -12990,20 +12990,6 @@ export namespace Prisma {
     deleteMany?: PostScalarWhereInput | PostScalarWhereInput[]
   }
 
-  export type LikeUncheckedUpdateManyWithoutUserNestedInput = {
-    create?: XOR<LikeCreateWithoutUserInput, LikeUncheckedCreateWithoutUserInput> | LikeCreateWithoutUserInput[] | LikeUncheckedCreateWithoutUserInput[]
-    connectOrCreate?: LikeCreateOrConnectWithoutUserInput | LikeCreateOrConnectWithoutUserInput[]
-    upsert?: LikeUpsertWithWhereUniqueWithoutUserInput | LikeUpsertWithWhereUniqueWithoutUserInput[]
-    createMany?: LikeCreateManyUserInputEnvelope
-    set?: LikeWhereUniqueInput | LikeWhereUniqueInput[]
-    disconnect?: LikeWhereUniqueInput | LikeWhereUniqueInput[]
-    delete?: LikeWhereUniqueInput | LikeWhereUniqueInput[]
-    connect?: LikeWhereUniqueInput | LikeWhereUniqueInput[]
-    update?: LikeUpdateWithWhereUniqueWithoutUserInput | LikeUpdateWithWhereUniqueWithoutUserInput[]
-    updateMany?: LikeUpdateManyWithWhereWithoutUserInput | LikeUpdateManyWithWhereWithoutUserInput[]
-    deleteMany?: LikeScalarWhereInput | LikeScalarWhereInput[]
-  }
-
   export type CommentUncheckedUpdateManyWithoutUserNestedInput = {
     create?: XOR<CommentCreateWithoutUserInput, CommentUncheckedCreateWithoutUserInput> | CommentCreateWithoutUserInput[] | CommentUncheckedCreateWithoutUserInput[]
     connectOrCreate?: CommentCreateOrConnectWithoutUserInput | CommentCreateOrConnectWithoutUserInput[]
@@ -13016,6 +13002,20 @@ export namespace Prisma {
     update?: CommentUpdateWithWhereUniqueWithoutUserInput | CommentUpdateWithWhereUniqueWithoutUserInput[]
     updateMany?: CommentUpdateManyWithWhereWithoutUserInput | CommentUpdateManyWithWhereWithoutUserInput[]
     deleteMany?: CommentScalarWhereInput | CommentScalarWhereInput[]
+  }
+
+  export type LikeUncheckedUpdateManyWithoutUserNestedInput = {
+    create?: XOR<LikeCreateWithoutUserInput, LikeUncheckedCreateWithoutUserInput> | LikeCreateWithoutUserInput[] | LikeUncheckedCreateWithoutUserInput[]
+    connectOrCreate?: LikeCreateOrConnectWithoutUserInput | LikeCreateOrConnectWithoutUserInput[]
+    upsert?: LikeUpsertWithWhereUniqueWithoutUserInput | LikeUpsertWithWhereUniqueWithoutUserInput[]
+    createMany?: LikeCreateManyUserInputEnvelope
+    set?: LikeWhereUniqueInput | LikeWhereUniqueInput[]
+    disconnect?: LikeWhereUniqueInput | LikeWhereUniqueInput[]
+    delete?: LikeWhereUniqueInput | LikeWhereUniqueInput[]
+    connect?: LikeWhereUniqueInput | LikeWhereUniqueInput[]
+    update?: LikeUpdateWithWhereUniqueWithoutUserInput | LikeUpdateWithWhereUniqueWithoutUserInput[]
+    updateMany?: LikeUpdateManyWithWhereWithoutUserInput | LikeUpdateManyWithWhereWithoutUserInput[]
+    deleteMany?: LikeScalarWhereInput | LikeScalarWhereInput[]
   }
 
   export type FollowerUncheckedUpdateManyWithoutFollowerNestedInput = {
@@ -13046,59 +13046,59 @@ export namespace Prisma {
     deleteMany?: FollowerScalarWhereInput | FollowerScalarWhereInput[]
   }
 
-  export type FollowerRequestUncheckedUpdateManyWithoutSenderNestedInput = {
-    create?: XOR<FollowerRequestCreateWithoutSenderInput, FollowerRequestUncheckedCreateWithoutSenderInput> | FollowerRequestCreateWithoutSenderInput[] | FollowerRequestUncheckedCreateWithoutSenderInput[]
-    connectOrCreate?: FollowerRequestCreateOrConnectWithoutSenderInput | FollowerRequestCreateOrConnectWithoutSenderInput[]
-    upsert?: FollowerRequestUpsertWithWhereUniqueWithoutSenderInput | FollowerRequestUpsertWithWhereUniqueWithoutSenderInput[]
-    createMany?: FollowerRequestCreateManySenderInputEnvelope
-    set?: FollowerRequestWhereUniqueInput | FollowerRequestWhereUniqueInput[]
-    disconnect?: FollowerRequestWhereUniqueInput | FollowerRequestWhereUniqueInput[]
-    delete?: FollowerRequestWhereUniqueInput | FollowerRequestWhereUniqueInput[]
-    connect?: FollowerRequestWhereUniqueInput | FollowerRequestWhereUniqueInput[]
-    update?: FollowerRequestUpdateWithWhereUniqueWithoutSenderInput | FollowerRequestUpdateWithWhereUniqueWithoutSenderInput[]
-    updateMany?: FollowerRequestUpdateManyWithWhereWithoutSenderInput | FollowerRequestUpdateManyWithWhereWithoutSenderInput[]
-    deleteMany?: FollowerRequestScalarWhereInput | FollowerRequestScalarWhereInput[]
+  export type FollowRequestUncheckedUpdateManyWithoutSenderNestedInput = {
+    create?: XOR<FollowRequestCreateWithoutSenderInput, FollowRequestUncheckedCreateWithoutSenderInput> | FollowRequestCreateWithoutSenderInput[] | FollowRequestUncheckedCreateWithoutSenderInput[]
+    connectOrCreate?: FollowRequestCreateOrConnectWithoutSenderInput | FollowRequestCreateOrConnectWithoutSenderInput[]
+    upsert?: FollowRequestUpsertWithWhereUniqueWithoutSenderInput | FollowRequestUpsertWithWhereUniqueWithoutSenderInput[]
+    createMany?: FollowRequestCreateManySenderInputEnvelope
+    set?: FollowRequestWhereUniqueInput | FollowRequestWhereUniqueInput[]
+    disconnect?: FollowRequestWhereUniqueInput | FollowRequestWhereUniqueInput[]
+    delete?: FollowRequestWhereUniqueInput | FollowRequestWhereUniqueInput[]
+    connect?: FollowRequestWhereUniqueInput | FollowRequestWhereUniqueInput[]
+    update?: FollowRequestUpdateWithWhereUniqueWithoutSenderInput | FollowRequestUpdateWithWhereUniqueWithoutSenderInput[]
+    updateMany?: FollowRequestUpdateManyWithWhereWithoutSenderInput | FollowRequestUpdateManyWithWhereWithoutSenderInput[]
+    deleteMany?: FollowRequestScalarWhereInput | FollowRequestScalarWhereInput[]
   }
 
-  export type FollowerRequestUncheckedUpdateManyWithoutReceiverNestedInput = {
-    create?: XOR<FollowerRequestCreateWithoutReceiverInput, FollowerRequestUncheckedCreateWithoutReceiverInput> | FollowerRequestCreateWithoutReceiverInput[] | FollowerRequestUncheckedCreateWithoutReceiverInput[]
-    connectOrCreate?: FollowerRequestCreateOrConnectWithoutReceiverInput | FollowerRequestCreateOrConnectWithoutReceiverInput[]
-    upsert?: FollowerRequestUpsertWithWhereUniqueWithoutReceiverInput | FollowerRequestUpsertWithWhereUniqueWithoutReceiverInput[]
-    createMany?: FollowerRequestCreateManyReceiverInputEnvelope
-    set?: FollowerRequestWhereUniqueInput | FollowerRequestWhereUniqueInput[]
-    disconnect?: FollowerRequestWhereUniqueInput | FollowerRequestWhereUniqueInput[]
-    delete?: FollowerRequestWhereUniqueInput | FollowerRequestWhereUniqueInput[]
-    connect?: FollowerRequestWhereUniqueInput | FollowerRequestWhereUniqueInput[]
-    update?: FollowerRequestUpdateWithWhereUniqueWithoutReceiverInput | FollowerRequestUpdateWithWhereUniqueWithoutReceiverInput[]
-    updateMany?: FollowerRequestUpdateManyWithWhereWithoutReceiverInput | FollowerRequestUpdateManyWithWhereWithoutReceiverInput[]
-    deleteMany?: FollowerRequestScalarWhereInput | FollowerRequestScalarWhereInput[]
+  export type FollowRequestUncheckedUpdateManyWithoutReceiverNestedInput = {
+    create?: XOR<FollowRequestCreateWithoutReceiverInput, FollowRequestUncheckedCreateWithoutReceiverInput> | FollowRequestCreateWithoutReceiverInput[] | FollowRequestUncheckedCreateWithoutReceiverInput[]
+    connectOrCreate?: FollowRequestCreateOrConnectWithoutReceiverInput | FollowRequestCreateOrConnectWithoutReceiverInput[]
+    upsert?: FollowRequestUpsertWithWhereUniqueWithoutReceiverInput | FollowRequestUpsertWithWhereUniqueWithoutReceiverInput[]
+    createMany?: FollowRequestCreateManyReceiverInputEnvelope
+    set?: FollowRequestWhereUniqueInput | FollowRequestWhereUniqueInput[]
+    disconnect?: FollowRequestWhereUniqueInput | FollowRequestWhereUniqueInput[]
+    delete?: FollowRequestWhereUniqueInput | FollowRequestWhereUniqueInput[]
+    connect?: FollowRequestWhereUniqueInput | FollowRequestWhereUniqueInput[]
+    update?: FollowRequestUpdateWithWhereUniqueWithoutReceiverInput | FollowRequestUpdateWithWhereUniqueWithoutReceiverInput[]
+    updateMany?: FollowRequestUpdateManyWithWhereWithoutReceiverInput | FollowRequestUpdateManyWithWhereWithoutReceiverInput[]
+    deleteMany?: FollowRequestScalarWhereInput | FollowRequestScalarWhereInput[]
   }
 
-  export type BlockUncheckedUpdateManyWithoutSenderNestedInput = {
-    create?: XOR<BlockCreateWithoutSenderInput, BlockUncheckedCreateWithoutSenderInput> | BlockCreateWithoutSenderInput[] | BlockUncheckedCreateWithoutSenderInput[]
-    connectOrCreate?: BlockCreateOrConnectWithoutSenderInput | BlockCreateOrConnectWithoutSenderInput[]
-    upsert?: BlockUpsertWithWhereUniqueWithoutSenderInput | BlockUpsertWithWhereUniqueWithoutSenderInput[]
-    createMany?: BlockCreateManySenderInputEnvelope
+  export type BlockUncheckedUpdateManyWithoutBlockerNestedInput = {
+    create?: XOR<BlockCreateWithoutBlockerInput, BlockUncheckedCreateWithoutBlockerInput> | BlockCreateWithoutBlockerInput[] | BlockUncheckedCreateWithoutBlockerInput[]
+    connectOrCreate?: BlockCreateOrConnectWithoutBlockerInput | BlockCreateOrConnectWithoutBlockerInput[]
+    upsert?: BlockUpsertWithWhereUniqueWithoutBlockerInput | BlockUpsertWithWhereUniqueWithoutBlockerInput[]
+    createMany?: BlockCreateManyBlockerInputEnvelope
     set?: BlockWhereUniqueInput | BlockWhereUniqueInput[]
     disconnect?: BlockWhereUniqueInput | BlockWhereUniqueInput[]
     delete?: BlockWhereUniqueInput | BlockWhereUniqueInput[]
     connect?: BlockWhereUniqueInput | BlockWhereUniqueInput[]
-    update?: BlockUpdateWithWhereUniqueWithoutSenderInput | BlockUpdateWithWhereUniqueWithoutSenderInput[]
-    updateMany?: BlockUpdateManyWithWhereWithoutSenderInput | BlockUpdateManyWithWhereWithoutSenderInput[]
+    update?: BlockUpdateWithWhereUniqueWithoutBlockerInput | BlockUpdateWithWhereUniqueWithoutBlockerInput[]
+    updateMany?: BlockUpdateManyWithWhereWithoutBlockerInput | BlockUpdateManyWithWhereWithoutBlockerInput[]
     deleteMany?: BlockScalarWhereInput | BlockScalarWhereInput[]
   }
 
-  export type BlockUncheckedUpdateManyWithoutReceiverNestedInput = {
-    create?: XOR<BlockCreateWithoutReceiverInput, BlockUncheckedCreateWithoutReceiverInput> | BlockCreateWithoutReceiverInput[] | BlockUncheckedCreateWithoutReceiverInput[]
-    connectOrCreate?: BlockCreateOrConnectWithoutReceiverInput | BlockCreateOrConnectWithoutReceiverInput[]
-    upsert?: BlockUpsertWithWhereUniqueWithoutReceiverInput | BlockUpsertWithWhereUniqueWithoutReceiverInput[]
-    createMany?: BlockCreateManyReceiverInputEnvelope
+  export type BlockUncheckedUpdateManyWithoutBlockedNestedInput = {
+    create?: XOR<BlockCreateWithoutBlockedInput, BlockUncheckedCreateWithoutBlockedInput> | BlockCreateWithoutBlockedInput[] | BlockUncheckedCreateWithoutBlockedInput[]
+    connectOrCreate?: BlockCreateOrConnectWithoutBlockedInput | BlockCreateOrConnectWithoutBlockedInput[]
+    upsert?: BlockUpsertWithWhereUniqueWithoutBlockedInput | BlockUpsertWithWhereUniqueWithoutBlockedInput[]
+    createMany?: BlockCreateManyBlockedInputEnvelope
     set?: BlockWhereUniqueInput | BlockWhereUniqueInput[]
     disconnect?: BlockWhereUniqueInput | BlockWhereUniqueInput[]
     delete?: BlockWhereUniqueInput | BlockWhereUniqueInput[]
     connect?: BlockWhereUniqueInput | BlockWhereUniqueInput[]
-    update?: BlockUpdateWithWhereUniqueWithoutReceiverInput | BlockUpdateWithWhereUniqueWithoutReceiverInput[]
-    updateMany?: BlockUpdateManyWithWhereWithoutReceiverInput | BlockUpdateManyWithWhereWithoutReceiverInput[]
+    update?: BlockUpdateWithWhereUniqueWithoutBlockedInput | BlockUpdateWithWhereUniqueWithoutBlockedInput[]
+    updateMany?: BlockUpdateManyWithWhereWithoutBlockedInput | BlockUpdateManyWithWhereWithoutBlockedInput[]
     deleteMany?: BlockScalarWhereInput | BlockScalarWhereInput[]
   }
 
@@ -13122,13 +13122,6 @@ export namespace Prisma {
     connect?: UserWhereUniqueInput
   }
 
-  export type LikeCreateNestedManyWithoutPostInput = {
-    create?: XOR<LikeCreateWithoutPostInput, LikeUncheckedCreateWithoutPostInput> | LikeCreateWithoutPostInput[] | LikeUncheckedCreateWithoutPostInput[]
-    connectOrCreate?: LikeCreateOrConnectWithoutPostInput | LikeCreateOrConnectWithoutPostInput[]
-    createMany?: LikeCreateManyPostInputEnvelope
-    connect?: LikeWhereUniqueInput | LikeWhereUniqueInput[]
-  }
-
   export type CommentCreateNestedManyWithoutPostInput = {
     create?: XOR<CommentCreateWithoutPostInput, CommentUncheckedCreateWithoutPostInput> | CommentCreateWithoutPostInput[] | CommentUncheckedCreateWithoutPostInput[]
     connectOrCreate?: CommentCreateOrConnectWithoutPostInput | CommentCreateOrConnectWithoutPostInput[]
@@ -13136,7 +13129,7 @@ export namespace Prisma {
     connect?: CommentWhereUniqueInput | CommentWhereUniqueInput[]
   }
 
-  export type LikeUncheckedCreateNestedManyWithoutPostInput = {
+  export type LikeCreateNestedManyWithoutPostInput = {
     create?: XOR<LikeCreateWithoutPostInput, LikeUncheckedCreateWithoutPostInput> | LikeCreateWithoutPostInput[] | LikeUncheckedCreateWithoutPostInput[]
     connectOrCreate?: LikeCreateOrConnectWithoutPostInput | LikeCreateOrConnectWithoutPostInput[]
     createMany?: LikeCreateManyPostInputEnvelope
@@ -13150,26 +13143,19 @@ export namespace Prisma {
     connect?: CommentWhereUniqueInput | CommentWhereUniqueInput[]
   }
 
+  export type LikeUncheckedCreateNestedManyWithoutPostInput = {
+    create?: XOR<LikeCreateWithoutPostInput, LikeUncheckedCreateWithoutPostInput> | LikeCreateWithoutPostInput[] | LikeUncheckedCreateWithoutPostInput[]
+    connectOrCreate?: LikeCreateOrConnectWithoutPostInput | LikeCreateOrConnectWithoutPostInput[]
+    createMany?: LikeCreateManyPostInputEnvelope
+    connect?: LikeWhereUniqueInput | LikeWhereUniqueInput[]
+  }
+
   export type UserUpdateOneRequiredWithoutPostsNestedInput = {
     create?: XOR<UserCreateWithoutPostsInput, UserUncheckedCreateWithoutPostsInput>
     connectOrCreate?: UserCreateOrConnectWithoutPostsInput
     upsert?: UserUpsertWithoutPostsInput
     connect?: UserWhereUniqueInput
     update?: XOR<XOR<UserUpdateToOneWithWhereWithoutPostsInput, UserUpdateWithoutPostsInput>, UserUncheckedUpdateWithoutPostsInput>
-  }
-
-  export type LikeUpdateManyWithoutPostNestedInput = {
-    create?: XOR<LikeCreateWithoutPostInput, LikeUncheckedCreateWithoutPostInput> | LikeCreateWithoutPostInput[] | LikeUncheckedCreateWithoutPostInput[]
-    connectOrCreate?: LikeCreateOrConnectWithoutPostInput | LikeCreateOrConnectWithoutPostInput[]
-    upsert?: LikeUpsertWithWhereUniqueWithoutPostInput | LikeUpsertWithWhereUniqueWithoutPostInput[]
-    createMany?: LikeCreateManyPostInputEnvelope
-    set?: LikeWhereUniqueInput | LikeWhereUniqueInput[]
-    disconnect?: LikeWhereUniqueInput | LikeWhereUniqueInput[]
-    delete?: LikeWhereUniqueInput | LikeWhereUniqueInput[]
-    connect?: LikeWhereUniqueInput | LikeWhereUniqueInput[]
-    update?: LikeUpdateWithWhereUniqueWithoutPostInput | LikeUpdateWithWhereUniqueWithoutPostInput[]
-    updateMany?: LikeUpdateManyWithWhereWithoutPostInput | LikeUpdateManyWithWhereWithoutPostInput[]
-    deleteMany?: LikeScalarWhereInput | LikeScalarWhereInput[]
   }
 
   export type CommentUpdateManyWithoutPostNestedInput = {
@@ -13186,15 +13172,7 @@ export namespace Prisma {
     deleteMany?: CommentScalarWhereInput | CommentScalarWhereInput[]
   }
 
-  export type IntFieldUpdateOperationsInput = {
-    set?: number
-    increment?: number
-    decrement?: number
-    multiply?: number
-    divide?: number
-  }
-
-  export type LikeUncheckedUpdateManyWithoutPostNestedInput = {
+  export type LikeUpdateManyWithoutPostNestedInput = {
     create?: XOR<LikeCreateWithoutPostInput, LikeUncheckedCreateWithoutPostInput> | LikeCreateWithoutPostInput[] | LikeUncheckedCreateWithoutPostInput[]
     connectOrCreate?: LikeCreateOrConnectWithoutPostInput | LikeCreateOrConnectWithoutPostInput[]
     upsert?: LikeUpsertWithWhereUniqueWithoutPostInput | LikeUpsertWithWhereUniqueWithoutPostInput[]
@@ -13206,6 +13184,14 @@ export namespace Prisma {
     update?: LikeUpdateWithWhereUniqueWithoutPostInput | LikeUpdateWithWhereUniqueWithoutPostInput[]
     updateMany?: LikeUpdateManyWithWhereWithoutPostInput | LikeUpdateManyWithWhereWithoutPostInput[]
     deleteMany?: LikeScalarWhereInput | LikeScalarWhereInput[]
+  }
+
+  export type IntFieldUpdateOperationsInput = {
+    set?: number
+    increment?: number
+    decrement?: number
+    multiply?: number
+    divide?: number
   }
 
   export type CommentUncheckedUpdateManyWithoutPostNestedInput = {
@@ -13222,15 +13208,29 @@ export namespace Prisma {
     deleteMany?: CommentScalarWhereInput | CommentScalarWhereInput[]
   }
 
+  export type LikeUncheckedUpdateManyWithoutPostNestedInput = {
+    create?: XOR<LikeCreateWithoutPostInput, LikeUncheckedCreateWithoutPostInput> | LikeCreateWithoutPostInput[] | LikeUncheckedCreateWithoutPostInput[]
+    connectOrCreate?: LikeCreateOrConnectWithoutPostInput | LikeCreateOrConnectWithoutPostInput[]
+    upsert?: LikeUpsertWithWhereUniqueWithoutPostInput | LikeUpsertWithWhereUniqueWithoutPostInput[]
+    createMany?: LikeCreateManyPostInputEnvelope
+    set?: LikeWhereUniqueInput | LikeWhereUniqueInput[]
+    disconnect?: LikeWhereUniqueInput | LikeWhereUniqueInput[]
+    delete?: LikeWhereUniqueInput | LikeWhereUniqueInput[]
+    connect?: LikeWhereUniqueInput | LikeWhereUniqueInput[]
+    update?: LikeUpdateWithWhereUniqueWithoutPostInput | LikeUpdateWithWhereUniqueWithoutPostInput[]
+    updateMany?: LikeUpdateManyWithWhereWithoutPostInput | LikeUpdateManyWithWhereWithoutPostInput[]
+    deleteMany?: LikeScalarWhereInput | LikeScalarWhereInput[]
+  }
+
   export type UserCreateNestedOneWithoutCommentsInput = {
     create?: XOR<UserCreateWithoutCommentsInput, UserUncheckedCreateWithoutCommentsInput>
     connectOrCreate?: UserCreateOrConnectWithoutCommentsInput
     connect?: UserWhereUniqueInput
   }
 
-  export type PostCreateNestedOneWithoutCommentInput = {
-    create?: XOR<PostCreateWithoutCommentInput, PostUncheckedCreateWithoutCommentInput>
-    connectOrCreate?: PostCreateOrConnectWithoutCommentInput
+  export type PostCreateNestedOneWithoutCommentsInput = {
+    create?: XOR<PostCreateWithoutCommentsInput, PostUncheckedCreateWithoutCommentsInput>
+    connectOrCreate?: PostCreateOrConnectWithoutCommentsInput
     connect?: PostWhereUniqueInput
   }
 
@@ -13256,12 +13256,12 @@ export namespace Prisma {
     update?: XOR<XOR<UserUpdateToOneWithWhereWithoutCommentsInput, UserUpdateWithoutCommentsInput>, UserUncheckedUpdateWithoutCommentsInput>
   }
 
-  export type PostUpdateOneRequiredWithoutCommentNestedInput = {
-    create?: XOR<PostCreateWithoutCommentInput, PostUncheckedCreateWithoutCommentInput>
-    connectOrCreate?: PostCreateOrConnectWithoutCommentInput
-    upsert?: PostUpsertWithoutCommentInput
+  export type PostUpdateOneRequiredWithoutCommentsNestedInput = {
+    create?: XOR<PostCreateWithoutCommentsInput, PostUncheckedCreateWithoutCommentsInput>
+    connectOrCreate?: PostCreateOrConnectWithoutCommentsInput
+    upsert?: PostUpsertWithoutCommentsInput
     connect?: PostWhereUniqueInput
-    update?: XOR<XOR<PostUpdateToOneWithWhereWithoutCommentInput, PostUpdateWithoutCommentInput>, PostUncheckedUpdateWithoutCommentInput>
+    update?: XOR<XOR<PostUpdateToOneWithWhereWithoutCommentsInput, PostUpdateWithoutCommentsInput>, PostUncheckedUpdateWithoutCommentsInput>
   }
 
   export type LikeUpdateManyWithoutCommentNestedInput = {
@@ -13352,9 +13352,9 @@ export namespace Prisma {
     connect?: UserWhereUniqueInput
   }
 
-  export type UserCreateNestedOneWithoutFollowingInput = {
-    create?: XOR<UserCreateWithoutFollowingInput, UserUncheckedCreateWithoutFollowingInput>
-    connectOrCreate?: UserCreateOrConnectWithoutFollowingInput
+  export type UserCreateNestedOneWithoutFollowingsInput = {
+    create?: XOR<UserCreateWithoutFollowingsInput, UserUncheckedCreateWithoutFollowingsInput>
+    connectOrCreate?: UserCreateOrConnectWithoutFollowingsInput
     connect?: UserWhereUniqueInput
   }
 
@@ -13366,40 +13366,40 @@ export namespace Prisma {
     update?: XOR<XOR<UserUpdateToOneWithWhereWithoutFollowersInput, UserUpdateWithoutFollowersInput>, UserUncheckedUpdateWithoutFollowersInput>
   }
 
-  export type UserUpdateOneRequiredWithoutFollowingNestedInput = {
-    create?: XOR<UserCreateWithoutFollowingInput, UserUncheckedCreateWithoutFollowingInput>
-    connectOrCreate?: UserCreateOrConnectWithoutFollowingInput
-    upsert?: UserUpsertWithoutFollowingInput
+  export type UserUpdateOneRequiredWithoutFollowingsNestedInput = {
+    create?: XOR<UserCreateWithoutFollowingsInput, UserUncheckedCreateWithoutFollowingsInput>
+    connectOrCreate?: UserCreateOrConnectWithoutFollowingsInput
+    upsert?: UserUpsertWithoutFollowingsInput
     connect?: UserWhereUniqueInput
-    update?: XOR<XOR<UserUpdateToOneWithWhereWithoutFollowingInput, UserUpdateWithoutFollowingInput>, UserUncheckedUpdateWithoutFollowingInput>
+    update?: XOR<XOR<UserUpdateToOneWithWhereWithoutFollowingsInput, UserUpdateWithoutFollowingsInput>, UserUncheckedUpdateWithoutFollowingsInput>
   }
 
-  export type UserCreateNestedOneWithoutFollowRequestSentInput = {
-    create?: XOR<UserCreateWithoutFollowRequestSentInput, UserUncheckedCreateWithoutFollowRequestSentInput>
-    connectOrCreate?: UserCreateOrConnectWithoutFollowRequestSentInput
-    connect?: UserWhereUniqueInput
-  }
-
-  export type UserCreateNestedOneWithoutFollowRequestReceivedInput = {
-    create?: XOR<UserCreateWithoutFollowRequestReceivedInput, UserUncheckedCreateWithoutFollowRequestReceivedInput>
-    connectOrCreate?: UserCreateOrConnectWithoutFollowRequestReceivedInput
+  export type UserCreateNestedOneWithoutFollowRequestsSentInput = {
+    create?: XOR<UserCreateWithoutFollowRequestsSentInput, UserUncheckedCreateWithoutFollowRequestsSentInput>
+    connectOrCreate?: UserCreateOrConnectWithoutFollowRequestsSentInput
     connect?: UserWhereUniqueInput
   }
 
-  export type UserUpdateOneRequiredWithoutFollowRequestSentNestedInput = {
-    create?: XOR<UserCreateWithoutFollowRequestSentInput, UserUncheckedCreateWithoutFollowRequestSentInput>
-    connectOrCreate?: UserCreateOrConnectWithoutFollowRequestSentInput
-    upsert?: UserUpsertWithoutFollowRequestSentInput
+  export type UserCreateNestedOneWithoutFollowRequestsReceivedInput = {
+    create?: XOR<UserCreateWithoutFollowRequestsReceivedInput, UserUncheckedCreateWithoutFollowRequestsReceivedInput>
+    connectOrCreate?: UserCreateOrConnectWithoutFollowRequestsReceivedInput
     connect?: UserWhereUniqueInput
-    update?: XOR<XOR<UserUpdateToOneWithWhereWithoutFollowRequestSentInput, UserUpdateWithoutFollowRequestSentInput>, UserUncheckedUpdateWithoutFollowRequestSentInput>
   }
 
-  export type UserUpdateOneRequiredWithoutFollowRequestReceivedNestedInput = {
-    create?: XOR<UserCreateWithoutFollowRequestReceivedInput, UserUncheckedCreateWithoutFollowRequestReceivedInput>
-    connectOrCreate?: UserCreateOrConnectWithoutFollowRequestReceivedInput
-    upsert?: UserUpsertWithoutFollowRequestReceivedInput
+  export type UserUpdateOneRequiredWithoutFollowRequestsSentNestedInput = {
+    create?: XOR<UserCreateWithoutFollowRequestsSentInput, UserUncheckedCreateWithoutFollowRequestsSentInput>
+    connectOrCreate?: UserCreateOrConnectWithoutFollowRequestsSentInput
+    upsert?: UserUpsertWithoutFollowRequestsSentInput
     connect?: UserWhereUniqueInput
-    update?: XOR<XOR<UserUpdateToOneWithWhereWithoutFollowRequestReceivedInput, UserUpdateWithoutFollowRequestReceivedInput>, UserUncheckedUpdateWithoutFollowRequestReceivedInput>
+    update?: XOR<XOR<UserUpdateToOneWithWhereWithoutFollowRequestsSentInput, UserUpdateWithoutFollowRequestsSentInput>, UserUncheckedUpdateWithoutFollowRequestsSentInput>
+  }
+
+  export type UserUpdateOneRequiredWithoutFollowRequestsReceivedNestedInput = {
+    create?: XOR<UserCreateWithoutFollowRequestsReceivedInput, UserUncheckedCreateWithoutFollowRequestsReceivedInput>
+    connectOrCreate?: UserCreateOrConnectWithoutFollowRequestsReceivedInput
+    upsert?: UserUpsertWithoutFollowRequestsReceivedInput
+    connect?: UserWhereUniqueInput
+    update?: XOR<XOR<UserUpdateToOneWithWhereWithoutFollowRequestsReceivedInput, UserUpdateWithoutFollowRequestsReceivedInput>, UserUncheckedUpdateWithoutFollowRequestsReceivedInput>
   }
 
   export type UserCreateNestedOneWithoutBlocksInput = {
@@ -13612,8 +13612,8 @@ export namespace Prisma {
     img?: string | null
     createdAt?: Date | string
     updatedAt?: Date | string
+    comments?: CommentCreateNestedManyWithoutPostInput
     likes?: LikeCreateNestedManyWithoutPostInput
-    Comment?: CommentCreateNestedManyWithoutPostInput
   }
 
   export type PostUncheckedCreateWithoutUserInput = {
@@ -13622,8 +13622,8 @@ export namespace Prisma {
     img?: string | null
     createdAt?: Date | string
     updatedAt?: Date | string
+    comments?: CommentUncheckedCreateNestedManyWithoutPostInput
     likes?: LikeUncheckedCreateNestedManyWithoutPostInput
-    Comment?: CommentUncheckedCreateNestedManyWithoutPostInput
   }
 
   export type PostCreateOrConnectWithoutUserInput = {
@@ -13633,6 +13633,33 @@ export namespace Prisma {
 
   export type PostCreateManyUserInputEnvelope = {
     data: PostCreateManyUserInput | PostCreateManyUserInput[]
+    skipDuplicates?: boolean
+  }
+
+  export type CommentCreateWithoutUserInput = {
+    desc: string
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    post: PostCreateNestedOneWithoutCommentsInput
+    likes?: LikeCreateNestedManyWithoutCommentInput
+  }
+
+  export type CommentUncheckedCreateWithoutUserInput = {
+    id?: number
+    desc: string
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    postId: number
+    likes?: LikeUncheckedCreateNestedManyWithoutCommentInput
+  }
+
+  export type CommentCreateOrConnectWithoutUserInput = {
+    where: CommentWhereUniqueInput
+    create: XOR<CommentCreateWithoutUserInput, CommentUncheckedCreateWithoutUserInput>
+  }
+
+  export type CommentCreateManyUserInputEnvelope = {
+    data: CommentCreateManyUserInput | CommentCreateManyUserInput[]
     skipDuplicates?: boolean
   }
 
@@ -13659,41 +13686,14 @@ export namespace Prisma {
     skipDuplicates?: boolean
   }
 
-  export type CommentCreateWithoutUserInput = {
-    desc: string
-    createdAt?: Date | string
-    updatedAt?: Date | string
-    post: PostCreateNestedOneWithoutCommentInput
-    likes?: LikeCreateNestedManyWithoutCommentInput
-  }
-
-  export type CommentUncheckedCreateWithoutUserInput = {
-    id?: number
-    desc: string
-    createdAt?: Date | string
-    updatedAt?: Date | string
-    postId: number
-    likes?: LikeUncheckedCreateNestedManyWithoutCommentInput
-  }
-
-  export type CommentCreateOrConnectWithoutUserInput = {
-    where: CommentWhereUniqueInput
-    create: XOR<CommentCreateWithoutUserInput, CommentUncheckedCreateWithoutUserInput>
-  }
-
-  export type CommentCreateManyUserInputEnvelope = {
-    data: CommentCreateManyUserInput | CommentCreateManyUserInput[]
-    skipDuplicates?: boolean
-  }
-
   export type FollowerCreateWithoutFollowerInput = {
-    createAt?: Date | string
-    following: UserCreateNestedOneWithoutFollowingInput
+    createdAt?: Date | string
+    following: UserCreateNestedOneWithoutFollowingsInput
   }
 
   export type FollowerUncheckedCreateWithoutFollowerInput = {
     id?: number
-    createAt?: Date | string
+    createdAt?: Date | string
     followingId: string
   }
 
@@ -13708,13 +13708,13 @@ export namespace Prisma {
   }
 
   export type FollowerCreateWithoutFollowingInput = {
-    createAt?: Date | string
+    createdAt?: Date | string
     follower: UserCreateNestedOneWithoutFollowersInput
   }
 
   export type FollowerUncheckedCreateWithoutFollowingInput = {
     id?: number
-    createAt?: Date | string
+    createdAt?: Date | string
     followerId: string
   }
 
@@ -13728,101 +13728,101 @@ export namespace Prisma {
     skipDuplicates?: boolean
   }
 
-  export type FollowerRequestCreateWithoutSenderInput = {
-    createAt?: Date | string
-    receiver: UserCreateNestedOneWithoutFollowRequestReceivedInput
+  export type FollowRequestCreateWithoutSenderInput = {
+    createdAt?: Date | string
+    receiver: UserCreateNestedOneWithoutFollowRequestsReceivedInput
   }
 
-  export type FollowerRequestUncheckedCreateWithoutSenderInput = {
+  export type FollowRequestUncheckedCreateWithoutSenderInput = {
     id?: number
-    createAt?: Date | string
+    createdAt?: Date | string
     receiverId: string
   }
 
-  export type FollowerRequestCreateOrConnectWithoutSenderInput = {
-    where: FollowerRequestWhereUniqueInput
-    create: XOR<FollowerRequestCreateWithoutSenderInput, FollowerRequestUncheckedCreateWithoutSenderInput>
+  export type FollowRequestCreateOrConnectWithoutSenderInput = {
+    where: FollowRequestWhereUniqueInput
+    create: XOR<FollowRequestCreateWithoutSenderInput, FollowRequestUncheckedCreateWithoutSenderInput>
   }
 
-  export type FollowerRequestCreateManySenderInputEnvelope = {
-    data: FollowerRequestCreateManySenderInput | FollowerRequestCreateManySenderInput[]
+  export type FollowRequestCreateManySenderInputEnvelope = {
+    data: FollowRequestCreateManySenderInput | FollowRequestCreateManySenderInput[]
     skipDuplicates?: boolean
   }
 
-  export type FollowerRequestCreateWithoutReceiverInput = {
-    createAt?: Date | string
-    sender: UserCreateNestedOneWithoutFollowRequestSentInput
+  export type FollowRequestCreateWithoutReceiverInput = {
+    createdAt?: Date | string
+    sender: UserCreateNestedOneWithoutFollowRequestsSentInput
   }
 
-  export type FollowerRequestUncheckedCreateWithoutReceiverInput = {
+  export type FollowRequestUncheckedCreateWithoutReceiverInput = {
     id?: number
-    createAt?: Date | string
+    createdAt?: Date | string
     senderId: string
   }
 
-  export type FollowerRequestCreateOrConnectWithoutReceiverInput = {
-    where: FollowerRequestWhereUniqueInput
-    create: XOR<FollowerRequestCreateWithoutReceiverInput, FollowerRequestUncheckedCreateWithoutReceiverInput>
+  export type FollowRequestCreateOrConnectWithoutReceiverInput = {
+    where: FollowRequestWhereUniqueInput
+    create: XOR<FollowRequestCreateWithoutReceiverInput, FollowRequestUncheckedCreateWithoutReceiverInput>
   }
 
-  export type FollowerRequestCreateManyReceiverInputEnvelope = {
-    data: FollowerRequestCreateManyReceiverInput | FollowerRequestCreateManyReceiverInput[]
+  export type FollowRequestCreateManyReceiverInputEnvelope = {
+    data: FollowRequestCreateManyReceiverInput | FollowRequestCreateManyReceiverInput[]
     skipDuplicates?: boolean
   }
 
-  export type BlockCreateWithoutSenderInput = {
-    createAt?: Date | string
-    receiver: UserCreateNestedOneWithoutBlockedByInput
+  export type BlockCreateWithoutBlockerInput = {
+    createdAt?: Date | string
+    blocked: UserCreateNestedOneWithoutBlockedByInput
   }
 
-  export type BlockUncheckedCreateWithoutSenderInput = {
+  export type BlockUncheckedCreateWithoutBlockerInput = {
     id?: number
-    createAt?: Date | string
+    createdAt?: Date | string
     blockedId: string
   }
 
-  export type BlockCreateOrConnectWithoutSenderInput = {
+  export type BlockCreateOrConnectWithoutBlockerInput = {
     where: BlockWhereUniqueInput
-    create: XOR<BlockCreateWithoutSenderInput, BlockUncheckedCreateWithoutSenderInput>
+    create: XOR<BlockCreateWithoutBlockerInput, BlockUncheckedCreateWithoutBlockerInput>
   }
 
-  export type BlockCreateManySenderInputEnvelope = {
-    data: BlockCreateManySenderInput | BlockCreateManySenderInput[]
+  export type BlockCreateManyBlockerInputEnvelope = {
+    data: BlockCreateManyBlockerInput | BlockCreateManyBlockerInput[]
     skipDuplicates?: boolean
   }
 
-  export type BlockCreateWithoutReceiverInput = {
-    createAt?: Date | string
-    sender: UserCreateNestedOneWithoutBlocksInput
+  export type BlockCreateWithoutBlockedInput = {
+    createdAt?: Date | string
+    blocker: UserCreateNestedOneWithoutBlocksInput
   }
 
-  export type BlockUncheckedCreateWithoutReceiverInput = {
+  export type BlockUncheckedCreateWithoutBlockedInput = {
     id?: number
-    createAt?: Date | string
+    createdAt?: Date | string
     blockerId: string
   }
 
-  export type BlockCreateOrConnectWithoutReceiverInput = {
+  export type BlockCreateOrConnectWithoutBlockedInput = {
     where: BlockWhereUniqueInput
-    create: XOR<BlockCreateWithoutReceiverInput, BlockUncheckedCreateWithoutReceiverInput>
+    create: XOR<BlockCreateWithoutBlockedInput, BlockUncheckedCreateWithoutBlockedInput>
   }
 
-  export type BlockCreateManyReceiverInputEnvelope = {
-    data: BlockCreateManyReceiverInput | BlockCreateManyReceiverInput[]
+  export type BlockCreateManyBlockedInputEnvelope = {
+    data: BlockCreateManyBlockedInput | BlockCreateManyBlockedInput[]
     skipDuplicates?: boolean
   }
 
   export type StoryCreateWithoutUserInput = {
-    createAt?: Date | string
+    createdAt?: Date | string
     expiresAt: Date | string
-    img?: string | null
+    img: string
   }
 
   export type StoryUncheckedCreateWithoutUserInput = {
     id?: number
-    createAt?: Date | string
+    createdAt?: Date | string
     expiresAt: Date | string
-    img?: string | null
+    img: string
   }
 
   export type StoryCreateOrConnectWithoutUserInput = {
@@ -13863,33 +13863,6 @@ export namespace Prisma {
     userId?: StringFilter<"Post"> | string
   }
 
-  export type LikeUpsertWithWhereUniqueWithoutUserInput = {
-    where: LikeWhereUniqueInput
-    update: XOR<LikeUpdateWithoutUserInput, LikeUncheckedUpdateWithoutUserInput>
-    create: XOR<LikeCreateWithoutUserInput, LikeUncheckedCreateWithoutUserInput>
-  }
-
-  export type LikeUpdateWithWhereUniqueWithoutUserInput = {
-    where: LikeWhereUniqueInput
-    data: XOR<LikeUpdateWithoutUserInput, LikeUncheckedUpdateWithoutUserInput>
-  }
-
-  export type LikeUpdateManyWithWhereWithoutUserInput = {
-    where: LikeScalarWhereInput
-    data: XOR<LikeUpdateManyMutationInput, LikeUncheckedUpdateManyWithoutUserInput>
-  }
-
-  export type LikeScalarWhereInput = {
-    AND?: LikeScalarWhereInput | LikeScalarWhereInput[]
-    OR?: LikeScalarWhereInput[]
-    NOT?: LikeScalarWhereInput | LikeScalarWhereInput[]
-    id?: IntFilter<"Like"> | number
-    createdAt?: DateTimeFilter<"Like"> | Date | string
-    userId?: StringFilter<"Like"> | string
-    postId?: IntNullableFilter<"Like"> | number | null
-    commentId?: IntNullableFilter<"Like"> | number | null
-  }
-
   export type CommentUpsertWithWhereUniqueWithoutUserInput = {
     where: CommentWhereUniqueInput
     update: XOR<CommentUpdateWithoutUserInput, CommentUncheckedUpdateWithoutUserInput>
@@ -13918,6 +13891,33 @@ export namespace Prisma {
     postId?: IntFilter<"Comment"> | number
   }
 
+  export type LikeUpsertWithWhereUniqueWithoutUserInput = {
+    where: LikeWhereUniqueInput
+    update: XOR<LikeUpdateWithoutUserInput, LikeUncheckedUpdateWithoutUserInput>
+    create: XOR<LikeCreateWithoutUserInput, LikeUncheckedCreateWithoutUserInput>
+  }
+
+  export type LikeUpdateWithWhereUniqueWithoutUserInput = {
+    where: LikeWhereUniqueInput
+    data: XOR<LikeUpdateWithoutUserInput, LikeUncheckedUpdateWithoutUserInput>
+  }
+
+  export type LikeUpdateManyWithWhereWithoutUserInput = {
+    where: LikeScalarWhereInput
+    data: XOR<LikeUpdateManyMutationInput, LikeUncheckedUpdateManyWithoutUserInput>
+  }
+
+  export type LikeScalarWhereInput = {
+    AND?: LikeScalarWhereInput | LikeScalarWhereInput[]
+    OR?: LikeScalarWhereInput[]
+    NOT?: LikeScalarWhereInput | LikeScalarWhereInput[]
+    id?: IntFilter<"Like"> | number
+    createdAt?: DateTimeFilter<"Like"> | Date | string
+    userId?: StringFilter<"Like"> | string
+    postId?: IntNullableFilter<"Like"> | number | null
+    commentId?: IntNullableFilter<"Like"> | number | null
+  }
+
   export type FollowerUpsertWithWhereUniqueWithoutFollowerInput = {
     where: FollowerWhereUniqueInput
     update: XOR<FollowerUpdateWithoutFollowerInput, FollowerUncheckedUpdateWithoutFollowerInput>
@@ -13939,7 +13939,7 @@ export namespace Prisma {
     OR?: FollowerScalarWhereInput[]
     NOT?: FollowerScalarWhereInput | FollowerScalarWhereInput[]
     id?: IntFilter<"Follower"> | number
-    createAt?: DateTimeFilter<"Follower"> | Date | string
+    createdAt?: DateTimeFilter<"Follower"> | Date | string
     followerId?: StringFilter<"Follower"> | string
     followingId?: StringFilter<"Follower"> | string
   }
@@ -13960,62 +13960,62 @@ export namespace Prisma {
     data: XOR<FollowerUpdateManyMutationInput, FollowerUncheckedUpdateManyWithoutFollowingInput>
   }
 
-  export type FollowerRequestUpsertWithWhereUniqueWithoutSenderInput = {
-    where: FollowerRequestWhereUniqueInput
-    update: XOR<FollowerRequestUpdateWithoutSenderInput, FollowerRequestUncheckedUpdateWithoutSenderInput>
-    create: XOR<FollowerRequestCreateWithoutSenderInput, FollowerRequestUncheckedCreateWithoutSenderInput>
+  export type FollowRequestUpsertWithWhereUniqueWithoutSenderInput = {
+    where: FollowRequestWhereUniqueInput
+    update: XOR<FollowRequestUpdateWithoutSenderInput, FollowRequestUncheckedUpdateWithoutSenderInput>
+    create: XOR<FollowRequestCreateWithoutSenderInput, FollowRequestUncheckedCreateWithoutSenderInput>
   }
 
-  export type FollowerRequestUpdateWithWhereUniqueWithoutSenderInput = {
-    where: FollowerRequestWhereUniqueInput
-    data: XOR<FollowerRequestUpdateWithoutSenderInput, FollowerRequestUncheckedUpdateWithoutSenderInput>
+  export type FollowRequestUpdateWithWhereUniqueWithoutSenderInput = {
+    where: FollowRequestWhereUniqueInput
+    data: XOR<FollowRequestUpdateWithoutSenderInput, FollowRequestUncheckedUpdateWithoutSenderInput>
   }
 
-  export type FollowerRequestUpdateManyWithWhereWithoutSenderInput = {
-    where: FollowerRequestScalarWhereInput
-    data: XOR<FollowerRequestUpdateManyMutationInput, FollowerRequestUncheckedUpdateManyWithoutSenderInput>
+  export type FollowRequestUpdateManyWithWhereWithoutSenderInput = {
+    where: FollowRequestScalarWhereInput
+    data: XOR<FollowRequestUpdateManyMutationInput, FollowRequestUncheckedUpdateManyWithoutSenderInput>
   }
 
-  export type FollowerRequestScalarWhereInput = {
-    AND?: FollowerRequestScalarWhereInput | FollowerRequestScalarWhereInput[]
-    OR?: FollowerRequestScalarWhereInput[]
-    NOT?: FollowerRequestScalarWhereInput | FollowerRequestScalarWhereInput[]
-    id?: IntFilter<"FollowerRequest"> | number
-    createAt?: DateTimeFilter<"FollowerRequest"> | Date | string
-    senderId?: StringFilter<"FollowerRequest"> | string
-    receiverId?: StringFilter<"FollowerRequest"> | string
+  export type FollowRequestScalarWhereInput = {
+    AND?: FollowRequestScalarWhereInput | FollowRequestScalarWhereInput[]
+    OR?: FollowRequestScalarWhereInput[]
+    NOT?: FollowRequestScalarWhereInput | FollowRequestScalarWhereInput[]
+    id?: IntFilter<"FollowRequest"> | number
+    createdAt?: DateTimeFilter<"FollowRequest"> | Date | string
+    senderId?: StringFilter<"FollowRequest"> | string
+    receiverId?: StringFilter<"FollowRequest"> | string
   }
 
-  export type FollowerRequestUpsertWithWhereUniqueWithoutReceiverInput = {
-    where: FollowerRequestWhereUniqueInput
-    update: XOR<FollowerRequestUpdateWithoutReceiverInput, FollowerRequestUncheckedUpdateWithoutReceiverInput>
-    create: XOR<FollowerRequestCreateWithoutReceiverInput, FollowerRequestUncheckedCreateWithoutReceiverInput>
+  export type FollowRequestUpsertWithWhereUniqueWithoutReceiverInput = {
+    where: FollowRequestWhereUniqueInput
+    update: XOR<FollowRequestUpdateWithoutReceiverInput, FollowRequestUncheckedUpdateWithoutReceiverInput>
+    create: XOR<FollowRequestCreateWithoutReceiverInput, FollowRequestUncheckedCreateWithoutReceiverInput>
   }
 
-  export type FollowerRequestUpdateWithWhereUniqueWithoutReceiverInput = {
-    where: FollowerRequestWhereUniqueInput
-    data: XOR<FollowerRequestUpdateWithoutReceiverInput, FollowerRequestUncheckedUpdateWithoutReceiverInput>
+  export type FollowRequestUpdateWithWhereUniqueWithoutReceiverInput = {
+    where: FollowRequestWhereUniqueInput
+    data: XOR<FollowRequestUpdateWithoutReceiverInput, FollowRequestUncheckedUpdateWithoutReceiverInput>
   }
 
-  export type FollowerRequestUpdateManyWithWhereWithoutReceiverInput = {
-    where: FollowerRequestScalarWhereInput
-    data: XOR<FollowerRequestUpdateManyMutationInput, FollowerRequestUncheckedUpdateManyWithoutReceiverInput>
+  export type FollowRequestUpdateManyWithWhereWithoutReceiverInput = {
+    where: FollowRequestScalarWhereInput
+    data: XOR<FollowRequestUpdateManyMutationInput, FollowRequestUncheckedUpdateManyWithoutReceiverInput>
   }
 
-  export type BlockUpsertWithWhereUniqueWithoutSenderInput = {
+  export type BlockUpsertWithWhereUniqueWithoutBlockerInput = {
     where: BlockWhereUniqueInput
-    update: XOR<BlockUpdateWithoutSenderInput, BlockUncheckedUpdateWithoutSenderInput>
-    create: XOR<BlockCreateWithoutSenderInput, BlockUncheckedCreateWithoutSenderInput>
+    update: XOR<BlockUpdateWithoutBlockerInput, BlockUncheckedUpdateWithoutBlockerInput>
+    create: XOR<BlockCreateWithoutBlockerInput, BlockUncheckedCreateWithoutBlockerInput>
   }
 
-  export type BlockUpdateWithWhereUniqueWithoutSenderInput = {
+  export type BlockUpdateWithWhereUniqueWithoutBlockerInput = {
     where: BlockWhereUniqueInput
-    data: XOR<BlockUpdateWithoutSenderInput, BlockUncheckedUpdateWithoutSenderInput>
+    data: XOR<BlockUpdateWithoutBlockerInput, BlockUncheckedUpdateWithoutBlockerInput>
   }
 
-  export type BlockUpdateManyWithWhereWithoutSenderInput = {
+  export type BlockUpdateManyWithWhereWithoutBlockerInput = {
     where: BlockScalarWhereInput
-    data: XOR<BlockUpdateManyMutationInput, BlockUncheckedUpdateManyWithoutSenderInput>
+    data: XOR<BlockUpdateManyMutationInput, BlockUncheckedUpdateManyWithoutBlockerInput>
   }
 
   export type BlockScalarWhereInput = {
@@ -14023,25 +14023,25 @@ export namespace Prisma {
     OR?: BlockScalarWhereInput[]
     NOT?: BlockScalarWhereInput | BlockScalarWhereInput[]
     id?: IntFilter<"Block"> | number
-    createAt?: DateTimeFilter<"Block"> | Date | string
+    createdAt?: DateTimeFilter<"Block"> | Date | string
     blockerId?: StringFilter<"Block"> | string
     blockedId?: StringFilter<"Block"> | string
   }
 
-  export type BlockUpsertWithWhereUniqueWithoutReceiverInput = {
+  export type BlockUpsertWithWhereUniqueWithoutBlockedInput = {
     where: BlockWhereUniqueInput
-    update: XOR<BlockUpdateWithoutReceiverInput, BlockUncheckedUpdateWithoutReceiverInput>
-    create: XOR<BlockCreateWithoutReceiverInput, BlockUncheckedCreateWithoutReceiverInput>
+    update: XOR<BlockUpdateWithoutBlockedInput, BlockUncheckedUpdateWithoutBlockedInput>
+    create: XOR<BlockCreateWithoutBlockedInput, BlockUncheckedCreateWithoutBlockedInput>
   }
 
-  export type BlockUpdateWithWhereUniqueWithoutReceiverInput = {
+  export type BlockUpdateWithWhereUniqueWithoutBlockedInput = {
     where: BlockWhereUniqueInput
-    data: XOR<BlockUpdateWithoutReceiverInput, BlockUncheckedUpdateWithoutReceiverInput>
+    data: XOR<BlockUpdateWithoutBlockedInput, BlockUncheckedUpdateWithoutBlockedInput>
   }
 
-  export type BlockUpdateManyWithWhereWithoutReceiverInput = {
+  export type BlockUpdateManyWithWhereWithoutBlockedInput = {
     where: BlockScalarWhereInput
-    data: XOR<BlockUpdateManyMutationInput, BlockUncheckedUpdateManyWithoutReceiverInput>
+    data: XOR<BlockUpdateManyMutationInput, BlockUncheckedUpdateManyWithoutBlockedInput>
   }
 
   export type StoryUpsertWithWhereUniqueWithoutUserInput = {
@@ -14065,9 +14065,9 @@ export namespace Prisma {
     OR?: StoryScalarWhereInput[]
     NOT?: StoryScalarWhereInput | StoryScalarWhereInput[]
     id?: IntFilter<"Story"> | number
-    createAt?: DateTimeFilter<"Story"> | Date | string
+    createdAt?: DateTimeFilter<"Story"> | Date | string
     expiresAt?: DateTimeFilter<"Story"> | Date | string
-    img?: StringNullableFilter<"Story"> | string | null
+    img?: StringFilter<"Story"> | string
     userId?: StringFilter<"Story"> | string
   }
 
@@ -14084,14 +14084,14 @@ export namespace Prisma {
     work?: string | null
     website?: string | null
     createdAt?: Date | string
-    likes?: LikeCreateNestedManyWithoutUserInput
     comments?: CommentCreateNestedManyWithoutUserInput
+    likes?: LikeCreateNestedManyWithoutUserInput
     followers?: FollowerCreateNestedManyWithoutFollowerInput
-    following?: FollowerCreateNestedManyWithoutFollowingInput
-    followRequestSent?: FollowerRequestCreateNestedManyWithoutSenderInput
-    followRequestReceived?: FollowerRequestCreateNestedManyWithoutReceiverInput
-    blocks?: BlockCreateNestedManyWithoutSenderInput
-    blockedBy?: BlockCreateNestedManyWithoutReceiverInput
+    followings?: FollowerCreateNestedManyWithoutFollowingInput
+    followRequestsSent?: FollowRequestCreateNestedManyWithoutSenderInput
+    followRequestsReceived?: FollowRequestCreateNestedManyWithoutReceiverInput
+    blocks?: BlockCreateNestedManyWithoutBlockerInput
+    blockedBy?: BlockCreateNestedManyWithoutBlockedInput
     stories?: StoryCreateNestedManyWithoutUserInput
   }
 
@@ -14108,43 +14108,20 @@ export namespace Prisma {
     work?: string | null
     website?: string | null
     createdAt?: Date | string
-    likes?: LikeUncheckedCreateNestedManyWithoutUserInput
     comments?: CommentUncheckedCreateNestedManyWithoutUserInput
+    likes?: LikeUncheckedCreateNestedManyWithoutUserInput
     followers?: FollowerUncheckedCreateNestedManyWithoutFollowerInput
-    following?: FollowerUncheckedCreateNestedManyWithoutFollowingInput
-    followRequestSent?: FollowerRequestUncheckedCreateNestedManyWithoutSenderInput
-    followRequestReceived?: FollowerRequestUncheckedCreateNestedManyWithoutReceiverInput
-    blocks?: BlockUncheckedCreateNestedManyWithoutSenderInput
-    blockedBy?: BlockUncheckedCreateNestedManyWithoutReceiverInput
+    followings?: FollowerUncheckedCreateNestedManyWithoutFollowingInput
+    followRequestsSent?: FollowRequestUncheckedCreateNestedManyWithoutSenderInput
+    followRequestsReceived?: FollowRequestUncheckedCreateNestedManyWithoutReceiverInput
+    blocks?: BlockUncheckedCreateNestedManyWithoutBlockerInput
+    blockedBy?: BlockUncheckedCreateNestedManyWithoutBlockedInput
     stories?: StoryUncheckedCreateNestedManyWithoutUserInput
   }
 
   export type UserCreateOrConnectWithoutPostsInput = {
     where: UserWhereUniqueInput
     create: XOR<UserCreateWithoutPostsInput, UserUncheckedCreateWithoutPostsInput>
-  }
-
-  export type LikeCreateWithoutPostInput = {
-    createdAt?: Date | string
-    user: UserCreateNestedOneWithoutLikesInput
-    Comment?: CommentCreateNestedOneWithoutLikesInput
-  }
-
-  export type LikeUncheckedCreateWithoutPostInput = {
-    id?: number
-    createdAt?: Date | string
-    userId: string
-    commentId?: number | null
-  }
-
-  export type LikeCreateOrConnectWithoutPostInput = {
-    where: LikeWhereUniqueInput
-    create: XOR<LikeCreateWithoutPostInput, LikeUncheckedCreateWithoutPostInput>
-  }
-
-  export type LikeCreateManyPostInputEnvelope = {
-    data: LikeCreateManyPostInput | LikeCreateManyPostInput[]
-    skipDuplicates?: boolean
   }
 
   export type CommentCreateWithoutPostInput = {
@@ -14174,6 +14151,29 @@ export namespace Prisma {
     skipDuplicates?: boolean
   }
 
+  export type LikeCreateWithoutPostInput = {
+    createdAt?: Date | string
+    user: UserCreateNestedOneWithoutLikesInput
+    Comment?: CommentCreateNestedOneWithoutLikesInput
+  }
+
+  export type LikeUncheckedCreateWithoutPostInput = {
+    id?: number
+    createdAt?: Date | string
+    userId: string
+    commentId?: number | null
+  }
+
+  export type LikeCreateOrConnectWithoutPostInput = {
+    where: LikeWhereUniqueInput
+    create: XOR<LikeCreateWithoutPostInput, LikeUncheckedCreateWithoutPostInput>
+  }
+
+  export type LikeCreateManyPostInputEnvelope = {
+    data: LikeCreateManyPostInput | LikeCreateManyPostInput[]
+    skipDuplicates?: boolean
+  }
+
   export type UserUpsertWithoutPostsInput = {
     update: XOR<UserUpdateWithoutPostsInput, UserUncheckedUpdateWithoutPostsInput>
     create: XOR<UserCreateWithoutPostsInput, UserUncheckedCreateWithoutPostsInput>
@@ -14198,14 +14198,14 @@ export namespace Prisma {
     work?: NullableStringFieldUpdateOperationsInput | string | null
     website?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    likes?: LikeUpdateManyWithoutUserNestedInput
     comments?: CommentUpdateManyWithoutUserNestedInput
+    likes?: LikeUpdateManyWithoutUserNestedInput
     followers?: FollowerUpdateManyWithoutFollowerNestedInput
-    following?: FollowerUpdateManyWithoutFollowingNestedInput
-    followRequestSent?: FollowerRequestUpdateManyWithoutSenderNestedInput
-    followRequestReceived?: FollowerRequestUpdateManyWithoutReceiverNestedInput
-    blocks?: BlockUpdateManyWithoutSenderNestedInput
-    blockedBy?: BlockUpdateManyWithoutReceiverNestedInput
+    followings?: FollowerUpdateManyWithoutFollowingNestedInput
+    followRequestsSent?: FollowRequestUpdateManyWithoutSenderNestedInput
+    followRequestsReceived?: FollowRequestUpdateManyWithoutReceiverNestedInput
+    blocks?: BlockUpdateManyWithoutBlockerNestedInput
+    blockedBy?: BlockUpdateManyWithoutBlockedNestedInput
     stories?: StoryUpdateManyWithoutUserNestedInput
   }
 
@@ -14222,31 +14222,15 @@ export namespace Prisma {
     work?: NullableStringFieldUpdateOperationsInput | string | null
     website?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    likes?: LikeUncheckedUpdateManyWithoutUserNestedInput
     comments?: CommentUncheckedUpdateManyWithoutUserNestedInput
+    likes?: LikeUncheckedUpdateManyWithoutUserNestedInput
     followers?: FollowerUncheckedUpdateManyWithoutFollowerNestedInput
-    following?: FollowerUncheckedUpdateManyWithoutFollowingNestedInput
-    followRequestSent?: FollowerRequestUncheckedUpdateManyWithoutSenderNestedInput
-    followRequestReceived?: FollowerRequestUncheckedUpdateManyWithoutReceiverNestedInput
-    blocks?: BlockUncheckedUpdateManyWithoutSenderNestedInput
-    blockedBy?: BlockUncheckedUpdateManyWithoutReceiverNestedInput
+    followings?: FollowerUncheckedUpdateManyWithoutFollowingNestedInput
+    followRequestsSent?: FollowRequestUncheckedUpdateManyWithoutSenderNestedInput
+    followRequestsReceived?: FollowRequestUncheckedUpdateManyWithoutReceiverNestedInput
+    blocks?: BlockUncheckedUpdateManyWithoutBlockerNestedInput
+    blockedBy?: BlockUncheckedUpdateManyWithoutBlockedNestedInput
     stories?: StoryUncheckedUpdateManyWithoutUserNestedInput
-  }
-
-  export type LikeUpsertWithWhereUniqueWithoutPostInput = {
-    where: LikeWhereUniqueInput
-    update: XOR<LikeUpdateWithoutPostInput, LikeUncheckedUpdateWithoutPostInput>
-    create: XOR<LikeCreateWithoutPostInput, LikeUncheckedCreateWithoutPostInput>
-  }
-
-  export type LikeUpdateWithWhereUniqueWithoutPostInput = {
-    where: LikeWhereUniqueInput
-    data: XOR<LikeUpdateWithoutPostInput, LikeUncheckedUpdateWithoutPostInput>
-  }
-
-  export type LikeUpdateManyWithWhereWithoutPostInput = {
-    where: LikeScalarWhereInput
-    data: XOR<LikeUpdateManyMutationInput, LikeUncheckedUpdateManyWithoutPostInput>
   }
 
   export type CommentUpsertWithWhereUniqueWithoutPostInput = {
@@ -14265,6 +14249,22 @@ export namespace Prisma {
     data: XOR<CommentUpdateManyMutationInput, CommentUncheckedUpdateManyWithoutPostInput>
   }
 
+  export type LikeUpsertWithWhereUniqueWithoutPostInput = {
+    where: LikeWhereUniqueInput
+    update: XOR<LikeUpdateWithoutPostInput, LikeUncheckedUpdateWithoutPostInput>
+    create: XOR<LikeCreateWithoutPostInput, LikeUncheckedCreateWithoutPostInput>
+  }
+
+  export type LikeUpdateWithWhereUniqueWithoutPostInput = {
+    where: LikeWhereUniqueInput
+    data: XOR<LikeUpdateWithoutPostInput, LikeUncheckedUpdateWithoutPostInput>
+  }
+
+  export type LikeUpdateManyWithWhereWithoutPostInput = {
+    where: LikeScalarWhereInput
+    data: XOR<LikeUpdateManyMutationInput, LikeUncheckedUpdateManyWithoutPostInput>
+  }
+
   export type UserCreateWithoutCommentsInput = {
     id: string
     username: string
@@ -14281,11 +14281,11 @@ export namespace Prisma {
     posts?: PostCreateNestedManyWithoutUserInput
     likes?: LikeCreateNestedManyWithoutUserInput
     followers?: FollowerCreateNestedManyWithoutFollowerInput
-    following?: FollowerCreateNestedManyWithoutFollowingInput
-    followRequestSent?: FollowerRequestCreateNestedManyWithoutSenderInput
-    followRequestReceived?: FollowerRequestCreateNestedManyWithoutReceiverInput
-    blocks?: BlockCreateNestedManyWithoutSenderInput
-    blockedBy?: BlockCreateNestedManyWithoutReceiverInput
+    followings?: FollowerCreateNestedManyWithoutFollowingInput
+    followRequestsSent?: FollowRequestCreateNestedManyWithoutSenderInput
+    followRequestsReceived?: FollowRequestCreateNestedManyWithoutReceiverInput
+    blocks?: BlockCreateNestedManyWithoutBlockerInput
+    blockedBy?: BlockCreateNestedManyWithoutBlockedInput
     stories?: StoryCreateNestedManyWithoutUserInput
   }
 
@@ -14305,11 +14305,11 @@ export namespace Prisma {
     posts?: PostUncheckedCreateNestedManyWithoutUserInput
     likes?: LikeUncheckedCreateNestedManyWithoutUserInput
     followers?: FollowerUncheckedCreateNestedManyWithoutFollowerInput
-    following?: FollowerUncheckedCreateNestedManyWithoutFollowingInput
-    followRequestSent?: FollowerRequestUncheckedCreateNestedManyWithoutSenderInput
-    followRequestReceived?: FollowerRequestUncheckedCreateNestedManyWithoutReceiverInput
-    blocks?: BlockUncheckedCreateNestedManyWithoutSenderInput
-    blockedBy?: BlockUncheckedCreateNestedManyWithoutReceiverInput
+    followings?: FollowerUncheckedCreateNestedManyWithoutFollowingInput
+    followRequestsSent?: FollowRequestUncheckedCreateNestedManyWithoutSenderInput
+    followRequestsReceived?: FollowRequestUncheckedCreateNestedManyWithoutReceiverInput
+    blocks?: BlockUncheckedCreateNestedManyWithoutBlockerInput
+    blockedBy?: BlockUncheckedCreateNestedManyWithoutBlockedInput
     stories?: StoryUncheckedCreateNestedManyWithoutUserInput
   }
 
@@ -14318,7 +14318,7 @@ export namespace Prisma {
     create: XOR<UserCreateWithoutCommentsInput, UserUncheckedCreateWithoutCommentsInput>
   }
 
-  export type PostCreateWithoutCommentInput = {
+  export type PostCreateWithoutCommentsInput = {
     desc: string
     img?: string | null
     createdAt?: Date | string
@@ -14327,7 +14327,7 @@ export namespace Prisma {
     likes?: LikeCreateNestedManyWithoutPostInput
   }
 
-  export type PostUncheckedCreateWithoutCommentInput = {
+  export type PostUncheckedCreateWithoutCommentsInput = {
     id?: number
     desc: string
     img?: string | null
@@ -14337,9 +14337,9 @@ export namespace Prisma {
     likes?: LikeUncheckedCreateNestedManyWithoutPostInput
   }
 
-  export type PostCreateOrConnectWithoutCommentInput = {
+  export type PostCreateOrConnectWithoutCommentsInput = {
     where: PostWhereUniqueInput
-    create: XOR<PostCreateWithoutCommentInput, PostUncheckedCreateWithoutCommentInput>
+    create: XOR<PostCreateWithoutCommentsInput, PostUncheckedCreateWithoutCommentsInput>
   }
 
   export type LikeCreateWithoutCommentInput = {
@@ -14392,11 +14392,11 @@ export namespace Prisma {
     posts?: PostUpdateManyWithoutUserNestedInput
     likes?: LikeUpdateManyWithoutUserNestedInput
     followers?: FollowerUpdateManyWithoutFollowerNestedInput
-    following?: FollowerUpdateManyWithoutFollowingNestedInput
-    followRequestSent?: FollowerRequestUpdateManyWithoutSenderNestedInput
-    followRequestReceived?: FollowerRequestUpdateManyWithoutReceiverNestedInput
-    blocks?: BlockUpdateManyWithoutSenderNestedInput
-    blockedBy?: BlockUpdateManyWithoutReceiverNestedInput
+    followings?: FollowerUpdateManyWithoutFollowingNestedInput
+    followRequestsSent?: FollowRequestUpdateManyWithoutSenderNestedInput
+    followRequestsReceived?: FollowRequestUpdateManyWithoutReceiverNestedInput
+    blocks?: BlockUpdateManyWithoutBlockerNestedInput
+    blockedBy?: BlockUpdateManyWithoutBlockedNestedInput
     stories?: StoryUpdateManyWithoutUserNestedInput
   }
 
@@ -14416,26 +14416,26 @@ export namespace Prisma {
     posts?: PostUncheckedUpdateManyWithoutUserNestedInput
     likes?: LikeUncheckedUpdateManyWithoutUserNestedInput
     followers?: FollowerUncheckedUpdateManyWithoutFollowerNestedInput
-    following?: FollowerUncheckedUpdateManyWithoutFollowingNestedInput
-    followRequestSent?: FollowerRequestUncheckedUpdateManyWithoutSenderNestedInput
-    followRequestReceived?: FollowerRequestUncheckedUpdateManyWithoutReceiverNestedInput
-    blocks?: BlockUncheckedUpdateManyWithoutSenderNestedInput
-    blockedBy?: BlockUncheckedUpdateManyWithoutReceiverNestedInput
+    followings?: FollowerUncheckedUpdateManyWithoutFollowingNestedInput
+    followRequestsSent?: FollowRequestUncheckedUpdateManyWithoutSenderNestedInput
+    followRequestsReceived?: FollowRequestUncheckedUpdateManyWithoutReceiverNestedInput
+    blocks?: BlockUncheckedUpdateManyWithoutBlockerNestedInput
+    blockedBy?: BlockUncheckedUpdateManyWithoutBlockedNestedInput
     stories?: StoryUncheckedUpdateManyWithoutUserNestedInput
   }
 
-  export type PostUpsertWithoutCommentInput = {
-    update: XOR<PostUpdateWithoutCommentInput, PostUncheckedUpdateWithoutCommentInput>
-    create: XOR<PostCreateWithoutCommentInput, PostUncheckedCreateWithoutCommentInput>
+  export type PostUpsertWithoutCommentsInput = {
+    update: XOR<PostUpdateWithoutCommentsInput, PostUncheckedUpdateWithoutCommentsInput>
+    create: XOR<PostCreateWithoutCommentsInput, PostUncheckedCreateWithoutCommentsInput>
     where?: PostWhereInput
   }
 
-  export type PostUpdateToOneWithWhereWithoutCommentInput = {
+  export type PostUpdateToOneWithWhereWithoutCommentsInput = {
     where?: PostWhereInput
-    data: XOR<PostUpdateWithoutCommentInput, PostUncheckedUpdateWithoutCommentInput>
+    data: XOR<PostUpdateWithoutCommentsInput, PostUncheckedUpdateWithoutCommentsInput>
   }
 
-  export type PostUpdateWithoutCommentInput = {
+  export type PostUpdateWithoutCommentsInput = {
     desc?: StringFieldUpdateOperationsInput | string
     img?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -14444,7 +14444,7 @@ export namespace Prisma {
     likes?: LikeUpdateManyWithoutPostNestedInput
   }
 
-  export type PostUncheckedUpdateWithoutCommentInput = {
+  export type PostUncheckedUpdateWithoutCommentsInput = {
     id?: IntFieldUpdateOperationsInput | number
     desc?: StringFieldUpdateOperationsInput | string
     img?: NullableStringFieldUpdateOperationsInput | string | null
@@ -14486,11 +14486,11 @@ export namespace Prisma {
     posts?: PostCreateNestedManyWithoutUserInput
     comments?: CommentCreateNestedManyWithoutUserInput
     followers?: FollowerCreateNestedManyWithoutFollowerInput
-    following?: FollowerCreateNestedManyWithoutFollowingInput
-    followRequestSent?: FollowerRequestCreateNestedManyWithoutSenderInput
-    followRequestReceived?: FollowerRequestCreateNestedManyWithoutReceiverInput
-    blocks?: BlockCreateNestedManyWithoutSenderInput
-    blockedBy?: BlockCreateNestedManyWithoutReceiverInput
+    followings?: FollowerCreateNestedManyWithoutFollowingInput
+    followRequestsSent?: FollowRequestCreateNestedManyWithoutSenderInput
+    followRequestsReceived?: FollowRequestCreateNestedManyWithoutReceiverInput
+    blocks?: BlockCreateNestedManyWithoutBlockerInput
+    blockedBy?: BlockCreateNestedManyWithoutBlockedInput
     stories?: StoryCreateNestedManyWithoutUserInput
   }
 
@@ -14510,11 +14510,11 @@ export namespace Prisma {
     posts?: PostUncheckedCreateNestedManyWithoutUserInput
     comments?: CommentUncheckedCreateNestedManyWithoutUserInput
     followers?: FollowerUncheckedCreateNestedManyWithoutFollowerInput
-    following?: FollowerUncheckedCreateNestedManyWithoutFollowingInput
-    followRequestSent?: FollowerRequestUncheckedCreateNestedManyWithoutSenderInput
-    followRequestReceived?: FollowerRequestUncheckedCreateNestedManyWithoutReceiverInput
-    blocks?: BlockUncheckedCreateNestedManyWithoutSenderInput
-    blockedBy?: BlockUncheckedCreateNestedManyWithoutReceiverInput
+    followings?: FollowerUncheckedCreateNestedManyWithoutFollowingInput
+    followRequestsSent?: FollowRequestUncheckedCreateNestedManyWithoutSenderInput
+    followRequestsReceived?: FollowRequestUncheckedCreateNestedManyWithoutReceiverInput
+    blocks?: BlockUncheckedCreateNestedManyWithoutBlockerInput
+    blockedBy?: BlockUncheckedCreateNestedManyWithoutBlockedInput
     stories?: StoryUncheckedCreateNestedManyWithoutUserInput
   }
 
@@ -14529,7 +14529,7 @@ export namespace Prisma {
     createdAt?: Date | string
     updatedAt?: Date | string
     user: UserCreateNestedOneWithoutPostsInput
-    Comment?: CommentCreateNestedManyWithoutPostInput
+    comments?: CommentCreateNestedManyWithoutPostInput
   }
 
   export type PostUncheckedCreateWithoutLikesInput = {
@@ -14539,7 +14539,7 @@ export namespace Prisma {
     createdAt?: Date | string
     updatedAt?: Date | string
     userId: string
-    Comment?: CommentUncheckedCreateNestedManyWithoutPostInput
+    comments?: CommentUncheckedCreateNestedManyWithoutPostInput
   }
 
   export type PostCreateOrConnectWithoutLikesInput = {
@@ -14552,7 +14552,7 @@ export namespace Prisma {
     createdAt?: Date | string
     updatedAt?: Date | string
     user: UserCreateNestedOneWithoutCommentsInput
-    post: PostCreateNestedOneWithoutCommentInput
+    post: PostCreateNestedOneWithoutCommentsInput
   }
 
   export type CommentUncheckedCreateWithoutLikesInput = {
@@ -14596,11 +14596,11 @@ export namespace Prisma {
     posts?: PostUpdateManyWithoutUserNestedInput
     comments?: CommentUpdateManyWithoutUserNestedInput
     followers?: FollowerUpdateManyWithoutFollowerNestedInput
-    following?: FollowerUpdateManyWithoutFollowingNestedInput
-    followRequestSent?: FollowerRequestUpdateManyWithoutSenderNestedInput
-    followRequestReceived?: FollowerRequestUpdateManyWithoutReceiverNestedInput
-    blocks?: BlockUpdateManyWithoutSenderNestedInput
-    blockedBy?: BlockUpdateManyWithoutReceiverNestedInput
+    followings?: FollowerUpdateManyWithoutFollowingNestedInput
+    followRequestsSent?: FollowRequestUpdateManyWithoutSenderNestedInput
+    followRequestsReceived?: FollowRequestUpdateManyWithoutReceiverNestedInput
+    blocks?: BlockUpdateManyWithoutBlockerNestedInput
+    blockedBy?: BlockUpdateManyWithoutBlockedNestedInput
     stories?: StoryUpdateManyWithoutUserNestedInput
   }
 
@@ -14620,11 +14620,11 @@ export namespace Prisma {
     posts?: PostUncheckedUpdateManyWithoutUserNestedInput
     comments?: CommentUncheckedUpdateManyWithoutUserNestedInput
     followers?: FollowerUncheckedUpdateManyWithoutFollowerNestedInput
-    following?: FollowerUncheckedUpdateManyWithoutFollowingNestedInput
-    followRequestSent?: FollowerRequestUncheckedUpdateManyWithoutSenderNestedInput
-    followRequestReceived?: FollowerRequestUncheckedUpdateManyWithoutReceiverNestedInput
-    blocks?: BlockUncheckedUpdateManyWithoutSenderNestedInput
-    blockedBy?: BlockUncheckedUpdateManyWithoutReceiverNestedInput
+    followings?: FollowerUncheckedUpdateManyWithoutFollowingNestedInput
+    followRequestsSent?: FollowRequestUncheckedUpdateManyWithoutSenderNestedInput
+    followRequestsReceived?: FollowRequestUncheckedUpdateManyWithoutReceiverNestedInput
+    blocks?: BlockUncheckedUpdateManyWithoutBlockerNestedInput
+    blockedBy?: BlockUncheckedUpdateManyWithoutBlockedNestedInput
     stories?: StoryUncheckedUpdateManyWithoutUserNestedInput
   }
 
@@ -14645,7 +14645,7 @@ export namespace Prisma {
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     user?: UserUpdateOneRequiredWithoutPostsNestedInput
-    Comment?: CommentUpdateManyWithoutPostNestedInput
+    comments?: CommentUpdateManyWithoutPostNestedInput
   }
 
   export type PostUncheckedUpdateWithoutLikesInput = {
@@ -14655,7 +14655,7 @@ export namespace Prisma {
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     userId?: StringFieldUpdateOperationsInput | string
-    Comment?: CommentUncheckedUpdateManyWithoutPostNestedInput
+    comments?: CommentUncheckedUpdateManyWithoutPostNestedInput
   }
 
   export type CommentUpsertWithoutLikesInput = {
@@ -14674,7 +14674,7 @@ export namespace Prisma {
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     user?: UserUpdateOneRequiredWithoutCommentsNestedInput
-    post?: PostUpdateOneRequiredWithoutCommentNestedInput
+    post?: PostUpdateOneRequiredWithoutCommentsNestedInput
   }
 
   export type CommentUncheckedUpdateWithoutLikesInput = {
@@ -14700,13 +14700,13 @@ export namespace Prisma {
     website?: string | null
     createdAt?: Date | string
     posts?: PostCreateNestedManyWithoutUserInput
-    likes?: LikeCreateNestedManyWithoutUserInput
     comments?: CommentCreateNestedManyWithoutUserInput
-    following?: FollowerCreateNestedManyWithoutFollowingInput
-    followRequestSent?: FollowerRequestCreateNestedManyWithoutSenderInput
-    followRequestReceived?: FollowerRequestCreateNestedManyWithoutReceiverInput
-    blocks?: BlockCreateNestedManyWithoutSenderInput
-    blockedBy?: BlockCreateNestedManyWithoutReceiverInput
+    likes?: LikeCreateNestedManyWithoutUserInput
+    followings?: FollowerCreateNestedManyWithoutFollowingInput
+    followRequestsSent?: FollowRequestCreateNestedManyWithoutSenderInput
+    followRequestsReceived?: FollowRequestCreateNestedManyWithoutReceiverInput
+    blocks?: BlockCreateNestedManyWithoutBlockerInput
+    blockedBy?: BlockCreateNestedManyWithoutBlockedInput
     stories?: StoryCreateNestedManyWithoutUserInput
   }
 
@@ -14724,13 +14724,13 @@ export namespace Prisma {
     website?: string | null
     createdAt?: Date | string
     posts?: PostUncheckedCreateNestedManyWithoutUserInput
-    likes?: LikeUncheckedCreateNestedManyWithoutUserInput
     comments?: CommentUncheckedCreateNestedManyWithoutUserInput
-    following?: FollowerUncheckedCreateNestedManyWithoutFollowingInput
-    followRequestSent?: FollowerRequestUncheckedCreateNestedManyWithoutSenderInput
-    followRequestReceived?: FollowerRequestUncheckedCreateNestedManyWithoutReceiverInput
-    blocks?: BlockUncheckedCreateNestedManyWithoutSenderInput
-    blockedBy?: BlockUncheckedCreateNestedManyWithoutReceiverInput
+    likes?: LikeUncheckedCreateNestedManyWithoutUserInput
+    followings?: FollowerUncheckedCreateNestedManyWithoutFollowingInput
+    followRequestsSent?: FollowRequestUncheckedCreateNestedManyWithoutSenderInput
+    followRequestsReceived?: FollowRequestUncheckedCreateNestedManyWithoutReceiverInput
+    blocks?: BlockUncheckedCreateNestedManyWithoutBlockerInput
+    blockedBy?: BlockUncheckedCreateNestedManyWithoutBlockedInput
     stories?: StoryUncheckedCreateNestedManyWithoutUserInput
   }
 
@@ -14739,7 +14739,7 @@ export namespace Prisma {
     create: XOR<UserCreateWithoutFollowersInput, UserUncheckedCreateWithoutFollowersInput>
   }
 
-  export type UserCreateWithoutFollowingInput = {
+  export type UserCreateWithoutFollowingsInput = {
     id: string
     username: string
     avatar?: string | null
@@ -14753,17 +14753,17 @@ export namespace Prisma {
     website?: string | null
     createdAt?: Date | string
     posts?: PostCreateNestedManyWithoutUserInput
-    likes?: LikeCreateNestedManyWithoutUserInput
     comments?: CommentCreateNestedManyWithoutUserInput
+    likes?: LikeCreateNestedManyWithoutUserInput
     followers?: FollowerCreateNestedManyWithoutFollowerInput
-    followRequestSent?: FollowerRequestCreateNestedManyWithoutSenderInput
-    followRequestReceived?: FollowerRequestCreateNestedManyWithoutReceiverInput
-    blocks?: BlockCreateNestedManyWithoutSenderInput
-    blockedBy?: BlockCreateNestedManyWithoutReceiverInput
+    followRequestsSent?: FollowRequestCreateNestedManyWithoutSenderInput
+    followRequestsReceived?: FollowRequestCreateNestedManyWithoutReceiverInput
+    blocks?: BlockCreateNestedManyWithoutBlockerInput
+    blockedBy?: BlockCreateNestedManyWithoutBlockedInput
     stories?: StoryCreateNestedManyWithoutUserInput
   }
 
-  export type UserUncheckedCreateWithoutFollowingInput = {
+  export type UserUncheckedCreateWithoutFollowingsInput = {
     id: string
     username: string
     avatar?: string | null
@@ -14777,19 +14777,19 @@ export namespace Prisma {
     website?: string | null
     createdAt?: Date | string
     posts?: PostUncheckedCreateNestedManyWithoutUserInput
-    likes?: LikeUncheckedCreateNestedManyWithoutUserInput
     comments?: CommentUncheckedCreateNestedManyWithoutUserInput
+    likes?: LikeUncheckedCreateNestedManyWithoutUserInput
     followers?: FollowerUncheckedCreateNestedManyWithoutFollowerInput
-    followRequestSent?: FollowerRequestUncheckedCreateNestedManyWithoutSenderInput
-    followRequestReceived?: FollowerRequestUncheckedCreateNestedManyWithoutReceiverInput
-    blocks?: BlockUncheckedCreateNestedManyWithoutSenderInput
-    blockedBy?: BlockUncheckedCreateNestedManyWithoutReceiverInput
+    followRequestsSent?: FollowRequestUncheckedCreateNestedManyWithoutSenderInput
+    followRequestsReceived?: FollowRequestUncheckedCreateNestedManyWithoutReceiverInput
+    blocks?: BlockUncheckedCreateNestedManyWithoutBlockerInput
+    blockedBy?: BlockUncheckedCreateNestedManyWithoutBlockedInput
     stories?: StoryUncheckedCreateNestedManyWithoutUserInput
   }
 
-  export type UserCreateOrConnectWithoutFollowingInput = {
+  export type UserCreateOrConnectWithoutFollowingsInput = {
     where: UserWhereUniqueInput
-    create: XOR<UserCreateWithoutFollowingInput, UserUncheckedCreateWithoutFollowingInput>
+    create: XOR<UserCreateWithoutFollowingsInput, UserUncheckedCreateWithoutFollowingsInput>
   }
 
   export type UserUpsertWithoutFollowersInput = {
@@ -14817,13 +14817,13 @@ export namespace Prisma {
     website?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     posts?: PostUpdateManyWithoutUserNestedInput
-    likes?: LikeUpdateManyWithoutUserNestedInput
     comments?: CommentUpdateManyWithoutUserNestedInput
-    following?: FollowerUpdateManyWithoutFollowingNestedInput
-    followRequestSent?: FollowerRequestUpdateManyWithoutSenderNestedInput
-    followRequestReceived?: FollowerRequestUpdateManyWithoutReceiverNestedInput
-    blocks?: BlockUpdateManyWithoutSenderNestedInput
-    blockedBy?: BlockUpdateManyWithoutReceiverNestedInput
+    likes?: LikeUpdateManyWithoutUserNestedInput
+    followings?: FollowerUpdateManyWithoutFollowingNestedInput
+    followRequestsSent?: FollowRequestUpdateManyWithoutSenderNestedInput
+    followRequestsReceived?: FollowRequestUpdateManyWithoutReceiverNestedInput
+    blocks?: BlockUpdateManyWithoutBlockerNestedInput
+    blockedBy?: BlockUpdateManyWithoutBlockedNestedInput
     stories?: StoryUpdateManyWithoutUserNestedInput
   }
 
@@ -14841,28 +14841,28 @@ export namespace Prisma {
     website?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     posts?: PostUncheckedUpdateManyWithoutUserNestedInput
-    likes?: LikeUncheckedUpdateManyWithoutUserNestedInput
     comments?: CommentUncheckedUpdateManyWithoutUserNestedInput
-    following?: FollowerUncheckedUpdateManyWithoutFollowingNestedInput
-    followRequestSent?: FollowerRequestUncheckedUpdateManyWithoutSenderNestedInput
-    followRequestReceived?: FollowerRequestUncheckedUpdateManyWithoutReceiverNestedInput
-    blocks?: BlockUncheckedUpdateManyWithoutSenderNestedInput
-    blockedBy?: BlockUncheckedUpdateManyWithoutReceiverNestedInput
+    likes?: LikeUncheckedUpdateManyWithoutUserNestedInput
+    followings?: FollowerUncheckedUpdateManyWithoutFollowingNestedInput
+    followRequestsSent?: FollowRequestUncheckedUpdateManyWithoutSenderNestedInput
+    followRequestsReceived?: FollowRequestUncheckedUpdateManyWithoutReceiverNestedInput
+    blocks?: BlockUncheckedUpdateManyWithoutBlockerNestedInput
+    blockedBy?: BlockUncheckedUpdateManyWithoutBlockedNestedInput
     stories?: StoryUncheckedUpdateManyWithoutUserNestedInput
   }
 
-  export type UserUpsertWithoutFollowingInput = {
-    update: XOR<UserUpdateWithoutFollowingInput, UserUncheckedUpdateWithoutFollowingInput>
-    create: XOR<UserCreateWithoutFollowingInput, UserUncheckedCreateWithoutFollowingInput>
+  export type UserUpsertWithoutFollowingsInput = {
+    update: XOR<UserUpdateWithoutFollowingsInput, UserUncheckedUpdateWithoutFollowingsInput>
+    create: XOR<UserCreateWithoutFollowingsInput, UserUncheckedCreateWithoutFollowingsInput>
     where?: UserWhereInput
   }
 
-  export type UserUpdateToOneWithWhereWithoutFollowingInput = {
+  export type UserUpdateToOneWithWhereWithoutFollowingsInput = {
     where?: UserWhereInput
-    data: XOR<UserUpdateWithoutFollowingInput, UserUncheckedUpdateWithoutFollowingInput>
+    data: XOR<UserUpdateWithoutFollowingsInput, UserUncheckedUpdateWithoutFollowingsInput>
   }
 
-  export type UserUpdateWithoutFollowingInput = {
+  export type UserUpdateWithoutFollowingsInput = {
     id?: StringFieldUpdateOperationsInput | string
     username?: StringFieldUpdateOperationsInput | string
     avatar?: NullableStringFieldUpdateOperationsInput | string | null
@@ -14876,17 +14876,17 @@ export namespace Prisma {
     website?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     posts?: PostUpdateManyWithoutUserNestedInput
-    likes?: LikeUpdateManyWithoutUserNestedInput
     comments?: CommentUpdateManyWithoutUserNestedInput
+    likes?: LikeUpdateManyWithoutUserNestedInput
     followers?: FollowerUpdateManyWithoutFollowerNestedInput
-    followRequestSent?: FollowerRequestUpdateManyWithoutSenderNestedInput
-    followRequestReceived?: FollowerRequestUpdateManyWithoutReceiverNestedInput
-    blocks?: BlockUpdateManyWithoutSenderNestedInput
-    blockedBy?: BlockUpdateManyWithoutReceiverNestedInput
+    followRequestsSent?: FollowRequestUpdateManyWithoutSenderNestedInput
+    followRequestsReceived?: FollowRequestUpdateManyWithoutReceiverNestedInput
+    blocks?: BlockUpdateManyWithoutBlockerNestedInput
+    blockedBy?: BlockUpdateManyWithoutBlockedNestedInput
     stories?: StoryUpdateManyWithoutUserNestedInput
   }
 
-  export type UserUncheckedUpdateWithoutFollowingInput = {
+  export type UserUncheckedUpdateWithoutFollowingsInput = {
     id?: StringFieldUpdateOperationsInput | string
     username?: StringFieldUpdateOperationsInput | string
     avatar?: NullableStringFieldUpdateOperationsInput | string | null
@@ -14900,17 +14900,17 @@ export namespace Prisma {
     website?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     posts?: PostUncheckedUpdateManyWithoutUserNestedInput
-    likes?: LikeUncheckedUpdateManyWithoutUserNestedInput
     comments?: CommentUncheckedUpdateManyWithoutUserNestedInput
+    likes?: LikeUncheckedUpdateManyWithoutUserNestedInput
     followers?: FollowerUncheckedUpdateManyWithoutFollowerNestedInput
-    followRequestSent?: FollowerRequestUncheckedUpdateManyWithoutSenderNestedInput
-    followRequestReceived?: FollowerRequestUncheckedUpdateManyWithoutReceiverNestedInput
-    blocks?: BlockUncheckedUpdateManyWithoutSenderNestedInput
-    blockedBy?: BlockUncheckedUpdateManyWithoutReceiverNestedInput
+    followRequestsSent?: FollowRequestUncheckedUpdateManyWithoutSenderNestedInput
+    followRequestsReceived?: FollowRequestUncheckedUpdateManyWithoutReceiverNestedInput
+    blocks?: BlockUncheckedUpdateManyWithoutBlockerNestedInput
+    blockedBy?: BlockUncheckedUpdateManyWithoutBlockedNestedInput
     stories?: StoryUncheckedUpdateManyWithoutUserNestedInput
   }
 
-  export type UserCreateWithoutFollowRequestSentInput = {
+  export type UserCreateWithoutFollowRequestsSentInput = {
     id: string
     username: string
     avatar?: string | null
@@ -14924,17 +14924,17 @@ export namespace Prisma {
     website?: string | null
     createdAt?: Date | string
     posts?: PostCreateNestedManyWithoutUserInput
-    likes?: LikeCreateNestedManyWithoutUserInput
     comments?: CommentCreateNestedManyWithoutUserInput
+    likes?: LikeCreateNestedManyWithoutUserInput
     followers?: FollowerCreateNestedManyWithoutFollowerInput
-    following?: FollowerCreateNestedManyWithoutFollowingInput
-    followRequestReceived?: FollowerRequestCreateNestedManyWithoutReceiverInput
-    blocks?: BlockCreateNestedManyWithoutSenderInput
-    blockedBy?: BlockCreateNestedManyWithoutReceiverInput
+    followings?: FollowerCreateNestedManyWithoutFollowingInput
+    followRequestsReceived?: FollowRequestCreateNestedManyWithoutReceiverInput
+    blocks?: BlockCreateNestedManyWithoutBlockerInput
+    blockedBy?: BlockCreateNestedManyWithoutBlockedInput
     stories?: StoryCreateNestedManyWithoutUserInput
   }
 
-  export type UserUncheckedCreateWithoutFollowRequestSentInput = {
+  export type UserUncheckedCreateWithoutFollowRequestsSentInput = {
     id: string
     username: string
     avatar?: string | null
@@ -14948,22 +14948,22 @@ export namespace Prisma {
     website?: string | null
     createdAt?: Date | string
     posts?: PostUncheckedCreateNestedManyWithoutUserInput
-    likes?: LikeUncheckedCreateNestedManyWithoutUserInput
     comments?: CommentUncheckedCreateNestedManyWithoutUserInput
+    likes?: LikeUncheckedCreateNestedManyWithoutUserInput
     followers?: FollowerUncheckedCreateNestedManyWithoutFollowerInput
-    following?: FollowerUncheckedCreateNestedManyWithoutFollowingInput
-    followRequestReceived?: FollowerRequestUncheckedCreateNestedManyWithoutReceiverInput
-    blocks?: BlockUncheckedCreateNestedManyWithoutSenderInput
-    blockedBy?: BlockUncheckedCreateNestedManyWithoutReceiverInput
+    followings?: FollowerUncheckedCreateNestedManyWithoutFollowingInput
+    followRequestsReceived?: FollowRequestUncheckedCreateNestedManyWithoutReceiverInput
+    blocks?: BlockUncheckedCreateNestedManyWithoutBlockerInput
+    blockedBy?: BlockUncheckedCreateNestedManyWithoutBlockedInput
     stories?: StoryUncheckedCreateNestedManyWithoutUserInput
   }
 
-  export type UserCreateOrConnectWithoutFollowRequestSentInput = {
+  export type UserCreateOrConnectWithoutFollowRequestsSentInput = {
     where: UserWhereUniqueInput
-    create: XOR<UserCreateWithoutFollowRequestSentInput, UserUncheckedCreateWithoutFollowRequestSentInput>
+    create: XOR<UserCreateWithoutFollowRequestsSentInput, UserUncheckedCreateWithoutFollowRequestsSentInput>
   }
 
-  export type UserCreateWithoutFollowRequestReceivedInput = {
+  export type UserCreateWithoutFollowRequestsReceivedInput = {
     id: string
     username: string
     avatar?: string | null
@@ -14977,17 +14977,17 @@ export namespace Prisma {
     website?: string | null
     createdAt?: Date | string
     posts?: PostCreateNestedManyWithoutUserInput
-    likes?: LikeCreateNestedManyWithoutUserInput
     comments?: CommentCreateNestedManyWithoutUserInput
+    likes?: LikeCreateNestedManyWithoutUserInput
     followers?: FollowerCreateNestedManyWithoutFollowerInput
-    following?: FollowerCreateNestedManyWithoutFollowingInput
-    followRequestSent?: FollowerRequestCreateNestedManyWithoutSenderInput
-    blocks?: BlockCreateNestedManyWithoutSenderInput
-    blockedBy?: BlockCreateNestedManyWithoutReceiverInput
+    followings?: FollowerCreateNestedManyWithoutFollowingInput
+    followRequestsSent?: FollowRequestCreateNestedManyWithoutSenderInput
+    blocks?: BlockCreateNestedManyWithoutBlockerInput
+    blockedBy?: BlockCreateNestedManyWithoutBlockedInput
     stories?: StoryCreateNestedManyWithoutUserInput
   }
 
-  export type UserUncheckedCreateWithoutFollowRequestReceivedInput = {
+  export type UserUncheckedCreateWithoutFollowRequestsReceivedInput = {
     id: string
     username: string
     avatar?: string | null
@@ -15001,33 +15001,33 @@ export namespace Prisma {
     website?: string | null
     createdAt?: Date | string
     posts?: PostUncheckedCreateNestedManyWithoutUserInput
-    likes?: LikeUncheckedCreateNestedManyWithoutUserInput
     comments?: CommentUncheckedCreateNestedManyWithoutUserInput
+    likes?: LikeUncheckedCreateNestedManyWithoutUserInput
     followers?: FollowerUncheckedCreateNestedManyWithoutFollowerInput
-    following?: FollowerUncheckedCreateNestedManyWithoutFollowingInput
-    followRequestSent?: FollowerRequestUncheckedCreateNestedManyWithoutSenderInput
-    blocks?: BlockUncheckedCreateNestedManyWithoutSenderInput
-    blockedBy?: BlockUncheckedCreateNestedManyWithoutReceiverInput
+    followings?: FollowerUncheckedCreateNestedManyWithoutFollowingInput
+    followRequestsSent?: FollowRequestUncheckedCreateNestedManyWithoutSenderInput
+    blocks?: BlockUncheckedCreateNestedManyWithoutBlockerInput
+    blockedBy?: BlockUncheckedCreateNestedManyWithoutBlockedInput
     stories?: StoryUncheckedCreateNestedManyWithoutUserInput
   }
 
-  export type UserCreateOrConnectWithoutFollowRequestReceivedInput = {
+  export type UserCreateOrConnectWithoutFollowRequestsReceivedInput = {
     where: UserWhereUniqueInput
-    create: XOR<UserCreateWithoutFollowRequestReceivedInput, UserUncheckedCreateWithoutFollowRequestReceivedInput>
+    create: XOR<UserCreateWithoutFollowRequestsReceivedInput, UserUncheckedCreateWithoutFollowRequestsReceivedInput>
   }
 
-  export type UserUpsertWithoutFollowRequestSentInput = {
-    update: XOR<UserUpdateWithoutFollowRequestSentInput, UserUncheckedUpdateWithoutFollowRequestSentInput>
-    create: XOR<UserCreateWithoutFollowRequestSentInput, UserUncheckedCreateWithoutFollowRequestSentInput>
+  export type UserUpsertWithoutFollowRequestsSentInput = {
+    update: XOR<UserUpdateWithoutFollowRequestsSentInput, UserUncheckedUpdateWithoutFollowRequestsSentInput>
+    create: XOR<UserCreateWithoutFollowRequestsSentInput, UserUncheckedCreateWithoutFollowRequestsSentInput>
     where?: UserWhereInput
   }
 
-  export type UserUpdateToOneWithWhereWithoutFollowRequestSentInput = {
+  export type UserUpdateToOneWithWhereWithoutFollowRequestsSentInput = {
     where?: UserWhereInput
-    data: XOR<UserUpdateWithoutFollowRequestSentInput, UserUncheckedUpdateWithoutFollowRequestSentInput>
+    data: XOR<UserUpdateWithoutFollowRequestsSentInput, UserUncheckedUpdateWithoutFollowRequestsSentInput>
   }
 
-  export type UserUpdateWithoutFollowRequestSentInput = {
+  export type UserUpdateWithoutFollowRequestsSentInput = {
     id?: StringFieldUpdateOperationsInput | string
     username?: StringFieldUpdateOperationsInput | string
     avatar?: NullableStringFieldUpdateOperationsInput | string | null
@@ -15041,17 +15041,17 @@ export namespace Prisma {
     website?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     posts?: PostUpdateManyWithoutUserNestedInput
-    likes?: LikeUpdateManyWithoutUserNestedInput
     comments?: CommentUpdateManyWithoutUserNestedInput
+    likes?: LikeUpdateManyWithoutUserNestedInput
     followers?: FollowerUpdateManyWithoutFollowerNestedInput
-    following?: FollowerUpdateManyWithoutFollowingNestedInput
-    followRequestReceived?: FollowerRequestUpdateManyWithoutReceiverNestedInput
-    blocks?: BlockUpdateManyWithoutSenderNestedInput
-    blockedBy?: BlockUpdateManyWithoutReceiverNestedInput
+    followings?: FollowerUpdateManyWithoutFollowingNestedInput
+    followRequestsReceived?: FollowRequestUpdateManyWithoutReceiverNestedInput
+    blocks?: BlockUpdateManyWithoutBlockerNestedInput
+    blockedBy?: BlockUpdateManyWithoutBlockedNestedInput
     stories?: StoryUpdateManyWithoutUserNestedInput
   }
 
-  export type UserUncheckedUpdateWithoutFollowRequestSentInput = {
+  export type UserUncheckedUpdateWithoutFollowRequestsSentInput = {
     id?: StringFieldUpdateOperationsInput | string
     username?: StringFieldUpdateOperationsInput | string
     avatar?: NullableStringFieldUpdateOperationsInput | string | null
@@ -15065,28 +15065,28 @@ export namespace Prisma {
     website?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     posts?: PostUncheckedUpdateManyWithoutUserNestedInput
-    likes?: LikeUncheckedUpdateManyWithoutUserNestedInput
     comments?: CommentUncheckedUpdateManyWithoutUserNestedInput
+    likes?: LikeUncheckedUpdateManyWithoutUserNestedInput
     followers?: FollowerUncheckedUpdateManyWithoutFollowerNestedInput
-    following?: FollowerUncheckedUpdateManyWithoutFollowingNestedInput
-    followRequestReceived?: FollowerRequestUncheckedUpdateManyWithoutReceiverNestedInput
-    blocks?: BlockUncheckedUpdateManyWithoutSenderNestedInput
-    blockedBy?: BlockUncheckedUpdateManyWithoutReceiverNestedInput
+    followings?: FollowerUncheckedUpdateManyWithoutFollowingNestedInput
+    followRequestsReceived?: FollowRequestUncheckedUpdateManyWithoutReceiverNestedInput
+    blocks?: BlockUncheckedUpdateManyWithoutBlockerNestedInput
+    blockedBy?: BlockUncheckedUpdateManyWithoutBlockedNestedInput
     stories?: StoryUncheckedUpdateManyWithoutUserNestedInput
   }
 
-  export type UserUpsertWithoutFollowRequestReceivedInput = {
-    update: XOR<UserUpdateWithoutFollowRequestReceivedInput, UserUncheckedUpdateWithoutFollowRequestReceivedInput>
-    create: XOR<UserCreateWithoutFollowRequestReceivedInput, UserUncheckedCreateWithoutFollowRequestReceivedInput>
+  export type UserUpsertWithoutFollowRequestsReceivedInput = {
+    update: XOR<UserUpdateWithoutFollowRequestsReceivedInput, UserUncheckedUpdateWithoutFollowRequestsReceivedInput>
+    create: XOR<UserCreateWithoutFollowRequestsReceivedInput, UserUncheckedCreateWithoutFollowRequestsReceivedInput>
     where?: UserWhereInput
   }
 
-  export type UserUpdateToOneWithWhereWithoutFollowRequestReceivedInput = {
+  export type UserUpdateToOneWithWhereWithoutFollowRequestsReceivedInput = {
     where?: UserWhereInput
-    data: XOR<UserUpdateWithoutFollowRequestReceivedInput, UserUncheckedUpdateWithoutFollowRequestReceivedInput>
+    data: XOR<UserUpdateWithoutFollowRequestsReceivedInput, UserUncheckedUpdateWithoutFollowRequestsReceivedInput>
   }
 
-  export type UserUpdateWithoutFollowRequestReceivedInput = {
+  export type UserUpdateWithoutFollowRequestsReceivedInput = {
     id?: StringFieldUpdateOperationsInput | string
     username?: StringFieldUpdateOperationsInput | string
     avatar?: NullableStringFieldUpdateOperationsInput | string | null
@@ -15100,17 +15100,17 @@ export namespace Prisma {
     website?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     posts?: PostUpdateManyWithoutUserNestedInput
-    likes?: LikeUpdateManyWithoutUserNestedInput
     comments?: CommentUpdateManyWithoutUserNestedInput
+    likes?: LikeUpdateManyWithoutUserNestedInput
     followers?: FollowerUpdateManyWithoutFollowerNestedInput
-    following?: FollowerUpdateManyWithoutFollowingNestedInput
-    followRequestSent?: FollowerRequestUpdateManyWithoutSenderNestedInput
-    blocks?: BlockUpdateManyWithoutSenderNestedInput
-    blockedBy?: BlockUpdateManyWithoutReceiverNestedInput
+    followings?: FollowerUpdateManyWithoutFollowingNestedInput
+    followRequestsSent?: FollowRequestUpdateManyWithoutSenderNestedInput
+    blocks?: BlockUpdateManyWithoutBlockerNestedInput
+    blockedBy?: BlockUpdateManyWithoutBlockedNestedInput
     stories?: StoryUpdateManyWithoutUserNestedInput
   }
 
-  export type UserUncheckedUpdateWithoutFollowRequestReceivedInput = {
+  export type UserUncheckedUpdateWithoutFollowRequestsReceivedInput = {
     id?: StringFieldUpdateOperationsInput | string
     username?: StringFieldUpdateOperationsInput | string
     avatar?: NullableStringFieldUpdateOperationsInput | string | null
@@ -15124,13 +15124,13 @@ export namespace Prisma {
     website?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     posts?: PostUncheckedUpdateManyWithoutUserNestedInput
-    likes?: LikeUncheckedUpdateManyWithoutUserNestedInput
     comments?: CommentUncheckedUpdateManyWithoutUserNestedInput
+    likes?: LikeUncheckedUpdateManyWithoutUserNestedInput
     followers?: FollowerUncheckedUpdateManyWithoutFollowerNestedInput
-    following?: FollowerUncheckedUpdateManyWithoutFollowingNestedInput
-    followRequestSent?: FollowerRequestUncheckedUpdateManyWithoutSenderNestedInput
-    blocks?: BlockUncheckedUpdateManyWithoutSenderNestedInput
-    blockedBy?: BlockUncheckedUpdateManyWithoutReceiverNestedInput
+    followings?: FollowerUncheckedUpdateManyWithoutFollowingNestedInput
+    followRequestsSent?: FollowRequestUncheckedUpdateManyWithoutSenderNestedInput
+    blocks?: BlockUncheckedUpdateManyWithoutBlockerNestedInput
+    blockedBy?: BlockUncheckedUpdateManyWithoutBlockedNestedInput
     stories?: StoryUncheckedUpdateManyWithoutUserNestedInput
   }
 
@@ -15148,13 +15148,13 @@ export namespace Prisma {
     website?: string | null
     createdAt?: Date | string
     posts?: PostCreateNestedManyWithoutUserInput
-    likes?: LikeCreateNestedManyWithoutUserInput
     comments?: CommentCreateNestedManyWithoutUserInput
+    likes?: LikeCreateNestedManyWithoutUserInput
     followers?: FollowerCreateNestedManyWithoutFollowerInput
-    following?: FollowerCreateNestedManyWithoutFollowingInput
-    followRequestSent?: FollowerRequestCreateNestedManyWithoutSenderInput
-    followRequestReceived?: FollowerRequestCreateNestedManyWithoutReceiverInput
-    blockedBy?: BlockCreateNestedManyWithoutReceiverInput
+    followings?: FollowerCreateNestedManyWithoutFollowingInput
+    followRequestsSent?: FollowRequestCreateNestedManyWithoutSenderInput
+    followRequestsReceived?: FollowRequestCreateNestedManyWithoutReceiverInput
+    blockedBy?: BlockCreateNestedManyWithoutBlockedInput
     stories?: StoryCreateNestedManyWithoutUserInput
   }
 
@@ -15172,13 +15172,13 @@ export namespace Prisma {
     website?: string | null
     createdAt?: Date | string
     posts?: PostUncheckedCreateNestedManyWithoutUserInput
-    likes?: LikeUncheckedCreateNestedManyWithoutUserInput
     comments?: CommentUncheckedCreateNestedManyWithoutUserInput
+    likes?: LikeUncheckedCreateNestedManyWithoutUserInput
     followers?: FollowerUncheckedCreateNestedManyWithoutFollowerInput
-    following?: FollowerUncheckedCreateNestedManyWithoutFollowingInput
-    followRequestSent?: FollowerRequestUncheckedCreateNestedManyWithoutSenderInput
-    followRequestReceived?: FollowerRequestUncheckedCreateNestedManyWithoutReceiverInput
-    blockedBy?: BlockUncheckedCreateNestedManyWithoutReceiverInput
+    followings?: FollowerUncheckedCreateNestedManyWithoutFollowingInput
+    followRequestsSent?: FollowRequestUncheckedCreateNestedManyWithoutSenderInput
+    followRequestsReceived?: FollowRequestUncheckedCreateNestedManyWithoutReceiverInput
+    blockedBy?: BlockUncheckedCreateNestedManyWithoutBlockedInput
     stories?: StoryUncheckedCreateNestedManyWithoutUserInput
   }
 
@@ -15201,13 +15201,13 @@ export namespace Prisma {
     website?: string | null
     createdAt?: Date | string
     posts?: PostCreateNestedManyWithoutUserInput
-    likes?: LikeCreateNestedManyWithoutUserInput
     comments?: CommentCreateNestedManyWithoutUserInput
+    likes?: LikeCreateNestedManyWithoutUserInput
     followers?: FollowerCreateNestedManyWithoutFollowerInput
-    following?: FollowerCreateNestedManyWithoutFollowingInput
-    followRequestSent?: FollowerRequestCreateNestedManyWithoutSenderInput
-    followRequestReceived?: FollowerRequestCreateNestedManyWithoutReceiverInput
-    blocks?: BlockCreateNestedManyWithoutSenderInput
+    followings?: FollowerCreateNestedManyWithoutFollowingInput
+    followRequestsSent?: FollowRequestCreateNestedManyWithoutSenderInput
+    followRequestsReceived?: FollowRequestCreateNestedManyWithoutReceiverInput
+    blocks?: BlockCreateNestedManyWithoutBlockerInput
     stories?: StoryCreateNestedManyWithoutUserInput
   }
 
@@ -15225,13 +15225,13 @@ export namespace Prisma {
     website?: string | null
     createdAt?: Date | string
     posts?: PostUncheckedCreateNestedManyWithoutUserInput
-    likes?: LikeUncheckedCreateNestedManyWithoutUserInput
     comments?: CommentUncheckedCreateNestedManyWithoutUserInput
+    likes?: LikeUncheckedCreateNestedManyWithoutUserInput
     followers?: FollowerUncheckedCreateNestedManyWithoutFollowerInput
-    following?: FollowerUncheckedCreateNestedManyWithoutFollowingInput
-    followRequestSent?: FollowerRequestUncheckedCreateNestedManyWithoutSenderInput
-    followRequestReceived?: FollowerRequestUncheckedCreateNestedManyWithoutReceiverInput
-    blocks?: BlockUncheckedCreateNestedManyWithoutSenderInput
+    followings?: FollowerUncheckedCreateNestedManyWithoutFollowingInput
+    followRequestsSent?: FollowRequestUncheckedCreateNestedManyWithoutSenderInput
+    followRequestsReceived?: FollowRequestUncheckedCreateNestedManyWithoutReceiverInput
+    blocks?: BlockUncheckedCreateNestedManyWithoutBlockerInput
     stories?: StoryUncheckedCreateNestedManyWithoutUserInput
   }
 
@@ -15265,13 +15265,13 @@ export namespace Prisma {
     website?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     posts?: PostUpdateManyWithoutUserNestedInput
-    likes?: LikeUpdateManyWithoutUserNestedInput
     comments?: CommentUpdateManyWithoutUserNestedInput
+    likes?: LikeUpdateManyWithoutUserNestedInput
     followers?: FollowerUpdateManyWithoutFollowerNestedInput
-    following?: FollowerUpdateManyWithoutFollowingNestedInput
-    followRequestSent?: FollowerRequestUpdateManyWithoutSenderNestedInput
-    followRequestReceived?: FollowerRequestUpdateManyWithoutReceiverNestedInput
-    blockedBy?: BlockUpdateManyWithoutReceiverNestedInput
+    followings?: FollowerUpdateManyWithoutFollowingNestedInput
+    followRequestsSent?: FollowRequestUpdateManyWithoutSenderNestedInput
+    followRequestsReceived?: FollowRequestUpdateManyWithoutReceiverNestedInput
+    blockedBy?: BlockUpdateManyWithoutBlockedNestedInput
     stories?: StoryUpdateManyWithoutUserNestedInput
   }
 
@@ -15289,13 +15289,13 @@ export namespace Prisma {
     website?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     posts?: PostUncheckedUpdateManyWithoutUserNestedInput
-    likes?: LikeUncheckedUpdateManyWithoutUserNestedInput
     comments?: CommentUncheckedUpdateManyWithoutUserNestedInput
+    likes?: LikeUncheckedUpdateManyWithoutUserNestedInput
     followers?: FollowerUncheckedUpdateManyWithoutFollowerNestedInput
-    following?: FollowerUncheckedUpdateManyWithoutFollowingNestedInput
-    followRequestSent?: FollowerRequestUncheckedUpdateManyWithoutSenderNestedInput
-    followRequestReceived?: FollowerRequestUncheckedUpdateManyWithoutReceiverNestedInput
-    blockedBy?: BlockUncheckedUpdateManyWithoutReceiverNestedInput
+    followings?: FollowerUncheckedUpdateManyWithoutFollowingNestedInput
+    followRequestsSent?: FollowRequestUncheckedUpdateManyWithoutSenderNestedInput
+    followRequestsReceived?: FollowRequestUncheckedUpdateManyWithoutReceiverNestedInput
+    blockedBy?: BlockUncheckedUpdateManyWithoutBlockedNestedInput
     stories?: StoryUncheckedUpdateManyWithoutUserNestedInput
   }
 
@@ -15324,13 +15324,13 @@ export namespace Prisma {
     website?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     posts?: PostUpdateManyWithoutUserNestedInput
-    likes?: LikeUpdateManyWithoutUserNestedInput
     comments?: CommentUpdateManyWithoutUserNestedInput
+    likes?: LikeUpdateManyWithoutUserNestedInput
     followers?: FollowerUpdateManyWithoutFollowerNestedInput
-    following?: FollowerUpdateManyWithoutFollowingNestedInput
-    followRequestSent?: FollowerRequestUpdateManyWithoutSenderNestedInput
-    followRequestReceived?: FollowerRequestUpdateManyWithoutReceiverNestedInput
-    blocks?: BlockUpdateManyWithoutSenderNestedInput
+    followings?: FollowerUpdateManyWithoutFollowingNestedInput
+    followRequestsSent?: FollowRequestUpdateManyWithoutSenderNestedInput
+    followRequestsReceived?: FollowRequestUpdateManyWithoutReceiverNestedInput
+    blocks?: BlockUpdateManyWithoutBlockerNestedInput
     stories?: StoryUpdateManyWithoutUserNestedInput
   }
 
@@ -15348,13 +15348,13 @@ export namespace Prisma {
     website?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     posts?: PostUncheckedUpdateManyWithoutUserNestedInput
-    likes?: LikeUncheckedUpdateManyWithoutUserNestedInput
     comments?: CommentUncheckedUpdateManyWithoutUserNestedInput
+    likes?: LikeUncheckedUpdateManyWithoutUserNestedInput
     followers?: FollowerUncheckedUpdateManyWithoutFollowerNestedInput
-    following?: FollowerUncheckedUpdateManyWithoutFollowingNestedInput
-    followRequestSent?: FollowerRequestUncheckedUpdateManyWithoutSenderNestedInput
-    followRequestReceived?: FollowerRequestUncheckedUpdateManyWithoutReceiverNestedInput
-    blocks?: BlockUncheckedUpdateManyWithoutSenderNestedInput
+    followings?: FollowerUncheckedUpdateManyWithoutFollowingNestedInput
+    followRequestsSent?: FollowRequestUncheckedUpdateManyWithoutSenderNestedInput
+    followRequestsReceived?: FollowRequestUncheckedUpdateManyWithoutReceiverNestedInput
+    blocks?: BlockUncheckedUpdateManyWithoutBlockerNestedInput
     stories?: StoryUncheckedUpdateManyWithoutUserNestedInput
   }
 
@@ -15372,14 +15372,14 @@ export namespace Prisma {
     website?: string | null
     createdAt?: Date | string
     posts?: PostCreateNestedManyWithoutUserInput
-    likes?: LikeCreateNestedManyWithoutUserInput
     comments?: CommentCreateNestedManyWithoutUserInput
+    likes?: LikeCreateNestedManyWithoutUserInput
     followers?: FollowerCreateNestedManyWithoutFollowerInput
-    following?: FollowerCreateNestedManyWithoutFollowingInput
-    followRequestSent?: FollowerRequestCreateNestedManyWithoutSenderInput
-    followRequestReceived?: FollowerRequestCreateNestedManyWithoutReceiverInput
-    blocks?: BlockCreateNestedManyWithoutSenderInput
-    blockedBy?: BlockCreateNestedManyWithoutReceiverInput
+    followings?: FollowerCreateNestedManyWithoutFollowingInput
+    followRequestsSent?: FollowRequestCreateNestedManyWithoutSenderInput
+    followRequestsReceived?: FollowRequestCreateNestedManyWithoutReceiverInput
+    blocks?: BlockCreateNestedManyWithoutBlockerInput
+    blockedBy?: BlockCreateNestedManyWithoutBlockedInput
   }
 
   export type UserUncheckedCreateWithoutStoriesInput = {
@@ -15396,14 +15396,14 @@ export namespace Prisma {
     website?: string | null
     createdAt?: Date | string
     posts?: PostUncheckedCreateNestedManyWithoutUserInput
-    likes?: LikeUncheckedCreateNestedManyWithoutUserInput
     comments?: CommentUncheckedCreateNestedManyWithoutUserInput
+    likes?: LikeUncheckedCreateNestedManyWithoutUserInput
     followers?: FollowerUncheckedCreateNestedManyWithoutFollowerInput
-    following?: FollowerUncheckedCreateNestedManyWithoutFollowingInput
-    followRequestSent?: FollowerRequestUncheckedCreateNestedManyWithoutSenderInput
-    followRequestReceived?: FollowerRequestUncheckedCreateNestedManyWithoutReceiverInput
-    blocks?: BlockUncheckedCreateNestedManyWithoutSenderInput
-    blockedBy?: BlockUncheckedCreateNestedManyWithoutReceiverInput
+    followings?: FollowerUncheckedCreateNestedManyWithoutFollowingInput
+    followRequestsSent?: FollowRequestUncheckedCreateNestedManyWithoutSenderInput
+    followRequestsReceived?: FollowRequestUncheckedCreateNestedManyWithoutReceiverInput
+    blocks?: BlockUncheckedCreateNestedManyWithoutBlockerInput
+    blockedBy?: BlockUncheckedCreateNestedManyWithoutBlockedInput
   }
 
   export type UserCreateOrConnectWithoutStoriesInput = {
@@ -15436,14 +15436,14 @@ export namespace Prisma {
     website?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     posts?: PostUpdateManyWithoutUserNestedInput
-    likes?: LikeUpdateManyWithoutUserNestedInput
     comments?: CommentUpdateManyWithoutUserNestedInput
+    likes?: LikeUpdateManyWithoutUserNestedInput
     followers?: FollowerUpdateManyWithoutFollowerNestedInput
-    following?: FollowerUpdateManyWithoutFollowingNestedInput
-    followRequestSent?: FollowerRequestUpdateManyWithoutSenderNestedInput
-    followRequestReceived?: FollowerRequestUpdateManyWithoutReceiverNestedInput
-    blocks?: BlockUpdateManyWithoutSenderNestedInput
-    blockedBy?: BlockUpdateManyWithoutReceiverNestedInput
+    followings?: FollowerUpdateManyWithoutFollowingNestedInput
+    followRequestsSent?: FollowRequestUpdateManyWithoutSenderNestedInput
+    followRequestsReceived?: FollowRequestUpdateManyWithoutReceiverNestedInput
+    blocks?: BlockUpdateManyWithoutBlockerNestedInput
+    blockedBy?: BlockUpdateManyWithoutBlockedNestedInput
   }
 
   export type UserUncheckedUpdateWithoutStoriesInput = {
@@ -15460,14 +15460,14 @@ export namespace Prisma {
     website?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     posts?: PostUncheckedUpdateManyWithoutUserNestedInput
-    likes?: LikeUncheckedUpdateManyWithoutUserNestedInput
     comments?: CommentUncheckedUpdateManyWithoutUserNestedInput
+    likes?: LikeUncheckedUpdateManyWithoutUserNestedInput
     followers?: FollowerUncheckedUpdateManyWithoutFollowerNestedInput
-    following?: FollowerUncheckedUpdateManyWithoutFollowingNestedInput
-    followRequestSent?: FollowerRequestUncheckedUpdateManyWithoutSenderNestedInput
-    followRequestReceived?: FollowerRequestUncheckedUpdateManyWithoutReceiverNestedInput
-    blocks?: BlockUncheckedUpdateManyWithoutSenderNestedInput
-    blockedBy?: BlockUncheckedUpdateManyWithoutReceiverNestedInput
+    followings?: FollowerUncheckedUpdateManyWithoutFollowingNestedInput
+    followRequestsSent?: FollowRequestUncheckedUpdateManyWithoutSenderNestedInput
+    followRequestsReceived?: FollowRequestUncheckedUpdateManyWithoutReceiverNestedInput
+    blocks?: BlockUncheckedUpdateManyWithoutBlockerNestedInput
+    blockedBy?: BlockUncheckedUpdateManyWithoutBlockedNestedInput
   }
 
   export type PostCreateManyUserInput = {
@@ -15478,13 +15478,6 @@ export namespace Prisma {
     updatedAt?: Date | string
   }
 
-  export type LikeCreateManyUserInput = {
-    id?: number
-    createdAt?: Date | string
-    postId?: number | null
-    commentId?: number | null
-  }
-
   export type CommentCreateManyUserInput = {
     id?: number
     desc: string
@@ -15493,47 +15486,54 @@ export namespace Prisma {
     postId: number
   }
 
+  export type LikeCreateManyUserInput = {
+    id?: number
+    createdAt?: Date | string
+    postId?: number | null
+    commentId?: number | null
+  }
+
   export type FollowerCreateManyFollowerInput = {
     id?: number
-    createAt?: Date | string
+    createdAt?: Date | string
     followingId: string
   }
 
   export type FollowerCreateManyFollowingInput = {
     id?: number
-    createAt?: Date | string
+    createdAt?: Date | string
     followerId: string
   }
 
-  export type FollowerRequestCreateManySenderInput = {
+  export type FollowRequestCreateManySenderInput = {
     id?: number
-    createAt?: Date | string
+    createdAt?: Date | string
     receiverId: string
   }
 
-  export type FollowerRequestCreateManyReceiverInput = {
+  export type FollowRequestCreateManyReceiverInput = {
     id?: number
-    createAt?: Date | string
+    createdAt?: Date | string
     senderId: string
   }
 
-  export type BlockCreateManySenderInput = {
+  export type BlockCreateManyBlockerInput = {
     id?: number
-    createAt?: Date | string
+    createdAt?: Date | string
     blockedId: string
   }
 
-  export type BlockCreateManyReceiverInput = {
+  export type BlockCreateManyBlockedInput = {
     id?: number
-    createAt?: Date | string
+    createdAt?: Date | string
     blockerId: string
   }
 
   export type StoryCreateManyUserInput = {
     id?: number
-    createAt?: Date | string
+    createdAt?: Date | string
     expiresAt: Date | string
-    img?: string | null
+    img: string
   }
 
   export type PostUpdateWithoutUserInput = {
@@ -15541,8 +15541,8 @@ export namespace Prisma {
     img?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    comments?: CommentUpdateManyWithoutPostNestedInput
     likes?: LikeUpdateManyWithoutPostNestedInput
-    Comment?: CommentUpdateManyWithoutPostNestedInput
   }
 
   export type PostUncheckedUpdateWithoutUserInput = {
@@ -15551,8 +15551,8 @@ export namespace Prisma {
     img?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    comments?: CommentUncheckedUpdateManyWithoutPostNestedInput
     likes?: LikeUncheckedUpdateManyWithoutPostNestedInput
-    Comment?: CommentUncheckedUpdateManyWithoutPostNestedInput
   }
 
   export type PostUncheckedUpdateManyWithoutUserInput = {
@@ -15561,6 +15561,31 @@ export namespace Prisma {
     img?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type CommentUpdateWithoutUserInput = {
+    desc?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    post?: PostUpdateOneRequiredWithoutCommentsNestedInput
+    likes?: LikeUpdateManyWithoutCommentNestedInput
+  }
+
+  export type CommentUncheckedUpdateWithoutUserInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    desc?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    postId?: IntFieldUpdateOperationsInput | number
+    likes?: LikeUncheckedUpdateManyWithoutCommentNestedInput
+  }
+
+  export type CommentUncheckedUpdateManyWithoutUserInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    desc?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    postId?: IntFieldUpdateOperationsInput | number
   }
 
   export type LikeUpdateWithoutUserInput = {
@@ -15583,158 +15608,126 @@ export namespace Prisma {
     commentId?: NullableIntFieldUpdateOperationsInput | number | null
   }
 
-  export type CommentUpdateWithoutUserInput = {
-    desc?: StringFieldUpdateOperationsInput | string
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    post?: PostUpdateOneRequiredWithoutCommentNestedInput
-    likes?: LikeUpdateManyWithoutCommentNestedInput
-  }
-
-  export type CommentUncheckedUpdateWithoutUserInput = {
-    id?: IntFieldUpdateOperationsInput | number
-    desc?: StringFieldUpdateOperationsInput | string
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    postId?: IntFieldUpdateOperationsInput | number
-    likes?: LikeUncheckedUpdateManyWithoutCommentNestedInput
-  }
-
-  export type CommentUncheckedUpdateManyWithoutUserInput = {
-    id?: IntFieldUpdateOperationsInput | number
-    desc?: StringFieldUpdateOperationsInput | string
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    postId?: IntFieldUpdateOperationsInput | number
-  }
-
   export type FollowerUpdateWithoutFollowerInput = {
-    createAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    following?: UserUpdateOneRequiredWithoutFollowingNestedInput
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    following?: UserUpdateOneRequiredWithoutFollowingsNestedInput
   }
 
   export type FollowerUncheckedUpdateWithoutFollowerInput = {
     id?: IntFieldUpdateOperationsInput | number
-    createAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     followingId?: StringFieldUpdateOperationsInput | string
   }
 
   export type FollowerUncheckedUpdateManyWithoutFollowerInput = {
     id?: IntFieldUpdateOperationsInput | number
-    createAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     followingId?: StringFieldUpdateOperationsInput | string
   }
 
   export type FollowerUpdateWithoutFollowingInput = {
-    createAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     follower?: UserUpdateOneRequiredWithoutFollowersNestedInput
   }
 
   export type FollowerUncheckedUpdateWithoutFollowingInput = {
     id?: IntFieldUpdateOperationsInput | number
-    createAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     followerId?: StringFieldUpdateOperationsInput | string
   }
 
   export type FollowerUncheckedUpdateManyWithoutFollowingInput = {
     id?: IntFieldUpdateOperationsInput | number
-    createAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     followerId?: StringFieldUpdateOperationsInput | string
   }
 
-  export type FollowerRequestUpdateWithoutSenderInput = {
-    createAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    receiver?: UserUpdateOneRequiredWithoutFollowRequestReceivedNestedInput
+  export type FollowRequestUpdateWithoutSenderInput = {
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    receiver?: UserUpdateOneRequiredWithoutFollowRequestsReceivedNestedInput
   }
 
-  export type FollowerRequestUncheckedUpdateWithoutSenderInput = {
+  export type FollowRequestUncheckedUpdateWithoutSenderInput = {
     id?: IntFieldUpdateOperationsInput | number
-    createAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     receiverId?: StringFieldUpdateOperationsInput | string
   }
 
-  export type FollowerRequestUncheckedUpdateManyWithoutSenderInput = {
+  export type FollowRequestUncheckedUpdateManyWithoutSenderInput = {
     id?: IntFieldUpdateOperationsInput | number
-    createAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     receiverId?: StringFieldUpdateOperationsInput | string
   }
 
-  export type FollowerRequestUpdateWithoutReceiverInput = {
-    createAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    sender?: UserUpdateOneRequiredWithoutFollowRequestSentNestedInput
+  export type FollowRequestUpdateWithoutReceiverInput = {
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    sender?: UserUpdateOneRequiredWithoutFollowRequestsSentNestedInput
   }
 
-  export type FollowerRequestUncheckedUpdateWithoutReceiverInput = {
+  export type FollowRequestUncheckedUpdateWithoutReceiverInput = {
     id?: IntFieldUpdateOperationsInput | number
-    createAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     senderId?: StringFieldUpdateOperationsInput | string
   }
 
-  export type FollowerRequestUncheckedUpdateManyWithoutReceiverInput = {
+  export type FollowRequestUncheckedUpdateManyWithoutReceiverInput = {
     id?: IntFieldUpdateOperationsInput | number
-    createAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     senderId?: StringFieldUpdateOperationsInput | string
   }
 
-  export type BlockUpdateWithoutSenderInput = {
-    createAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    receiver?: UserUpdateOneRequiredWithoutBlockedByNestedInput
+  export type BlockUpdateWithoutBlockerInput = {
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    blocked?: UserUpdateOneRequiredWithoutBlockedByNestedInput
   }
 
-  export type BlockUncheckedUpdateWithoutSenderInput = {
+  export type BlockUncheckedUpdateWithoutBlockerInput = {
     id?: IntFieldUpdateOperationsInput | number
-    createAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     blockedId?: StringFieldUpdateOperationsInput | string
   }
 
-  export type BlockUncheckedUpdateManyWithoutSenderInput = {
+  export type BlockUncheckedUpdateManyWithoutBlockerInput = {
     id?: IntFieldUpdateOperationsInput | number
-    createAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     blockedId?: StringFieldUpdateOperationsInput | string
   }
 
-  export type BlockUpdateWithoutReceiverInput = {
-    createAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    sender?: UserUpdateOneRequiredWithoutBlocksNestedInput
+  export type BlockUpdateWithoutBlockedInput = {
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    blocker?: UserUpdateOneRequiredWithoutBlocksNestedInput
   }
 
-  export type BlockUncheckedUpdateWithoutReceiverInput = {
+  export type BlockUncheckedUpdateWithoutBlockedInput = {
     id?: IntFieldUpdateOperationsInput | number
-    createAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     blockerId?: StringFieldUpdateOperationsInput | string
   }
 
-  export type BlockUncheckedUpdateManyWithoutReceiverInput = {
+  export type BlockUncheckedUpdateManyWithoutBlockedInput = {
     id?: IntFieldUpdateOperationsInput | number
-    createAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     blockerId?: StringFieldUpdateOperationsInput | string
   }
 
   export type StoryUpdateWithoutUserInput = {
-    createAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     expiresAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    img?: NullableStringFieldUpdateOperationsInput | string | null
+    img?: StringFieldUpdateOperationsInput | string
   }
 
   export type StoryUncheckedUpdateWithoutUserInput = {
     id?: IntFieldUpdateOperationsInput | number
-    createAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     expiresAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    img?: NullableStringFieldUpdateOperationsInput | string | null
+    img?: StringFieldUpdateOperationsInput | string
   }
 
   export type StoryUncheckedUpdateManyWithoutUserInput = {
     id?: IntFieldUpdateOperationsInput | number
-    createAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     expiresAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    img?: NullableStringFieldUpdateOperationsInput | string | null
-  }
-
-  export type LikeCreateManyPostInput = {
-    id?: number
-    createdAt?: Date | string
-    userId: string
-    commentId?: number | null
+    img?: StringFieldUpdateOperationsInput | string
   }
 
   export type CommentCreateManyPostInput = {
@@ -15745,24 +15738,11 @@ export namespace Prisma {
     userId: string
   }
 
-  export type LikeUpdateWithoutPostInput = {
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    user?: UserUpdateOneRequiredWithoutLikesNestedInput
-    Comment?: CommentUpdateOneWithoutLikesNestedInput
-  }
-
-  export type LikeUncheckedUpdateWithoutPostInput = {
-    id?: IntFieldUpdateOperationsInput | number
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    userId?: StringFieldUpdateOperationsInput | string
-    commentId?: NullableIntFieldUpdateOperationsInput | number | null
-  }
-
-  export type LikeUncheckedUpdateManyWithoutPostInput = {
-    id?: IntFieldUpdateOperationsInput | number
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    userId?: StringFieldUpdateOperationsInput | string
-    commentId?: NullableIntFieldUpdateOperationsInput | number | null
+  export type LikeCreateManyPostInput = {
+    id?: number
+    createdAt?: Date | string
+    userId: string
+    commentId?: number | null
   }
 
   export type CommentUpdateWithoutPostInput = {
@@ -15788,6 +15768,26 @@ export namespace Prisma {
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     userId?: StringFieldUpdateOperationsInput | string
+  }
+
+  export type LikeUpdateWithoutPostInput = {
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    user?: UserUpdateOneRequiredWithoutLikesNestedInput
+    Comment?: CommentUpdateOneWithoutLikesNestedInput
+  }
+
+  export type LikeUncheckedUpdateWithoutPostInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    userId?: StringFieldUpdateOperationsInput | string
+    commentId?: NullableIntFieldUpdateOperationsInput | number | null
+  }
+
+  export type LikeUncheckedUpdateManyWithoutPostInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    userId?: StringFieldUpdateOperationsInput | string
+    commentId?: NullableIntFieldUpdateOperationsInput | number | null
   }
 
   export type LikeCreateManyCommentInput = {

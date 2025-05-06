@@ -39,7 +39,7 @@ const UserInfoCard = async ({ user }: { user: User }) => {
 
     isFollowing = followRes ? true : false;
 
-    const followReqRes = await prisma.followerRequest.findFirst({
+    const followReqRes = await prisma.followRequest.findFirst({
       where: {
         senderId: currentUserId,
         receiverId: user.id,

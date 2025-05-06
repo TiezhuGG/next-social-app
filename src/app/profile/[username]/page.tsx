@@ -23,7 +23,7 @@ const ProfilePage = async ({
       _count: {
         select: {
           followers: true,
-          following: true,
+          followings: true,
           posts: true,
         },
       },
@@ -86,7 +86,7 @@ const ProfilePage = async ({
                 <span className="text-sm">Followers</span>
               </div>
               <div className="flex flex-col items-center">
-                <span className="font-medium">{user._count.following}</span>
+                <span className="font-medium">{user._count.followings}</span>
                 <span className="text-sm">Following</span>
               </div>
             </div>

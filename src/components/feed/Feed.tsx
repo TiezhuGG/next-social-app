@@ -22,7 +22,7 @@ const Feed = async ({ username }: { username?: string }) => {
         },
         _count: {
           select: {
-            Comment: true,
+            comments: true,
           },
         },
       },
@@ -60,7 +60,7 @@ const Feed = async ({ username }: { username?: string }) => {
         },
         _count: {
           select: {
-            Comment: true,
+            comments: true,
           },
         },
       },
