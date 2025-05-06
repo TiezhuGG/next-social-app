@@ -1,18 +1,22 @@
 "use client";
 
-// import { updateProfile } from "@/lib/actions";
+import { updateProfile } from "@/lib/actions";
 import Image from "next/image";
 import { useActionState, useState } from "react";
-// import { CldUploadWidget } from "next-cloudinary";
+import { CldUploadWidget } from "next-cloudinary";
 import { useRouter } from "next/navigation";
 import UpdateButton from "./UpdateButton";
 import { User } from "@/app/generated/prisma";
+import { CircleX } from "lucide-react";
 
 const UpdateUser = ({ user }: { user: User }) => {
   const [open, setOpen] = useState(false);
   const [cover, setCover] = useState<any>(false);
 
-  const [state, formAction] = useActionState(updateProfile,{success:false,error:false});
+  const [state, formAction] = useActionState(updateProfile, {
+    success: false,
+    error: false,
+  });
 
   const router = useRouter();
 
@@ -30,18 +34,18 @@ const UpdateUser = ({ user }: { user: User }) => {
         Update
       </span>
       {open && (
-        <div className="absolute w-screen h-screen top-0 left-0 bg-black bg-opacity-65 flex items-center justify-center z-50 ">
+        <div className="absolute w-screen h-screen top-0 left-0 bg-black/65 flex items-center justify-center z-50 ">
           <form
             action={(formData) =>
               formAction({ formData, cover: cover?.secure_url || "" })
             }
             className="p-12 bg-white rounded-lg shadow-md flex flex-col gap-2 w-full md:w-1/2 xl:w-1/3 relative"
           >
-            {/* TITLE */}
             <h1>Update Profile</h1>
             <div className="mt-4 text-xs text-gray-500">
               Use the navbar profile to change the avatar or username.
             </div>
+
             {/* COVER PIC UPLOAD */}
             <CldUploadWidget
               uploadPreset="social"
@@ -71,9 +75,7 @@ const UpdateUser = ({ user }: { user: User }) => {
               }}
             </CldUploadWidget>
 
-            {/* WRAPPER */}
             <div className="flex flex-wrap justify-between gap-2 xl:gap-4">
-              {/* INPUT */}
               <div className="flex flex-col gap-4">
                 <label htmlFor="" className="text-xs text-gray-500">
                   First Name
@@ -85,6 +87,7 @@ const UpdateUser = ({ user }: { user: User }) => {
                   name="name"
                 />
               </div>
+
               <div className="flex flex-col gap-4">
                 <label htmlFor="" className="text-xs text-gray-500">
                   Surname
@@ -96,7 +99,7 @@ const UpdateUser = ({ user }: { user: User }) => {
                   name="surname"
                 />
               </div>
-              {/* INPUT */}
+
               <div className="flex flex-col gap-4">
                 <label htmlFor="" className="text-xs text-gray-500">
                   Description
@@ -108,7 +111,7 @@ const UpdateUser = ({ user }: { user: User }) => {
                   name="description"
                 />
               </div>
-              {/* INPUT */}
+
               <div className="flex flex-col gap-4">
                 <label htmlFor="" className="text-xs text-gray-500">
                   City
@@ -120,7 +123,6 @@ const UpdateUser = ({ user }: { user: User }) => {
                   name="city"
                 />
               </div>
-              {/* INPUT */}
 
               <div className="flex flex-col gap-4">
                 <label htmlFor="" className="text-xs text-gray-500">
@@ -133,7 +135,6 @@ const UpdateUser = ({ user }: { user: User }) => {
                   name="school"
                 />
               </div>
-              {/* INPUT */}
 
               <div className="flex flex-col gap-4">
                 <label htmlFor="" className="text-xs text-gray-500">
@@ -146,7 +147,6 @@ const UpdateUser = ({ user }: { user: User }) => {
                   name="work"
                 />
               </div>
-              {/* INPUT */}
 
               <div className="flex flex-col gap-4">
                 <label htmlFor="" className="text-xs text-gray-500">
@@ -160,7 +160,9 @@ const UpdateUser = ({ user }: { user: User }) => {
                 />
               </div>
             </div>
-            <UpdateButton/>
+
+            <UpdateButton />
+
             {state.success && (
               <span className="text-green-500">Profile has been updated!</span>
             )}
@@ -168,10 +170,10 @@ const UpdateUser = ({ user }: { user: User }) => {
               <span className="text-red-500">Something went wrong!</span>
             )}
             <div
-              className="absolute text-xl right-2 top-3 cursor-pointer"
+              className="absolute text-xl right-3 top-3 cursor-pointer"
               onClick={handleClose}
             >
-              X
+              <CircleX />
             </div>
           </form>
         </div>

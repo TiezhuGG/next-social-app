@@ -1,8 +1,8 @@
 "use client";
 
+import { Story, User } from "@/app/generated/prisma";
 import { addStory } from "@/lib/actions";
 import { useUser } from "@clerk/nextjs";
-import { Story, User } from "@prisma/client";
 import { CldUploadWidget } from "next-cloudinary";
 import Image from "next/image";
 import { useOptimistic, useState } from "react";
@@ -51,7 +51,7 @@ const StoryList = ({
     try {
       const createdStory = await addStory(img.secure_url);
       setStoryList((prev) => [createdStory!, ...prev]);
-      setImg(null)
+      setImg(null);
     } catch (err) {}
   };
 
@@ -93,7 +93,7 @@ const StoryList = ({
           );
         }}
       </CldUploadWidget>
-      {/* STORY */}
+      
       {optimisticStories.map((story) => (
         <div
           className="flex flex-col items-center gap-2 cursor-pointer"

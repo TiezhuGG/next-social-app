@@ -1,8 +1,8 @@
 "use client";
 
-// import { addComment } from "@/lib/actions";
+import { User, Comment } from "@/app/generated/prisma";
+import { addComment } from "@/lib/actions";
 import { useUser } from "@clerk/nextjs";
-// import { Comment, User } from "@prisma/client";
 import Image from "next/image";
 import { useOptimistic, useState } from "react";
 type CommentWithUser = Comment & { user: User };
@@ -85,10 +85,8 @@ const CommentList = ({
         </div>
       )}
       <div className="">
-        {/* COMMENT */}
         {optimisticComments.map((comment) => (
           <div className="flex gap-4 justify-between mt-6" key={comment.id}>
-            {/* AVATAR */}
             <Image
               src={comment.user.avatar || "noAvatar.png"}
               alt=""
@@ -96,7 +94,7 @@ const CommentList = ({
               height={40}
               className="w-10 h-10 rounded-full"
             />
-            {/* DESC */}
+            
             <div className="flex flex-col gap-2 flex-1">
               <span className="font-medium">
                 {comment.user.name && comment.user.surname
@@ -119,7 +117,7 @@ const CommentList = ({
                 <div className="">Reply</div>
               </div>
             </div>
-            {/* ICON */}
+            
             <Image
               src="/more.png"
               alt=""

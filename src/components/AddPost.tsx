@@ -1,57 +1,90 @@
+"use client";
 
-import { Album, Calendar, Video, Vote } from "lucide-react";
+import { useUser } from "@clerk/nextjs";
+import { CldUploadWidget } from "next-cloudinary";
 import Image from "next/image";
-import React from "react";
+import { useState } from "react";
+import AddPostButton from "./AddPostButton";
+import { addPost } from "@/lib/actions";
 
-export default async function AddPost() {
+const AddPost = () => {
+  const { user, isLoaded } = useUser();
+  const [desc, setDesc] = useState("");
+  const [img, setImg] = useState<any>();
+
+  if (!isLoaded) {
+    return "Loading...";
+  }
 
   return (
-    <div className="p-4 bg-white rounded-lg flex gap-4 text-sm">
-      <div>
-        <Image
-          src=""
-          width={60}
-          height={60}
-          alt="avatar"
-          className="rounded-full"
-        />
-      </div>
-      <div className="flex flex-col flex-1">
-        <form className="flex gap-4 items-end">
+    <div className="p-4 bg-white shadow-md rounded-lg flex gap-4 justify-between text-sm">
+      <Image
+        src={user?.imageUrl || "/noAvatar.png"}
+        alt=""
+        width={48}
+        height={48}
+        className="w-12 h-12 object-cover rounded-full"
+      />
+
+      <div className="flex-1">
+        <form
+          action={(formData) => addPost(formData, img?.secure_url || "")}
+          className="flex gap-4"
+        >
           <textarea
             placeholder="What's on your mind?"
-            className="w-full bg-slate-100 rounded-lg p-3"
+            className="flex-1 bg-slate-100 rounded-lg p-2"
             name="desc"
+            onChange={(e) => setDesc(e.target.value)}
           ></textarea>
-          <Image
-            src="/emoji.png"
-            alt=""
-            width={20}
-            height={20}
-            className="w-5 h-5 cursor-pointer self-end"
-          />
-          <button>Send</button>
+          <div className="">
+            <Image
+              src="/emoji.png"
+              alt=""
+              width={20}
+              height={20}
+              className="w-5 h-5 cursor-pointer self-end"
+            />
+            <AddPostButton />
+          </div>
         </form>
 
-        <div className="flex mt-3 gap-4">
-          <div className="flex items-center gap-1">
-            <Album className="h-5 w-5 text-emerald-500" />
-            <span>Photo</span>
+        <div className="flex items-center gap-4 mt-4 text-gray-400 flex-wrap">
+          <CldUploadWidget
+            uploadPreset="social"
+            onSuccess={(result, { widget }) => {
+              setImg(result.info);
+              widget.close();
+            }}
+          >
+            {({ open }) => {
+              return (
+                <div
+                  className="flex items-center gap-2 cursor-pointer"
+                  onClick={() => open()}
+                >
+                  <Image src="/addimage.png" alt="" width={20} height={20} />
+                  Photo
+                </div>
+              );
+            }}
+          </CldUploadWidget>
+          <div className="flex items-center gap-2 cursor-pointer">
+            <Image src="/addVideo.png" alt="" width={20} height={20} />
+            Video
           </div>
-          <div className="flex items-center gap-1">
-            <Video className="h-5 w-5 text-pink-500" />
-            <span>Video</span>
+          <div className="flex items-center gap-2 cursor-pointer">
+            <Image src="/poll.png" alt="" width={20} height={20} />
+            Poll
           </div>
-          <div className="flex items-center gap-1">
-            <Vote className="h-5 w-5 text-cyan-500" />
-            <span>Poll</span>
-          </div>
-          <div className="flex items-center gap-1">
-            <Calendar className="h-5 w-5 text-orange-500" />
-            <span>Event</span>
+          <div className="flex items-center gap-2 cursor-pointer">
+            <Image src="/addevent.png" alt="" width={20} height={20} />
+            Event
           </div>
         </div>
       </div>
     </div>
   );
-}
+};
+
+export default AddPost;

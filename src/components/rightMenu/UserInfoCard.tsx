@@ -7,8 +7,6 @@ import UpdateUser from "./UpdateUser";
 import { User } from "@/app/generated/prisma";
 
 const UserInfoCard = async ({ user }: { user: User }) => {
-  console.log("user info card", user);
-
   const createdAtDate = new Date(user.createdAt);
 
   const formattedDate = createdAtDate.toLocaleDateString("en-US", {
@@ -22,7 +20,7 @@ const UserInfoCard = async ({ user }: { user: User }) => {
   let isFollowingSent = false;
 
   const { userId: currentUserId } = await auth();
-
+  
   if (currentUserId) {
     const blockRes = await prisma.block.findFirst({
       where: {
@@ -31,7 +29,7 @@ const UserInfoCard = async ({ user }: { user: User }) => {
       },
     });
 
-    blockRes ? (isUserBlocked = true) : (isUserBlocked = false);
+    isUserBlocked = blockRes ? true : false;
     const followRes = await prisma.follower.findFirst({
       where: {
         followerId: currentUserId,
@@ -39,7 +37,8 @@ const UserInfoCard = async ({ user }: { user: User }) => {
       },
     });
 
-    followRes ? (isFollowing = true) : (isFollowing = false);
+    isFollowing = followRes ? true : false;
+
     const followReqRes = await prisma.followerRequest.findFirst({
       where: {
         senderId: currentUserId,
@@ -47,22 +46,21 @@ const UserInfoCard = async ({ user }: { user: User }) => {
       },
     });
 
-    followReqRes ? (isFollowingSent = true) : (isFollowingSent = false);
+    isFollowingSent = followReqRes ? true : false;
   }
   return (
     <div className="p-4 bg-white rounded-lg shadow-md text-sm flex flex-col gap-4">
-      {/* TOP */}
       <div className="flex justify-between items-center font-medium">
         <span className="text-gray-500">User Information</span>
-        {/* {currentUserId === user.id ? (
-          <UpdateUser user={user}/>
+        {currentUserId === user.id ? (
+          <UpdateUser user={user} />
         ) : (
           <Link href="/" className="text-blue-500 text-xs">
             See all
           </Link>
-        )} */}
+        )}
       </div>
-      {/* BOTTOM */}
+
       <div className="flex flex-col gap-4 text-gray-500">
         <div className="flex items-center gap-2">
           <span className="text-xl text-black">
@@ -112,6 +110,7 @@ const UserInfoCard = async ({ user }: { user: User }) => {
             <span>Joined {formattedDate}</span>
           </div>
         </div>
+
         {currentUserId && currentUserId !== user.id && (
           <UserInfoCardInteraction
             userId={user.id}

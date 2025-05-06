@@ -8,4 +8,8 @@
       display: none; /* Chrome/Safari */
     }
   }
+
+  button {
+    @apply cursor-pointer;
+  }
 }

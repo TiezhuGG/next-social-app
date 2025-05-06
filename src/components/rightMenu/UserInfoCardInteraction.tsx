@@ -1,6 +1,6 @@
 "use client";
 
-// import { switchBlock, switchFollow } from "@/lib/actions";
+import { switchBlock, switchFollow } from "@/lib/actions";
 import { useOptimistic, useState } from "react";
 
 const UserInfoCardInteraction = ({
@@ -56,6 +56,7 @@ const UserInfoCardInteraction = ({
           }
         : { ...state, blocked: !state.blocked }
   );
+
   return (
     <>
       <form action={follow}>
@@ -67,6 +68,7 @@ const UserInfoCardInteraction = ({
             : "Follow"}
         </button>
       </form>
+
       <form action={block} className="self-end ">
         <button>
           <span className="text-red-400 text-xs cursor-pointer">

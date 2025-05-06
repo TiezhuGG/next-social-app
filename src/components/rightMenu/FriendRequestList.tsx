@@ -1,11 +1,11 @@
 "use client";
 
-// import { acceptFollowRequest, declineFollowRequest } from "@/lib/actions";
-// import { FollowRequest, User } from "@prisma/client";
+import { User, FollowerRequest } from "@/app/generated/prisma";
+import { acceptFollowRequest, declineFollowRequest } from "@/lib/actions";
 import Image from "next/image";
 import { useOptimistic, useState } from "react";
 
-type RequestWithUser = FollowRequest & {
+type RequestWithUser = FollowerRequest & {
   sender: User;
 };
 
@@ -31,13 +31,14 @@ const FriendRequestList = ({ requests }: { requests: RequestWithUser[] }) => {
     requestState,
     (state, value: number) => state.filter((req) => req.id !== value)
   );
+
   return (
     <div className="">
       {optimisticRequests.map((request) => (
         <div className="flex items-center justify-between" key={request.id}>
           <div className="flex items-center gap-4">
             <Image
-              src={request.sender.avatar || "/noAvatar.png"}
+              src={request?.sender?.avatar || "/noAvatar.png"}
               alt=""
               width={40}
               height={40}
@@ -49,6 +50,7 @@ const FriendRequestList = ({ requests }: { requests: RequestWithUser[] }) => {
                 : request.sender.username}
             </span>
           </div>
+
           <div className="flex gap-3 justify-end">
             <form action={() => accept(request.id, request.sender.id)}>
               <button>
@@ -61,6 +63,7 @@ const FriendRequestList = ({ requests }: { requests: RequestWithUser[] }) => {
                 />
               </button>
             </form>
+
             <form action={() => decline(request.id, request.sender.id)}>
               <button>
                 <Image
