@@ -9850,6 +9850,7 @@ export namespace Prisma {
     id: number | null
     createAt: Date | null
     expiresAt: Date | null
+    img: string | null
     userId: string | null
   }
 
@@ -9857,6 +9858,7 @@ export namespace Prisma {
     id: number | null
     createAt: Date | null
     expiresAt: Date | null
+    img: string | null
     userId: string | null
   }
 
@@ -9864,6 +9866,7 @@ export namespace Prisma {
     id: number
     createAt: number
     expiresAt: number
+    img: number
     userId: number
     _all: number
   }
@@ -9881,6 +9884,7 @@ export namespace Prisma {
     id?: true
     createAt?: true
     expiresAt?: true
+    img?: true
     userId?: true
   }
 
@@ -9888,6 +9892,7 @@ export namespace Prisma {
     id?: true
     createAt?: true
     expiresAt?: true
+    img?: true
     userId?: true
   }
 
@@ -9895,6 +9900,7 @@ export namespace Prisma {
     id?: true
     createAt?: true
     expiresAt?: true
+    img?: true
     userId?: true
     _all?: true
   }
@@ -9989,6 +9995,7 @@ export namespace Prisma {
     id: number
     createAt: Date
     expiresAt: Date
+    img: string | null
     userId: string
     _count: StoryCountAggregateOutputType | null
     _avg: StoryAvgAggregateOutputType | null
@@ -10015,6 +10022,7 @@ export namespace Prisma {
     id?: boolean
     createAt?: boolean
     expiresAt?: boolean
+    img?: boolean
     userId?: boolean
     user?: boolean | UserDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["story"]>
@@ -10023,6 +10031,7 @@ export namespace Prisma {
     id?: boolean
     createAt?: boolean
     expiresAt?: boolean
+    img?: boolean
     userId?: boolean
     user?: boolean | UserDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["story"]>
@@ -10031,6 +10040,7 @@ export namespace Prisma {
     id?: boolean
     createAt?: boolean
     expiresAt?: boolean
+    img?: boolean
     userId?: boolean
     user?: boolean | UserDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["story"]>
@@ -10039,10 +10049,11 @@ export namespace Prisma {
     id?: boolean
     createAt?: boolean
     expiresAt?: boolean
+    img?: boolean
     userId?: boolean
   }
 
-  export type StoryOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "createAt" | "expiresAt" | "userId", ExtArgs["result"]["story"]>
+  export type StoryOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "createAt" | "expiresAt" | "img" | "userId", ExtArgs["result"]["story"]>
   export type StoryInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     user?: boolean | UserDefaultArgs<ExtArgs>
   }
@@ -10062,6 +10073,7 @@ export namespace Prisma {
       id: number
       createAt: Date
       expiresAt: Date
+      img: string | null
       userId: string
     }, ExtArgs["result"]["story"]>
     composites: {}
@@ -10490,6 +10502,7 @@ export namespace Prisma {
     readonly id: FieldRef<"Story", 'Int'>
     readonly createAt: FieldRef<"Story", 'DateTime'>
     readonly expiresAt: FieldRef<"Story", 'DateTime'>
+    readonly img: FieldRef<"Story", 'String'>
     readonly userId: FieldRef<"Story", 'String'>
   }
     
@@ -11006,6 +11019,7 @@ export namespace Prisma {
     id: 'id',
     createAt: 'createAt',
     expiresAt: 'expiresAt',
+    img: 'img',
     userId: 'userId'
   };
 
@@ -11590,6 +11604,7 @@ export namespace Prisma {
     id?: IntFilter<"Story"> | number
     createAt?: DateTimeFilter<"Story"> | Date | string
     expiresAt?: DateTimeFilter<"Story"> | Date | string
+    img?: StringNullableFilter<"Story"> | string | null
     userId?: StringFilter<"Story"> | string
     user?: XOR<UserScalarRelationFilter, UserWhereInput>
   }
@@ -11598,6 +11613,7 @@ export namespace Prisma {
     id?: SortOrder
     createAt?: SortOrder
     expiresAt?: SortOrder
+    img?: SortOrderInput | SortOrder
     userId?: SortOrder
     user?: UserOrderByWithRelationInput
   }
@@ -11609,6 +11625,7 @@ export namespace Prisma {
     NOT?: StoryWhereInput | StoryWhereInput[]
     createAt?: DateTimeFilter<"Story"> | Date | string
     expiresAt?: DateTimeFilter<"Story"> | Date | string
+    img?: StringNullableFilter<"Story"> | string | null
     userId?: StringFilter<"Story"> | string
     user?: XOR<UserScalarRelationFilter, UserWhereInput>
   }, "id">
@@ -11617,6 +11634,7 @@ export namespace Prisma {
     id?: SortOrder
     createAt?: SortOrder
     expiresAt?: SortOrder
+    img?: SortOrderInput | SortOrder
     userId?: SortOrder
     _count?: StoryCountOrderByAggregateInput
     _avg?: StoryAvgOrderByAggregateInput
@@ -11632,6 +11650,7 @@ export namespace Prisma {
     id?: IntWithAggregatesFilter<"Story"> | number
     createAt?: DateTimeWithAggregatesFilter<"Story"> | Date | string
     expiresAt?: DateTimeWithAggregatesFilter<"Story"> | Date | string
+    img?: StringNullableWithAggregatesFilter<"Story"> | string | null
     userId?: StringWithAggregatesFilter<"Story"> | string
   }
 
@@ -12094,6 +12113,7 @@ export namespace Prisma {
   export type StoryCreateInput = {
     createAt?: Date | string
     expiresAt: Date | string
+    img?: string | null
     user: UserCreateNestedOneWithoutStoriesInput
   }
 
@@ -12101,12 +12121,14 @@ export namespace Prisma {
     id?: number
     createAt?: Date | string
     expiresAt: Date | string
+    img?: string | null
     userId: string
   }
 
   export type StoryUpdateInput = {
     createAt?: DateTimeFieldUpdateOperationsInput | Date | string
     expiresAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    img?: NullableStringFieldUpdateOperationsInput | string | null
     user?: UserUpdateOneRequiredWithoutStoriesNestedInput
   }
 
@@ -12114,6 +12136,7 @@ export namespace Prisma {
     id?: IntFieldUpdateOperationsInput | number
     createAt?: DateTimeFieldUpdateOperationsInput | Date | string
     expiresAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    img?: NullableStringFieldUpdateOperationsInput | string | null
     userId?: StringFieldUpdateOperationsInput | string
   }
 
@@ -12121,18 +12144,21 @@ export namespace Prisma {
     id?: number
     createAt?: Date | string
     expiresAt: Date | string
+    img?: string | null
     userId: string
   }
 
   export type StoryUpdateManyMutationInput = {
     createAt?: DateTimeFieldUpdateOperationsInput | Date | string
     expiresAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    img?: NullableStringFieldUpdateOperationsInput | string | null
   }
 
   export type StoryUncheckedUpdateManyInput = {
     id?: IntFieldUpdateOperationsInput | number
     createAt?: DateTimeFieldUpdateOperationsInput | Date | string
     expiresAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    img?: NullableStringFieldUpdateOperationsInput | string | null
     userId?: StringFieldUpdateOperationsInput | string
   }
 
@@ -12630,6 +12656,7 @@ export namespace Prisma {
     id?: SortOrder
     createAt?: SortOrder
     expiresAt?: SortOrder
+    img?: SortOrder
     userId?: SortOrder
   }
 
@@ -12641,6 +12668,7 @@ export namespace Prisma {
     id?: SortOrder
     createAt?: SortOrder
     expiresAt?: SortOrder
+    img?: SortOrder
     userId?: SortOrder
   }
 
@@ -12648,6 +12676,7 @@ export namespace Prisma {
     id?: SortOrder
     createAt?: SortOrder
     expiresAt?: SortOrder
+    img?: SortOrder
     userId?: SortOrder
   }
 
@@ -13786,12 +13815,14 @@ export namespace Prisma {
   export type StoryCreateWithoutUserInput = {
     createAt?: Date | string
     expiresAt: Date | string
+    img?: string | null
   }
 
   export type StoryUncheckedCreateWithoutUserInput = {
     id?: number
     createAt?: Date | string
     expiresAt: Date | string
+    img?: string | null
   }
 
   export type StoryCreateOrConnectWithoutUserInput = {
@@ -14036,6 +14067,7 @@ export namespace Prisma {
     id?: IntFilter<"Story"> | number
     createAt?: DateTimeFilter<"Story"> | Date | string
     expiresAt?: DateTimeFilter<"Story"> | Date | string
+    img?: StringNullableFilter<"Story"> | string | null
     userId?: StringFilter<"Story"> | string
   }
 
@@ -15501,6 +15533,7 @@ export namespace Prisma {
     id?: number
     createAt?: Date | string
     expiresAt: Date | string
+    img?: string | null
   }
 
   export type PostUpdateWithoutUserInput = {
@@ -15680,18 +15713,21 @@ export namespace Prisma {
   export type StoryUpdateWithoutUserInput = {
     createAt?: DateTimeFieldUpdateOperationsInput | Date | string
     expiresAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    img?: NullableStringFieldUpdateOperationsInput | string | null
   }
 
   export type StoryUncheckedUpdateWithoutUserInput = {
     id?: IntFieldUpdateOperationsInput | number
     createAt?: DateTimeFieldUpdateOperationsInput | Date | string
     expiresAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    img?: NullableStringFieldUpdateOperationsInput | string | null
   }
 
   export type StoryUncheckedUpdateManyWithoutUserInput = {
     id?: IntFieldUpdateOperationsInput | number
     createAt?: DateTimeFieldUpdateOperationsInput | Date | string
     expiresAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    img?: NullableStringFieldUpdateOperationsInput | string | null
   }
 
   export type LikeCreateManyPostInput = {

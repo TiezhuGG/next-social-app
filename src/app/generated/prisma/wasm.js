@@ -186,6 +186,7 @@ exports.Prisma.StoryScalarFieldEnum = {
   id: 'id',
   createAt: 'createAt',
   expiresAt: 'expiresAt',
+  img: 'img',
   userId: 'userId'
 };
 
